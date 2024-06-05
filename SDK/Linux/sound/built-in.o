@@ -1,0 +1,97 @@
+!<thin>
+//                                              836       `
+sound_core.o/
+core/sound.o/
+core/init.o/
+core/memory.o/
+core/control.o/
+core/misc.o/
+core/device.o/
+core/info.o/
+core/info_oss.o/
+core/sound_oss.o/
+core/ctljack.o/
+core/jack.o/
+core/timer.o/
+core/pcm.o/
+core/pcm_native.o/
+core/pcm_lib.o/
+core/pcm_misc.o/
+core/pcm_memory.o/
+core/memalloc.o/
+core/pcm_timer.o/
+core/pcm_dmaengine.o/
+core/oss/mixer_oss.o/
+core/oss/pcm_oss.o/
+core/oss/pcm_plugin.o/
+core/oss/io.o/
+core/oss/copy.o/
+core/oss/linear.o/
+core/oss/mulaw.o/
+core/oss/route.o/
+core/oss/rate.o/
+drivers/aloop.o/
+soc/soc-core.o/
+soc/soc-dapm.o/
+soc/soc-jack.o/
+soc/soc-cache.o/
+soc/soc-utils.o/
+soc/soc-pcm.o/
+soc/soc-io.o/
+soc/soc-devres.o/
+soc/soc-ops.o/
+soc/soc-generic-dmaengine-pcm.o/
+soc/generic/simple-card-utils.o/
+soc/generic/simple-card.o/
+soc/sunxi/sun4i-codec.o/
+soc/sunxi/sun4i-i2s.o/
+soc/sunxi/sun4i-spdif.o/
+last.o/
+
+/0              0           0     0     644     10948     `
+/14             0           0     0     644     9932      `
+/28             0           0     0     644     18316     `
+/41             0           0     0     644     2424      `
+/56             0           0     0     644     24520     `
+/72             0           0     0     644     1588      `
+/85             0           0     0     644     4056      `
+/100            0           0     0     644     13416     `
+/113            0           0     0     644     4112      `
+/130            0           0     0     644     5496      `
+/148            0           0     0     644     2220      `
+/164            0           0     0     644     5848      `
+/177            0           0     0     644     28172     `
+/191            0           0     0     644     19976     `
+/203            0           0     0     644     41252     `
+/222            0           0     0     644     31048     `
+/238            0           0     0     644     9020      `
+/255            0           0     0     644     7864      `
+/274            0           0     0     644     4884      `
+/291            0           0     0     644     3008      `
+/309           /0           0     0     644     7140      `
+/331            0           0     0     644     19720     `
+/353            0           0     0     644     30312     `
+/373            0           0     0     644     7876      `
+/396            0           0     0     644     2440      `
+/411            0           0     0     644     2000      `
+/428            0           0     0     644     2628      `
+/447            0           0     0     644     3236      `
+/465            0           0     0     644     1936      `
+/483            0           0     0     644     3840      `
+/500            0           0     0     644     20152     `
+/517            0           0     0     644     63852     `
+/533            0           0     0     644     52776     `
+/549            0           0     0     644     10144     `
+/565            0           0     0     644     1440      `
+/582            0           0     0     644     11364     `
+/599            0           0     0     644     36504     `
+/614            0           0     0     644     6600      `
+/628            0           0     0     644     3976      `
+/646            0           0     0     644     13096     `
+/661            0           0     0     644     6500      `
+/694            0           0     0     644     10760     `
+/727            0           0     0     644     8716      `
+/754            0           0     0     644     38388     `
+/779            0           0     0     644     14112     `
+/802            0           0     0     644     8672      `
+/827            0           0     0     644     1788      `

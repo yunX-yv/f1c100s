@@ -1,0 +1,1 @@
+cmd_drivers/reset/built-in.o :=  rm -f drivers/reset/built-in.o; arm-linux-gnueabi-ar rcSTPD drivers/reset/built-in.o drivers/reset/core.o drivers/reset/hisilicon/built-in.o drivers/reset/reset-simple.o drivers/reset/reset-sunxi.o 

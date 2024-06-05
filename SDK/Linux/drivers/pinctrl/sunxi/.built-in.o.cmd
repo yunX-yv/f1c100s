@@ -1,0 +1,1 @@
+cmd_drivers/pinctrl/sunxi/built-in.o :=  rm -f drivers/pinctrl/sunxi/built-in.o; arm-linux-gnueabi-ar rcSTPD drivers/pinctrl/sunxi/built-in.o drivers/pinctrl/sunxi/pinctrl-sunxi.o drivers/pinctrl/sunxi/pinctrl-suniv.o 

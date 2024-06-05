@@ -1,0 +1,1 @@
+cmd_drivers/usb/gadget/function/usb_f_ecm_subset.o := rm -f drivers/usb/gadget/function/usb_f_ecm_subset.o; arm-linux-gnueabi-ar rcSTPD drivers/usb/gadget/function/usb_f_ecm_subset.o drivers/usb/gadget/function/f_subset.o
