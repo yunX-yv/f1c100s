@@ -1,1 +1,0 @@
-cmd_drivers/soc/mediatek/built-in.o :=  rm -f drivers/soc/mediatek/built-in.o; arm-linux-gnueabi-ar rcSTPD drivers/soc/mediatek/built-in.o

@@ -1,1 +1,0 @@
-cmd_drivers/usb/gadget/function/usb_f_serial.o := rm -f drivers/usb/gadget/function/usb_f_serial.o; arm-linux-gnueabi-ar rcSTPD drivers/usb/gadget/function/usb_f_serial.o drivers/usb/gadget/function/f_serial.o

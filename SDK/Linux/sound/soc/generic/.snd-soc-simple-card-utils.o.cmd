@@ -1,1 +1,0 @@
-cmd_sound/soc/generic/snd-soc-simple-card-utils.o := rm -f sound/soc/generic/snd-soc-simple-card-utils.o; arm-linux-gnueabi-ar rcSTPD sound/soc/generic/snd-soc-simple-card-utils.o sound/soc/generic/simple-card-utils.o
