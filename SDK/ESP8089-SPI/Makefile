@@ -10,7 +10,7 @@ KVERS_ARCH ?= $(shell arch)
 # same as the kernel source tree, except when the kernel was compiled in
 # a separate directory.
 #KBUILD ?= $(shell readlink -f /lib/modules/$(KVERS_UNAME)/build)
-KBUILD = /home/xiao/f1c100s/Linux
+KBUILD = ../Linux
 
 ifeq (,$(KBUILD))
 $(error Kernel build tree not found - please set KBUILD to configured kernel)
