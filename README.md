@@ -49,14 +49,69 @@
 ### <span id="head3"> 开发工具</span>
 ![alt text](image/image.png)**芯片启动流程**
 
-#### <span id="head4">2. 开发工具链下载</span>
+#### <span id="head4">1. 开发工具链下载</span>
 
-> 编译工具链官网：https://www.linaro.org/
->
-> 或[Arm GNU Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain)，以linaro为例：进入`support->downloads`可以看到下载页面，点击`GNU cross-toolchain binary archives`，可以进入对应[下载列表](https://releases.linaro.org/components/toolchain/binaries/)，可以看到各个版本的toolchain，这里我使用的`latest-7/arm-linux-gnueabi/`即`gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi`即可。
->
+```bash
+wget http://releases.linaro.org/components/toolchain/binaries/7.2-2017.11/arm-linux-gnueabi/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi.tar.xz
+```
+#### <span id="head5">2. sunxi-tools</span>
 
-## <span id="head5"> 1.硬件开发</span>
+```bash
+git clone -b f1c100s-spiflash https://github.com/Icenowy/sunxi-tools.git
+cd sunxi-tools
+make && sudo make install
+```
+[编译和使用sunxi-tools](https://wiki.sipeed.com/soft/Lichee/zh/Nano-Doc-Backup/step_by_step/two_sunxi-tools.html)
+
+#### <span id="head6">3. u-boot</span>
+
+```bash
+git clone https://gitee.com/LicheePiNano/u-boot.git -b nano-lcd800480
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- licheepi_nano_spiflash_defconfig
+```
+
+#### <span id="head7">4. kernel</span>
+
+```bash
+git clone https://gitee.com/LicheePiNano/Linux.git 
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- f1c100s_nano_linux_defconfig
+```
+
+#### <span id="head8">5. buildroot</span>
+
+```bash
+wget https://buildroot.org/downloads/buildroot-2021.02.4.tar.gz
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+```
+
+## <span id="head9"> 1.硬件开发</span>
+### <span id="head10"> 原理图</span>
+![原理图](image/F1c100s_v1.png)
+### <span id="head11"> 引脚分配</span>
+|Pin ID |Pin name |Function                                           |
+| ---- | ----------|-------------------------------------------------- |
+|Pin29  | PD21       | WIFI_CHIP_EN|
+|Pin42  | PE7       | SPI0_WIFI_CS|
+|Pin53  | PF5       | SDC0_D2|
+|Pin54  | PF4       | SDC0_D3|
+|Pin55  | PF3       | SDC0_CMD|
+|Pin56  | PF2       | SDC0_CLK|
+|Pin57  | PF1       | SDC0_D0|
+|Pin58  | PF0       | SDC0_D1|
+|Pin59 | PC0 | SPI0_CLK|
+|Pin60 | PC1 | SPI0_FLASH_CS|
+|Pin61 | PC2 | SPI0_MISO|
+|Pin62 | PC3 | SPI0_MOSI|
+
+## <span id="head9"> 2.软件开发</span>
+### <span id="head10"> 编译kernel</span>
+
+```bash
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- f1c100s_xiaodq_linux_defconfig
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- 
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- INSTALL_MOD_PATH=out modules
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- INSTALL_MOD_PATH=out modules_install
+```
 
 ### 其他参考资料
 
