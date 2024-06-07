@@ -1,1 +1,0 @@
-cmd_spl/common/built-in.o :=  arm-linux-gnueabi-ld.bfd   -r -o spl/common/built-in.o spl/common/console.o spl/common/dlmalloc.o spl/common/malloc_simple.o spl/common/image.o spl/common/memsize.o spl/common/stdio.o spl/common/cli.o spl/common/command.o spl/common/s_record.o spl/common/xyzModem.o 
