@@ -104,6 +104,12 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
 |Pin62 | PC3 | SPI0_MOSI|
 
 ## <span id="head9"> 2.软件开发</span>
+### <span id="head10"> 编译uboot</span>
+
+```bash
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- f1c100s_xiaodq_spiflash_defconfig
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- 
+```
 ### <span id="head10"> 编译kernel</span>
 
 ```bash
