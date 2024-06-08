@@ -2,7 +2,8 @@
 UBOOT_FILE=./u-boot/u-boot-sunxi-with-spl.bin
 DTB_FILE=./Linux/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano.dtb
 KERNEL_FILE=./Linux/arch/arm/boot/zImage
-ROOTFS_FILE=./buildroot-2021.02.4/output/images/rootfs.tar
+#ROOTFS_FILE=./buildroot-2021.02.4/output/images/rootfs.tar
+ROOTFS_FILE=./root/rootfs.tar
 MOD_FILE=./Linux/out/lib/modules
 
 dd if=/dev/zero of=flashimg.bin bs=1M count=16 &&\

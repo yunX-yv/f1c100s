@@ -1,0 +1,12 @@
+kernel/crypto/echainiv.ko:
+kernel/drivers/video/backlight/lcd.ko:
+kernel/drivers/net/mii.ko:
+kernel/drivers/net/usb/rtl8150.ko:
+kernel/drivers/usb/gadget/function/usb_f_mass_storage.ko:
+kernel/drivers/usb/gadget/legacy/g_ether.ko:
+kernel/drivers/usb/gadget/legacy/g_serial.ko:
+kernel/drivers/usb/gadget/legacy/g_cdc.ko:
+kernel/drivers/usb/gadget/legacy/g_multi.ko: kernel/drivers/usb/gadget/function/usb_f_mass_storage.ko
+kernel/drivers/usb/gadget/legacy/g_ncm.ko:
+kernel/drivers/usb/mon/usbmon.ko:
+kernel/drivers/staging/rtl8723bs/r8723bs.ko:
