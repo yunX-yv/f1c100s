@@ -86,7 +86,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
 
 ## <span id="head9"> 1.硬件开发</span>
 ### <span id="head10"> 原理图</span>
-![原理图](image/F1c100s_v1.png)
+![原理图](image/SCH_v1.2.png)
 ### <span id="head11"> 引脚分配</span>
 |Pin ID |Pin name |Function                                           |
 | ---- | ----------|-------------------------------------------------- |
