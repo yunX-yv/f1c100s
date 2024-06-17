@@ -110,7 +110,7 @@ static struct spi_board_info esp_board_spi_devices[] = {
     .modalias = "ESP8089_0",
     .max_speed_hz = MAX_SPEED_HZ,
     .bus_num = 1,
-    .chip_select = 0,
+    .chip_select = 1,
     .mode = 0,
   },
 };

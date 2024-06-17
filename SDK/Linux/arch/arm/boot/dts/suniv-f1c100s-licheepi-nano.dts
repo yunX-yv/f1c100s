@@ -111,13 +111,19 @@
         };
 };
 */
-
+&pio {
+        spi0_cs_pins: spi0_cs_pins {
+                pins = "PE7";
+                function = "gpio_out";
+        };
+};
 
 &spi0 {
     pinctrl-names = "default";
-    pinctrl-0 = <&spi0_pins_a>;
+    pinctrl-0 = <&spi0_pins_a &spi0_cs_pins>;
     status = "okay";
     spi-max-frequency = <50000000>;
+	cs-gpios = <0>, <&pio 4 7 GPIO_ACTIVE_HIGH>;
     flash: xt25f128b@0 {
         #address-cells = <1>;
         #size-cells = <1>;
