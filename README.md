@@ -88,20 +88,41 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
 ### <span id="head10"> 原理图</span>
 ![原理图](image/SCH_v1.2.png)
 ### <span id="head11"> 引脚分配</span>
+#### <span id="head11"> SDIO</span>
 |Pin ID |Pin name |Function                                           |
 | ---- | ----------|-------------------------------------------------- |
-|Pin29  | PD21       | WIFI_CHIP_EN|
-|Pin42  | PE7       | SPI0_WIFI_CS|
 |Pin53  | PF5       | SDC0_D2|
 |Pin54  | PF4       | SDC0_D3|
 |Pin55  | PF3       | SDC0_CMD|
 |Pin56  | PF2       | SDC0_CLK|
 |Pin57  | PF1       | SDC0_D0|
 |Pin58  | PF0       | SDC0_D1|
+
+#### <span id="head11"> SPI</span>
+|Pin ID |Pin name |Function                                           |
+| ---- | ----------|-------------------------------------------------- |
 |Pin59 | PC0 | SPI0_CLK|
-|Pin60 | PC1 | SPI0_FLASH_CS|
 |Pin61 | PC2 | SPI0_MISO|
 |Pin62 | PC3 | SPI0_MOSI|
+
+##### <span id="head11"> SPI0-FLASH </span>
+|Pin ID |Pin name |Function                                           |
+| ---- | ----------|-------------------------------------------------- |
+|Pin60 | PC1 | SPI0_FLASH_CS|
+
+
+##### <span id="head11"> SPI0-WIFI </span>
+|Pin ID |Pin name |Function                                           |
+| ---- | ----------|-------------------------------------------------- |
+|Pin29  | PD21       | WIFI_CHIP_EN|
+|Pin42  | PE7       | SPI0_WIFI_CS|
+
+#### <span id="head11"> USB</span>
+|Pin ID |Pin name |Function                                           |
+| ---- | ----------|-------------------------------------------------- |
+|Pin68 | USB-DM | USB|
+|Pin69 | USB-DP | USB|
+|Pin47 | PE2 	| OTG-ID|
 
 ## <span id="head9"> 2.软件开发</span>
 ### <span id="head10"> 编译uboot</span>
