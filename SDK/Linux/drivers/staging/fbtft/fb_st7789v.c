@@ -85,6 +85,7 @@ enum st7789v_command {
  */
 static int init_display(struct fbtft_par *par)
 {
+#if 0
 	/* turn off sleep mode */
 	write_reg(par, MIPI_DCS_EXIT_SLEEP_MODE);
 	mdelay(120);
@@ -130,6 +131,38 @@ static int init_display(struct fbtft_par *par)
 
 	write_reg(par, MIPI_DCS_SET_DISPLAY_ON);
 	return 0;
+#else
+	par->fbtftops.reset(par);
+	mdelay(50);
+	write_reg(par,0x11);//Sleep exit
+	mdelay(12);
+	write_reg(par,0x11);
+	mdelay(10);
+	write_reg(par,0x3A,0x05); //65k mode
+	write_reg(par,0xc5,0x1a);
+	write_reg(par,0x36,0x70); // 屏幕显示方向设置
+	//-------------ST7789V Frame rate setting-----------//
+	write_reg(par,0xb2,0x05,0x05,0x00,0x33,0x33);
+	write_reg(par,0xb7,0x35);
+	//--------------ST7789V Power setting---------------//
+	write_reg(par,0xbb,0x3f);
+	write_reg(par,0xc0,0x2c);
+	write_reg(par,0xc2,0x01);
+	write_reg(par,0xc3,0x0f);
+	write_reg(par,0xc4,0x20);
+	write_reg(par,0xc6,0x11);
+	write_reg(par,0xd0,0xa4,0xa1);
+	write_reg(par,0xe8,0x03);
+	write_reg(par,0xe9,0x09,0x09,0x08);
+	write_reg(par,0xe0,0xd0,0x05,0x09,0x09,0x08,0x14,0x28,0x33,0x3f,0x07,0x13,0x14,0x28,0x30);
+	write_reg(par,0xe1,0xd0,0x05,0x09,0x09,0x08,0x03,0x24,0x32,0x32,0x3b,0x14,0x13,0x28,0x2f);
+	write_reg(par,0x21);
+	write_reg(par,0x11);
+	mdelay(120);      //Delay 120ms
+	write_reg(par,0x29);
+	mdelay(200);
+	return 0;
+#endif
 }
 
 /**
@@ -241,7 +274,7 @@ static int blank(struct fbtft_par *par, bool on)
 static struct fbtft_display display = {
 	.regwidth = 8,
 	.width = 240,
-	.height = 320,
+	.height = 240,
 	.gamma_num = 2,
 	.gamma_len = 14,
 	.gamma = DEFAULT_GAMMA,

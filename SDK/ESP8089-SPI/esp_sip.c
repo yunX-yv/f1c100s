@@ -2192,7 +2192,7 @@ sip_reclaim_ctrl_buf(struct esp_sip *sip, struct sip_pkt *pkt, SIP_BUF_TYPE bfty
         list_add_tail(&pkt->list, bflist);
         spin_unlock_bh(&sip->lock);
 }
-
+extern struct task_struct *sif_irq_thread;
 int
 sip_poll_bootup_event(struct esp_sip *sip)
 {
@@ -2206,7 +2206,14 @@ sip_poll_bootup_event(struct esp_sip *sip)
 	esp_dbg(ESP_DBG_TRACE, "******time remain****** = [%d]\n", ret);
 	if (ret <= 0) {
 		esp_dbg(ESP_DBG_ERROR, "bootup event timeout\n");
+#if 0
 		return -ETIMEDOUT;
+#else
+                sip->epub->wait_reset = 0;
+                wake_up_process(sif_irq_thread);
+                esp_dbg(ESP_DBG_ERROR, "for unknow reason,we may not be informed the boot/rst complete event, assume it completed and continue here\n");
+                msleep(50);
+#endif
 	}	
 
 	if(sif_get_ate_config() == 0){
@@ -2227,6 +2234,8 @@ sip_poll_bootup_event(struct esp_sip *sip)
 	return ret;
 }
 
+
+
 int
 sip_poll_resetting_event(struct esp_sip *sip)
 {
@@ -2240,8 +2249,15 @@ sip_poll_resetting_event(struct esp_sip *sip)
 	esp_dbg(ESP_DBG_TRACE, "******time remain****** = [%d]\n", ret);
 	if (ret <= 0) {
 		esp_dbg(ESP_DBG_ERROR, "resetting event timeout\n");
+#if 0
 		return -ETIMEDOUT;
-	}	
+#else
+                sip->epub->wait_reset = 0;
+                wake_up_process(sif_irq_thread);
+                esp_dbg(ESP_DBG_ERROR, "for unknow reason,we may not be informed the boot/rst complete event, assume it completed and continue here\n");
+                msleep(50);
+#endif
+        }	
       
         esp_dbg(ESP_DBG_TRACE, "target resetting %d %p\n", ret, gl_bootup_cplx);
 

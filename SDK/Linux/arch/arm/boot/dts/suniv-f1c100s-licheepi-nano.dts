@@ -113,7 +113,7 @@
 */
 &pio {
         spi0_cs_pins: spi0_cs_pins {
-                pins = "PE7";
+                pins = "PE7", "PE6";
                 function = "gpio_out";
         };
 };
@@ -123,7 +123,8 @@
     pinctrl-0 = <&spi0_pins_a &spi0_cs_pins>;
     status = "okay";
     spi-max-frequency = <50000000>;
-	cs-gpios = <0>, <&pio 4 7 GPIO_ACTIVE_HIGH>;
+	cs-gpios = <0>, <&pio 4 7 GPIO_ACTIVE_HIGH>, <&pio 4 6 GPIO_ACTIVE_HIGH>;
+
     flash: w25q128bv@0 {
         #address-cells = <1>;
         #size-cells = <1>;
@@ -159,6 +160,22 @@
             };
         };
     };
+
+	st7789v@0 {
+		status = "okay";
+		compatible = "sitronix,st7789v";
+			reg = <2>;
+			spi-max-frequency = <100000000>;
+			rotate = <90>;
+			spi-cpol;
+			spi-cpha;
+			rgb;
+			fps = <60>;
+			buswidth = <8>;
+			reset-gpios = <&pio 4 3 GPIO_ACTIVE_LOW>;
+			dc-gpios = <&pio 4 5 GPIO_ACTIVE_LOW>;
+			debug = <0>;
+	};
 };
 
 &tcon0 {

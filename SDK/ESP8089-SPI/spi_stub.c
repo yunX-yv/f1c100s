@@ -108,10 +108,10 @@ static struct spi_device *spi;
 static struct spi_board_info esp_board_spi_devices[] = {
   {
     .modalias = "ESP8089_0",
-    .max_speed_hz = MAX_SPEED_HZ,
+    .max_speed_hz = 15 * MHz, //MAX_SPEED_HZ
     .bus_num = 0,
     .chip_select = 1,
-    .mode = 3,
+    .mode = SPI_MODE_3,  
   },
 };
 
@@ -134,7 +134,7 @@ struct spi_device* sif_platform_new_device(void) {
 
 /* *** *** Interrupt *** *** */
 
-static int esp_interrupt = 136;  //pe8
+static int esp_interrupt = 108;  //pd12
 module_param(esp_interrupt, int, 0);
 MODULE_PARM_DESC(esp_interrupt, "Interrupt pin");
 
