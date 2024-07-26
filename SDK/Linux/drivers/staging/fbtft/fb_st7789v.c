@@ -26,8 +26,8 @@
 #define DRVNAME "fb_st7789v"
 
 #define DEFAULT_GAMMA \
-	"70 2C 2E 15 10 09 48 33 53 0B 19 18 20 25\n" \
-	"70 2C 2E 15 10 09 48 33 53 0B 19 18 20 25"
+	"D0 0D 14 0D 0D 07 3A 44 50 08 13 13 2D 32\n" \
+	"D0 0D 14 0D 0D 07 3A 44 50 08 13 13 2D 32"
 
 /**
  * enum st7789v_command - ST7789V display controller commands
@@ -85,84 +85,40 @@ enum st7789v_command {
  */
 static int init_display(struct fbtft_par *par)
 {
-#if 0
-	/* turn off sleep mode */
-	write_reg(par, MIPI_DCS_EXIT_SLEEP_MODE);
-	mdelay(120);
-
-	/* set pixel format to RGB-565 */
-	write_reg(par, MIPI_DCS_SET_PIXEL_FORMAT, MIPI_DCS_PIXEL_FMT_16BIT);
-
-	write_reg(par, PORCTRL, 0x08, 0x08, 0x00, 0x22, 0x22);
-
-	/*
-	 * VGH = 13.26V
-	 * VGL = -10.43V
-	 */
-	write_reg(par, GCTRL, 0x35);
-
-	/*
-	 * VDV and VRH register values come from command write
-	 * (instead of NVM)
-	 */
-	write_reg(par, VDVVRHEN, 0x01, 0xFF);
-
-	/*
-	 * VAP =  4.1V + (VCOM + VCOM offset + 0.5 * VDV)
-	 * VAN = -4.1V + (VCOM + VCOM offset + 0.5 * VDV)
-	 */
-	write_reg(par, VRHS, 0x0B);
-
-	/* VDV = 0V */
-	write_reg(par, VDVS, 0x20);
-
-	/* VCOM = 0.9V */
-	write_reg(par, VCOMS, 0x20);
-
-	/* VCOM offset = 0V */
-	write_reg(par, VCMOFSET, 0x20);
-
-	/*
-	 * AVDD = 6.8V
-	 * AVCL = -4.8V
-	 * VDS = 2.3V
-	 */
-	write_reg(par, PWCTRL1, 0xA4, 0xA1);
-
-	write_reg(par, MIPI_DCS_SET_DISPLAY_ON);
-	return 0;
-#else
 	par->fbtftops.reset(par);
 	mdelay(50);
 	write_reg(par,0x11);//Sleep exit
 	mdelay(12);
 	write_reg(par,0x11);
-	mdelay(10);
-	write_reg(par,0x3A,0x05); //65k mode
-	write_reg(par,0xc5,0x1a);
-	write_reg(par,0x36,0x70); // 屏幕显示方向设置
+	mdelay(120);
 	//-------------ST7789V Frame rate setting-----------//
-	write_reg(par,0xb2,0x05,0x05,0x00,0x33,0x33);
-	write_reg(par,0xb7,0x35);
+	write_reg(par,0x2A,0x00,0x00,0x00,0xef); //Column address set
+	write_reg(par,0x2b,0x00,0x28,0x01,0x17); //Row address set
+	write_reg(par,0xb2,0x0c,0x0c,0x00,0x33,0x33);	//Porch control
+	write_reg(par,0x20);	//Display Inversion Off
+	write_reg(par,0xb7,0x56);	//Gate control
 	//--------------ST7789V Power setting---------------//
-	write_reg(par,0xbb,0x3f);
-	write_reg(par,0xc0,0x2c);
-	write_reg(par,0xc2,0x01);
-	write_reg(par,0xc3,0x0f);
-	write_reg(par,0xc4,0x20);
-	write_reg(par,0xc6,0x11);
-	write_reg(par,0xd0,0xa4,0xa1);
-	write_reg(par,0xe8,0x03);
-	write_reg(par,0xe9,0x09,0x09,0x08);
-	write_reg(par,0xe0,0xd0,0x05,0x09,0x09,0x08,0x14,0x28,0x33,0x3f,0x07,0x13,0x14,0x28,0x30);
-	write_reg(par,0xe1,0xd0,0x05,0x09,0x09,0x08,0x03,0x24,0x32,0x32,0x3b,0x14,0x13,0x28,0x2f);
-	write_reg(par,0x21);
-	write_reg(par,0x11);
+	write_reg(par,0xbb,0x18);	//VCOMS Setting
+	write_reg(par,0xc0,0x2c);	//LCM Control
+	write_reg(par,0xc2,0x01);	//VDV and VRH Command Enable
+	write_reg(par,0xc3,0x1f);	//VRH Set
+	write_reg(par,0xc4,0x20);	//VDV Setting
+	write_reg(par,0xc6,0x0f);	//FR Control 2
+	write_reg(par,0xd0,0xa6,0xa1);	//Power Control 1
+	//--------------------------------ST7789S gamma setting---------------------------------------// 
+	write_reg(par,0xe0,0xd0,0x0d,0x14,0x0b,0x0b,0x07,0x3a,0x44,0x50,0x08,0x13,0x13,0x2d,0x32);
+	//Negative Voltage Gamma Contro
+	write_reg(par,0xe1,0xd0,0x0d,0x14,0x0b,0x0b,0x07,0x3a,0x44,0x50,0x08,0x13,0x13,0x2d,0x32);
+	write_reg(par,0x36,0x00);	//Memory data access control
+	write_reg(par,0x3A,0x55);	//Interface pixel format
+	write_reg(par,0xe7,0x00);	//SPI2 enable    启用2数据通道模式
+	write_reg(par,0x21);	//Display inversion on
+	write_reg(par,0x29);	//Display inversion on
 	mdelay(120);      //Delay 120ms
 	write_reg(par,0x29);
 	mdelay(200);
 	return 0;
-#endif
+
 }
 
 /**
