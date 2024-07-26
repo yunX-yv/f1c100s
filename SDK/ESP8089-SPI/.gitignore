@@ -124,3 +124,5 @@ all.config
 *.kdev4
 
 image
+
+compile_commands.json
