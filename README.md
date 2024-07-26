@@ -116,6 +116,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
 | ---- | ----------|-------------------------------------------------- |
 |Pin29  | PD21       | WIFI_CHIP_EN|
 |Pin42  | PE7       | SPI0_WIFI_CS|
+|Pin41  | PE8       | WIFI_int|
 
 #### <span id="head11"> USB</span>
 |Pin ID |Pin name |Function                                           |
