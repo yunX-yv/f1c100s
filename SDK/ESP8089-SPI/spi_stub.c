@@ -134,7 +134,7 @@ struct spi_device* sif_platform_new_device(void) {
 
 /* *** *** Interrupt *** *** */
 
-static int esp_interrupt = 108;  //pd12
+static int esp_interrupt = 137;  //pe9
 module_param(esp_interrupt, int, 0);
 MODULE_PARM_DESC(esp_interrupt, "Interrupt pin");
 

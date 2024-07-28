@@ -116,8 +116,13 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
 | ---- | ----------|-------------------------------------------------- |
 |Pin29  | PD21       | WIFI_CHIP_EN|
 |Pin42  | PE7       | SPI0_WIFI_CS|
-|Pin41  | PE8       | WIFI_int|
-
+|Pin41  | PE9       | WIFI_int|
+##### <span id="head11"> SPI0-LCD ST7789P3 </span>
+|Pin ID |Pin name |Function                                           |
+| ---- | ----------|-------------------------------------------------- |
+|Pin46  | PE3       | LCD_RST|
+|Pin43  | PE6       | LCD_CS|
+|Pin44  | PE5       | LCD_DC|
 #### <span id="head11"> USB</span>
 |Pin ID |Pin name |Function                                           |
 | ---- | ----------|-------------------------------------------------- |
