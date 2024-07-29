@@ -948,6 +948,7 @@ int sif_spi_read_bytes(struct spi_device *spi, unsigned int addr,unsigned char *
             {
                 sif_spi_read_raw(spi,rx_cmd,((count+4)>256)?(count+4):256);
                // sif_spi_read_raw(spi, check_buf, 256);
+                esp_dbg(ESP_DBG, "esp8089_spi: recv err \n");
                 find_start_token = 1;
                 err_ret = -4;
                 goto goto_err;
@@ -1287,16 +1288,17 @@ int sif_spi_read_mix_nosync(struct spi_device *spi, unsigned int addr, unsigned 
 		if (remain_len > 0) {
 			if(dummymode == 0 )
 			{
-				retry = 20;
+                #define TIME_NUM 20
+				retry = TIME_NUM;
 				do{
-					if(retry <20)
+					if(retry <TIME_NUM)
 						mdelay(10);
 					retry--;
 					err = sif_spi_read_bytes(spi, addr, (buf + (blk_cnt*SPI_BLOCK_SIZE)), remain_len, dummymode);
 				}while(retry >0 && err != 0);
 
 				if(err != 0 &&  retry == 0)
-					esp_dbg(ESP_DBG_ERROR, "esp8089_spi: spierr 20 times retry byte read fail\n");
+					esp_dbg(ESP_DBG_ERROR, "esp8089_spi: spierr %d times retry byte read fail:%d\n", TIME_NUM, err);
 			}
 			else
 			{
@@ -2094,10 +2096,12 @@ static int esp_spi_probe(struct spi_device *spi)
         spi_set_drvdata(spi, sctrl);
 
         if (err){
-                if(sif_sdio_state == ESP_SDIO_STATE_FIRST_INIT)
-                	goto _err_ext_gpio;
-		else
-			goto _err_second_init;
+            if(sif_sdio_state == ESP_SDIO_STATE_FIRST_INIT){
+                goto _err_ext_gpio;
+            }else{
+                goto _err_second_init;
+            }
+			    
         }
         check_target_id(epub);
 
@@ -2121,8 +2125,8 @@ static int esp_spi_probe(struct spi_device *spi)
 		sif_sdio_state = ESP_SDIO_STATE_FIRST_NORMAL_EXIT;
 		up(&esp_powerup_sem);
 	}
-  printk("esp8089_spi: %s EXIT\n", __func__);
-        return err;
+    printk("esp8089_spi: %s EXIT\n", __func__);
+    return err;
 _err_ext_gpio:
 #ifdef USE_EXT_GPIO	
 	if (sif_get_ate_config() == 0)

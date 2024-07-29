@@ -219,6 +219,10 @@
 				pins = "PC0", "PC1", "PC2", "PC3";
 				function = "spi0";
 			};
+			spi1_pins_a: spi1-pins-pc {
+				pins = "PA2", "PA0", "PA3", "PA1";
+				function = "spi1";
+			};
 
 			lcd_rgb666_pins: lcd-rgb666-pins {
 				pins = "PD0", "PD1", "PD2", "PD3", "PD4",
