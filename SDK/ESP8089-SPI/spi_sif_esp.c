@@ -2354,7 +2354,7 @@ static int __init esp_spi_init(void) {
   do {
     sema_init(&esp_powerup_sem, 0);
     sif_platform_target_poweron();
-    err = spi_register_driver(&esp_spi_dummy_driver);
+    err = spi_register_driver(&esp_spi_dummy_driver);   //注册SPI驱动
 
     if (err) {
       esp_dbg(ESP_DBG_ERROR, "esp8089_spi: eagle spi driver registration failed, error code: %d\n", err);
@@ -2362,7 +2362,7 @@ static int __init esp_spi_init(void) {
     }
 
     #ifdef REGISTER_SPI_BOARD_INFO
-      spi = sif_platform_new_device();
+      spi = sif_platform_new_device();  //注册SPI信息
       if (spi) {
         printk("esp8089_spi: register board OK\n");
         //err = esp_spi_dummy_probe(spi);

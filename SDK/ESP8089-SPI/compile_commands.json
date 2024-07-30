@@ -2,7 +2,7 @@
   {
     "arguments": [
       "/home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-gcc",
-      "-Wp,-MD,/home/xiao/project/f1c100s/SDK/ESP8089-SPI/.spi_sif_esp.o.d",
+      "-Wp,-MD,/home/xiao/f1c100s/f1c100s/SDK/ESP8089-SPI/.esp_debug.o.d",
       "-nostdinc",
       "-isystem",
       "/home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/bin/../lib/gcc/arm-linux-gnueabi/7.2.1/include",
@@ -75,15 +75,15 @@
       "-DESP_USE_SPI",
       "-DREGISTER_SPI_BOARD_INFO",
       "-DMODULE",
-      "-DKBUILD_BASENAME=\"spi_sif_esp\"",
+      "-DKBUILD_BASENAME=\"esp_debug\"",
       "-DKBUILD_MODNAME=\"esp8089_spi\"",
       "-c",
       "-o",
-      "/home/xiao/project/f1c100s/SDK/ESP8089-SPI/spi_sif_esp.o",
-      "/home/xiao/project/f1c100s/SDK/ESP8089-SPI/spi_sif_esp.c"
+      "/home/xiao/f1c100s/f1c100s/SDK/ESP8089-SPI/esp_debug.o",
+      "/home/xiao/f1c100s/f1c100s/SDK/ESP8089-SPI/esp_debug.c"
     ],
-    "directory": "/home/xiao/project/f1c100s/SDK/Linux",
-    "file": "/home/xiao/project/f1c100s/SDK/ESP8089-SPI/spi_sif_esp.c",
-    "output": "/home/xiao/project/f1c100s/SDK/ESP8089-SPI/spi_sif_esp.o"
+    "directory": "/home/xiao/f1c100s/f1c100s/SDK/Linux",
+    "file": "/home/xiao/f1c100s/f1c100s/SDK/ESP8089-SPI/esp_debug.c",
+    "output": "/home/xiao/f1c100s/f1c100s/SDK/ESP8089-SPI/esp_debug.o"
   }
 ]
