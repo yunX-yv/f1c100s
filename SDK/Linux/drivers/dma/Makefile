@@ -52,6 +52,7 @@ obj-$(CONFIG_MV_XOR_V2) += mv_xor_v2.o
 obj-$(CONFIG_MXS_DMA) += mxs-dma.o
 obj-$(CONFIG_MX3_IPU) += ipu/
 obj-$(CONFIG_NBPFAXI_DMA) += nbpfaxi.o
+obj-$(CONFIG_OWL_DMA) += owl-dma.o
 obj-$(CONFIG_PCH_DMA) += pch_dma.o
 obj-$(CONFIG_PL330_DMA) += pl330.o
 obj-$(CONFIG_PPC_BESTCOMM) += bestcomm/
@@ -74,6 +75,8 @@ obj-$(CONFIG_TI_EDMA) += edma.o
 obj-$(CONFIG_XGENE_DMA) += xgene-dma.o
 obj-$(CONFIG_ZX_DMA) += zx_dma.o
 obj-$(CONFIG_ST_FDMA) += st_fdma.o
+
+obj-$(CONFIG_DMA_SUNIV) += suniv-dma.o
 
 obj-y += qcom/
 obj-y += xilinx/

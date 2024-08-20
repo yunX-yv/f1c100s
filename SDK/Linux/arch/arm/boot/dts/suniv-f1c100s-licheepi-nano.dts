@@ -7,6 +7,7 @@
 #include "suniv-f1c100s.dtsi"
 
 #include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/dma/sun4i-a10.h> 
 
 / {
 	model = "Lichee Pi Nano";
@@ -186,5 +187,13 @@
 
 &usbphy {
 	usb0_id_det-gpio = <&pio 4 2 GPIO_ACTIVE_HIGH>; /* PE2 */
+	status = "okay";
+};
+
+&codec {
+	allwinner,audio-routing =
+		"Headphone", "HP",
+		"Headphone", "HPCOM",
+		"MIC", "Mic";
 	status = "okay";
 };

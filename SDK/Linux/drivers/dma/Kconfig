@@ -168,6 +168,17 @@ config DMA_SA11X0
 	  SA-1110 SoCs.  This DMA engine can only be used with on-chip
 	  devices.
 
+config DMA_SUNIV
+	tristate "Allwinner F1C100s DMA SoCs support"
+	depends on MACH_SUN4I || MACH_SUNIV
+	depends on RESET_CONTROLLER
+	default (MACH_SUN4I || MACH_SUNIV)
+	select DMA_ENGINE
+	select DMA_VIRTUAL_CHANNELS
+	help
+	  Enable support for the DMA controller present in the f1c100s,
+	  Allwinner ARM SoCs.
+
 config DMA_SUN4I
 	tristate "Allwinner A10 DMA SoCs support"
 	depends on MACH_SUN4I || MACH_SUN5I || MACH_SUN7I

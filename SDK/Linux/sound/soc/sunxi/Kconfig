@@ -1,6 +1,14 @@
 menu "Allwinner SoC Audio support"
 	depends on ARCH_SUNXI || COMPILE_TEST
 
+config SND_SUNIV_CODEC
+	tristate "Allwinner F1C100s Codec Support"
+	select SND_SOC_GENERIC_DMAENGINE_PCM
+	select REGMAP_MMIO
+	help
+	  Select Y or M to add support for the Codec embedded in the Allwinner
+	  F1C100s and affiliated SoCs.
+
 config SND_SUN4I_CODEC
 	tristate "Allwinner A10 Codec Support"
 	select SND_SOC_GENERIC_DMAENGINE_PCM
