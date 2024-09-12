@@ -1,24 +1,23 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hah/Desktop/chat/tts/tts.cpp" "/home/hah/Desktop/chat/build/tts/CMakeFiles/tts.dir/tts.cpp.o"
-  "/home/hah/Desktop/chat/tts/tts_common.cpp" "/home/hah/Desktop/chat/build/tts/CMakeFiles/tts.dir/tts_common.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/hah/Downloads/curl-8.0.1/build/install/include"
-  ".././paho-mqtt-c-1.3.12/include"
-  ".././pocketsphinx/include"
-  ".././pocketsphinx/examples/include"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/xiao/project/f1c100s/SDK/app/chat/tts/tts.cpp" "tts/CMakeFiles/tts.dir/tts.cpp.o" "gcc" "tts/CMakeFiles/tts.dir/tts.cpp.o.d"
+  "/home/xiao/project/f1c100s/SDK/app/chat/tts/tts_common.cpp" "tts/CMakeFiles/tts.dir/tts_common.cpp.o" "gcc" "tts/CMakeFiles/tts.dir/tts_common.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

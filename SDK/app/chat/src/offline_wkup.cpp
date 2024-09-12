@@ -12,7 +12,7 @@
 int OL_WKUP::awake = 0;
 Timer OL_WKUP::timer_2;
 
-extern MQTTCLIENT *mqttClient;
+//extern MQTTCLIENT *mqttClient;
 
 static FILE *
 popen_sox(int sample_rate)
@@ -242,7 +242,10 @@ void OL_WKUP::run()
             }
         }
         if(publish_flag)
-            mqttClient->publish("/test/ui",str);
+        {
+            
+        }
+           // mqttClient->publish("/test/ui",str);
     }
 }
 

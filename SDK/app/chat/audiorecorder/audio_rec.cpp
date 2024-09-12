@@ -11,7 +11,7 @@ int AudioRec::start_record = 0;
 
 int AudioRec::slient_flag = 1;
 
-extern MQTTCLIENT *mqttClient;
+//extern MQTTCLIENT *mqttClient;
 
 OL_WKUP * AudioRec::ol_wkup;//这样也有声明作用，其他文件可以用
 
@@ -65,7 +65,7 @@ void thread_record(FILE *sox)
     // std::cout << "Please speak:\n" << std::endl;
 
     std::string str = "Please say:";
-    mqttClient->publish("/test/ui",str);
+    // mqttClient->publish("/test/ui",str);
 
     AudioRec::start_record = 0;
 
@@ -132,7 +132,7 @@ void AudioRec::record()
 	running = true;
 
     std::string str = "等待环境静音";
-    mqttClient->publish("/test/ui",str);
+    // mqttClient->publish("/test/ui",str);
     //等待背景音变小
     AudioRec::slient_flag = 0;
     OL_WKUP::timer_2.restart();
@@ -143,7 +143,7 @@ void AudioRec::record()
 
 //在新线程发布好像不太行,不是不行，好像特定字符总是转化失败
     str = "请说话:";
-    mqttClient->publish("/test/ui",str);
+    // mqttClient->publish("/test/ui",str);
 
     // 创建新线程
     std::thread t(thread_record, AudioRec::ol_wkup->sox);
@@ -179,5 +179,5 @@ void AudioRec::record()
     // t.join();
     // std::cout << "record finished!" << std::endl;
     str = "录音完成";
-    mqttClient->publish("/test/ui",str);
+    // mqttClient->publish("/test/ui",str);
 }

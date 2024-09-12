@@ -1,0 +1,1 @@
+/home/xiao/f1c100s/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-g++ -static CMakeFiles/chat.dir/main.cpp.o -o chat   -L/home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/arm-linux-gnueabi/lib  -L/home/xiao/project/f1c100s/SDK/root/rootfs/lib 

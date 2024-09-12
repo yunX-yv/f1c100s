@@ -1,0 +1,5 @@
+/home/xiao/project/f1c100s/SDK/app/test/build/CMakeFiles/edit_cache.dir
+/home/xiao/project/f1c100s/SDK/app/test/build/CMakeFiles/rebuild_cache.dir
+/home/xiao/project/f1c100s/SDK/app/test/build/src/CMakeFiles/chat.dir
+/home/xiao/project/f1c100s/SDK/app/test/build/src/CMakeFiles/edit_cache.dir
+/home/xiao/project/f1c100s/SDK/app/test/build/src/CMakeFiles/rebuild_cache.dir

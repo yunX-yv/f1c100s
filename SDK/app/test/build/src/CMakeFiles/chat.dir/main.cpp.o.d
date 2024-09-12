@@ -1,0 +1,27 @@
+src/CMakeFiles/chat.dir/main.cpp.o: \
+ /home/xiao/project/f1c100s/SDK/app/test/src/main.cpp \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdc-predef.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdio.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/libc-header-start.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/features.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/cdefs.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/wordsize.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/long-double.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/gnu/stubs.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/gnu/stubs-soft.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stddef.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdarg.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/timesize.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/typesizes.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/time64.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__fpos_t.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__mbstate_t.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__fpos64_t.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__FILE.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/FILE.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_FILE.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/cookie_io_functions_t.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdio_lim.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/floatn.h \
+ /home/xiao/f1c100s/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/floatn-common.h

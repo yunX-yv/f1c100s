@@ -8,5 +8,5 @@ add_library(audio_rec audio_rec.cpp)
 # 同时将其从target_include_directories中删除
 target_include_directories(audio_rec INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/json) 
 
-
+link_libraries(pthread)
 

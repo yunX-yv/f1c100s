@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/audio_rec.dir/audio_rec.cpp.o"
+  "CMakeFiles/audio_rec.dir/audio_rec.cpp.o.d"
   "libaudio_rec.a"
   "libaudio_rec.pdb"
 )

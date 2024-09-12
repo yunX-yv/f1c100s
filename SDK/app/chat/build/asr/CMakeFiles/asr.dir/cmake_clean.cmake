@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/asr.dir/asr.cpp.o"
+  "CMakeFiles/asr.dir/asr.cpp.o.d"
   "CMakeFiles/asr.dir/common.cpp.o"
+  "CMakeFiles/asr.dir/common.cpp.o.d"
   "libasr.a"
   "libasr.pdb"
 )

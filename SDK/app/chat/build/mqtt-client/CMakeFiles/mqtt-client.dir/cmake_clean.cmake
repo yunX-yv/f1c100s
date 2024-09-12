@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mqtt-client.dir/mqtt-client.cpp.o"
+  "CMakeFiles/mqtt-client.dir/mqtt-client.cpp.o.d"
   "libmqtt-client.a"
   "libmqtt-client.pdb"
 )

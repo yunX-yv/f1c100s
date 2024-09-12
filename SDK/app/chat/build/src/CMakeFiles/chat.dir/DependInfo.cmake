@@ -1,37 +1,24 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hah/Desktop/chat/src/main.cpp" "/home/hah/Desktop/chat/build/src/CMakeFiles/chat.dir/main.cpp.o"
-  "/home/hah/Desktop/chat/src/offline_wkup.cpp" "/home/hah/Desktop/chat/build/src/CMakeFiles/chat.dir/offline_wkup.cpp.o"
-  "/home/hah/Desktop/chat/src/timer.cpp" "/home/hah/Desktop/chat/build/src/CMakeFiles/chat.dir/timer.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/hah/Downloads/curl-8.0.1/build/install/include"
-  ".././paho-mqtt-c-1.3.12/include"
-  ".././pocketsphinx/include"
-  ".././pocketsphinx/examples/include"
-  "../include"
-  "../asr"
-  "../tts"
-  "../mqtt-client"
-  "../json/json"
-  "../audiorecorder/json"
-  "../mqtt-client/json"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/hah/Desktop/chat/build/tts/CMakeFiles/tts.dir/DependInfo.cmake"
-  "/home/hah/Desktop/chat/build/json/CMakeFiles/json.dir/DependInfo.cmake"
-  "/home/hah/Desktop/chat/build/asr/CMakeFiles/asr.dir/DependInfo.cmake"
-  "/home/hah/Desktop/chat/build/audiorecorder/CMakeFiles/audio_rec.dir/DependInfo.cmake"
-  "/home/hah/Desktop/chat/build/mqtt-client/CMakeFiles/mqtt-client.dir/DependInfo.cmake"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/xiao/project/f1c100s/SDK/app/chat/src/main.cpp" "src/CMakeFiles/chat.dir/main.cpp.o" "gcc" "src/CMakeFiles/chat.dir/main.cpp.o.d"
+  "/home/xiao/project/f1c100s/SDK/app/chat/src/offline_wkup.cpp" "src/CMakeFiles/chat.dir/offline_wkup.cpp.o" "gcc" "src/CMakeFiles/chat.dir/offline_wkup.cpp.o.d"
+  "/home/xiao/project/f1c100s/SDK/app/chat/src/timer.cpp" "src/CMakeFiles/chat.dir/timer.cpp.o" "gcc" "src/CMakeFiles/chat.dir/timer.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

@@ -1,0 +1,15 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=/usr/local/lib
+includedir=/usr/local/include
+libs=
+datadir=/usr/local/share/pocketsphinx
+modeldir=/usr/local/share/pocketsphinx/model
+
+Name: PocketSphinx
+Description: Lightweight speech recognition system
+Version: 5.0.1
+URL: https://github.com/cmusphinx/pocketsphinx
+Libs: -L${libdir} -lpocketsphinx
+Libs.private: ${libs} -lm -lpthread
+Cflags: -I${includedir} -I${includedir}/sphinxbase -I${includedir}/pocketsphinx

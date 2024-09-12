@@ -39,18 +39,22 @@ static int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_mes
     // printf("     topic: %s\n", topicName);
     // printf("   message: %.*s\n", message->payloadlen, (char*)message->payload);
     answer_txt = (char *)message->payload;
-    MQTTClient_freeMessage(&message);
-    MQTTClient_free(topicName);
+//    MQTTClient_freeMessage(&message);
+//    MQTTClient_free(topicName);
     answer_flag = 1;
     return 1;
 }
-
+#if 0
 MQTTCLIENT *mqttClient = new MQTTCLIENT();
+#endif
 Timer wait_ai_timer;
 
 
 int main(int argc, char **argv)
 {
+    printf("test for xiao f1c100s\r\n");
+    while(1);
+
     string payload = "hello world";
     // SetConsoleOutputCP(CP_UTF8);
 
@@ -59,15 +63,17 @@ int main(int argc, char **argv)
     
     ASR *asr = new ASR();
     TTS *tts = new TTS();
-    
+#if 0
     mqttClient->subscribe("/test/answer",msgarrvd);
-    
+#endif    
     OL_WKUP *ol_wkup = new OL_WKUP();
     AudioRec *audioRec = new AudioRec(ol_wkup);
     //
     
     std::string str = "你好,我叫小C,一个智能语音助手,你有什么需要帮助的吗？";
+#if 0
     mqttClient->publish("/test/ui",str);
+#endif
     tts->getResponse("你好,我叫小C,一个智能语音助手,你有什么需要帮助的吗？");
 
 
@@ -83,19 +89,24 @@ int main(int argc, char **argv)
         {
             if(!continuous_dialog_flag) {
                 std::string str = "我在，你说";
+#if 0
                 mqttClient->publish("/test/ui",str);
+#endif
                 tts->getResponse("我在，你说");
             }
             audioRec->record();
             asr->getResponse();
             //
             std::string str = "你:" + ASR::txt_result;
+#if 0
             mqttClient->publish("/test/ui",str);
-
+#endif
             if (continuous_dialog_flag && (strstr(ASR::txt_result.c_str(), "闭连续对话") != NULL || strstr(ASR::txt_result.c_str(), "出连续对话")))
             {
                 std::string str = "连续对话已关闭";
+#if 0
                 mqttClient->publish("/test/ui",str);
+#endif
                 continuous_dialog_flag = 0;
                 tts->getResponse("连续对话已关闭");
                 answer_flag = 0;
@@ -106,13 +117,15 @@ int main(int argc, char **argv)
             if (!continuous_dialog_flag && strstr(ASR::txt_result.c_str(), "启连续对话") != NULL)
             {
                 std::string str = "连续对话已开启";
+#if 0
                 mqttClient->publish("/test/ui",str);
+#endif
                 continuous_dialog_flag = 1;
                 tts->getResponse("连续对话已开启");
                 audioRec->record();
                 asr->getResponse();
             }
-
+#if 0
             if (strstr(ASR::txt_result.c_str(), "清空对话") != NULL || strstr(ASR::txt_result.c_str(), "新对话") != NULL)
             {
                 std::string str = "已清空历史对话";
@@ -220,8 +233,11 @@ int main(int argc, char **argv)
                 
                 return 0;
             }
-            
+#endif
+
+#if 0
             mqttClient->publish("/test/question",ASR::txt_result);
+#endif
             wait_ai_timer.restart();
             while(answer_flag == 0) {
                 // answer_flag = 0;
@@ -235,7 +251,9 @@ int main(int argc, char **argv)
                 answer_txt = " ";
             }
             std::string ss= "小C:" + answer_txt;
+#if 0
             mqttClient->publish("/test/ui", ss);
+#endif
             tts->getResponse(answer_txt);
             answer_flag = 0;
             ol_wkup->awake = 0;
@@ -246,7 +264,7 @@ int main(int argc, char **argv)
 
     free(asr);
     free(tts);
-    free(mqttClient);
+//    free(mqttClient);
     free(ol_wkup);
     return 0;
 }

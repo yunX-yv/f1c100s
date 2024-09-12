@@ -1,0 +1,48 @@
+name: Run Tests
+on:
+  - push
+  - pull_request
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install
+        run: |
+          sudo apt-get install sox ninja-build
+      - name: Build
+        run: |
+          cmake -S. -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
+          cmake --build build
+      - name: Run tests
+        run: |
+          cmake --build build --target check
+  test-fixed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install
+        run: |
+          sudo apt-get install sox ninja-build
+      - name: Build
+        run: |
+          cmake -S. -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DFIXED_POINT=ON
+          cmake --build build
+      - name: Run tests
+        run: |
+          cmake --build build --target check
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install
+        run: |
+          sudo apt-get install sox
+          python -m pip install --upgrade pip
+          pip install -r requirements.dev.txt
+          pip install .
+      - name: Run tests
+        run: pytest
