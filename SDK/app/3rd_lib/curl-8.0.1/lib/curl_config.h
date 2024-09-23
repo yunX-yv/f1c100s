@@ -397,7 +397,7 @@
 /* #undef HAVE_LIBWOLFSSH */
 
 /* if zlib is available */
-/* #undef HAVE_LIBZ */
+#define HAVE_LIBZ 1
 
 /* Define to 1 if you have the `zstd' library (-lzstd). */
 /* #undef HAVE_LIBZSTD */
@@ -774,7 +774,7 @@
 /* #undef NTLM_WB_FILE */
 
 /* cpu-machine-OS */
-#define OS "arm-unknown-linux-gnueabi"
+#define OS "arm-buildroot-linux-gnueabi"
 
 /* Name of package */
 #define PACKAGE "curl"

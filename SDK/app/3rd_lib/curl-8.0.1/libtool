@@ -47,7 +47,7 @@ AS="as"
 DLLTOOL="false"
 
 # Object dumper program.
-OBJDUMP="arm-linux-gnueabi-objdump"
+OBJDUMP="objdump"
 
 # Whether or not to build shared libraries.
 build_libtool_libs=yes
@@ -74,8 +74,8 @@ ECHO="printf %s\\n"
 PATH_SEPARATOR=":"
 
 # The host system.
-host_alias=arm-linux-gnueabi
-host=arm-unknown-linux-gnueabi
+host_alias=arm-buildroot-linux-gnueabi
+host=arm-buildroot-linux-gnueabi
 host_os=linux-gnueabi
 
 # The build system.
@@ -99,7 +99,7 @@ EGREP="/usr/bin/grep -E"
 FGREP="/usr/bin/grep -F"
 
 # A BSD- or MS-compatible name lister.
-NM="/home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-nm -B"
+NM="nm"
 
 # Whether we need soft or hard links.
 LN_S="ln -s"
@@ -147,7 +147,7 @@ want_nocaseglob="no"
 sharedlib_from_linklib_cmd="printf %s\\n"
 
 # The archiver.
-AR="/home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-ar"
+AR="/usr/bin/ar"
 
 # Flags to create an archive (by configure).
 lt_ar_flags=cr
@@ -159,10 +159,10 @@ AR_FLAGS=${ARFLAGS-"$lt_ar_flags"}
 archiver_list_spec="@"
 
 # A symbol stripping program.
-STRIP="arm-linux-gnueabi-strip"
+STRIP="strip"
 
 # Commands used to install an old-style archive.
-RANLIB="arm-linux-gnueabi-ranlib"
+RANLIB="ranlib"
 old_postinstall_cmds="chmod 644 \$oldlib~\$RANLIB \$tool_oldlib"
 old_postuninstall_cmds=""
 
@@ -170,7 +170,7 @@ old_postuninstall_cmds=""
 lock_old_archive_extraction=no
 
 # A C compiler.
-LTCC="arm-linux-gnueabi-gcc"
+LTCC="/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc"
 
 # LTCC compiler flags.
 LTCFLAGS="-Werror-implicit-function-declaration -O2 -Wno-system-headers -pthread"
@@ -290,7 +290,7 @@ finish_eval=""
 hardcode_into_libs=yes
 
 # Compile-time system search path for libraries.
-sys_lib_search_path_spec="/home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/lib/gcc/arm-linux-gnueabi/7.2.1 /home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/lib/gcc/arm-linux-gnueabi /home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/lib/gcc /home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/arm-linux-gnueabi/lib /home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/arm-linux-gnueabi/libc/lib /home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/arm-linux-gnueabi/libc/usr/lib "
+sys_lib_search_path_spec="/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0 /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/lib /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/lib /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/lib "
 
 # Detected run-time system search path for libraries.
 sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib/x86_64-linux-gnu/libfakeroot /usr/local/lib /usr/local/lib/x86_64-linux-gnu /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu /lib32 /usr/lib32 "
@@ -308,12 +308,12 @@ dlopen_self=unknown
 dlopen_self_static=unknown
 
 # Commands to strip libraries.
-old_striplib="arm-linux-gnueabi-strip --strip-debug"
-striplib="arm-linux-gnueabi-strip --strip-unneeded"
+old_striplib="strip --strip-debug"
+striplib="strip --strip-unneeded"
 
 
 # The linker used to build libraries.
-LD="/home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/arm-linux-gnueabi/bin/ld"
+LD="/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/bin/ld"
 
 # How to create reloadable object files.
 reload_flag=" -r"
@@ -323,7 +323,7 @@ reload_cmds="\$LD\$reload_flag -o \$output\$reload_objs"
 old_archive_cmds="\$AR \$AR_FLAGS \$oldlib\$oldobjs~\$RANLIB \$tool_oldlib"
 
 # A language specific compiler.
-CC="arm-linux-gnueabi-gcc"
+CC="/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc"
 
 # Is the compiler the GNU compiler?
 with_gcc=yes
