@@ -73,15 +73,15 @@ src/CMakeFiles/chat.dir/main.cpp.o: src/CMakeFiles/chat.dir/flags.make
 src/CMakeFiles/chat.dir/main.cpp.o: /home/xiao/project/f1c100s/SDK/app/test/src/main.cpp
 src/CMakeFiles/chat.dir/main.cpp.o: src/CMakeFiles/chat.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xiao/project/f1c100s/SDK/app/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/chat.dir/main.cpp.o"
-	cd /home/xiao/project/f1c100s/SDK/app/test/build/src && /home/xiao/f1c100s/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/chat.dir/main.cpp.o -MF CMakeFiles/chat.dir/main.cpp.o.d -o CMakeFiles/chat.dir/main.cpp.o -c /home/xiao/project/f1c100s/SDK/app/test/src/main.cpp
+	cd /home/xiao/project/f1c100s/SDK/app/test/build/src && /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/chat.dir/main.cpp.o -MF CMakeFiles/chat.dir/main.cpp.o.d -o CMakeFiles/chat.dir/main.cpp.o -c /home/xiao/project/f1c100s/SDK/app/test/src/main.cpp
 
 src/CMakeFiles/chat.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chat.dir/main.cpp.i"
-	cd /home/xiao/project/f1c100s/SDK/app/test/build/src && /home/xiao/f1c100s/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xiao/project/f1c100s/SDK/app/test/src/main.cpp > CMakeFiles/chat.dir/main.cpp.i
+	cd /home/xiao/project/f1c100s/SDK/app/test/build/src && /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xiao/project/f1c100s/SDK/app/test/src/main.cpp > CMakeFiles/chat.dir/main.cpp.i
 
 src/CMakeFiles/chat.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat.dir/main.cpp.s"
-	cd /home/xiao/project/f1c100s/SDK/app/test/build/src && /home/xiao/f1c100s/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xiao/project/f1c100s/SDK/app/test/src/main.cpp -o CMakeFiles/chat.dir/main.cpp.s
+	cd /home/xiao/project/f1c100s/SDK/app/test/build/src && /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xiao/project/f1c100s/SDK/app/test/src/main.cpp -o CMakeFiles/chat.dir/main.cpp.s
 
 # Object files for target chat
 chat_OBJECTS = \
@@ -92,6 +92,11 @@ chat_EXTERNAL_OBJECTS =
 
 src/chat: src/CMakeFiles/chat.dir/main.cpp.o
 src/chat: src/CMakeFiles/chat.dir/build.make
+src/chat: /home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install/lib/libcurl.a
+src/chat: lib/json/libjson.a
+src/chat: lib/asr/libasr.a
+src/chat: lib/json/libjson.a
+src/chat: /home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install/lib/libcurl.a
 src/chat: src/CMakeFiles/chat.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xiao/project/f1c100s/SDK/app/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable chat"
 	cd /home/xiao/project/f1c100s/SDK/app/test/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chat.dir/link.txt --verbose=$(VERBOSE)

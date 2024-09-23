@@ -164,7 +164,7 @@ noinst_PROGRAMS = chkhostname$(EXEEXT) libauthretry$(EXEEXT) \
 	lib2502$(EXEEXT) lib3010$(EXEEXT) lib3025$(EXEEXT) \
 	lib3026$(EXEEXT) lib3027$(EXEEXT) lib3100$(EXEEXT) \
 	lib3101$(EXEEXT)
-#am__append_1 = -DCURL_STATICLIB
+am__append_1 = -DCURL_STATICLIB
 #am__append_2 = -no-undefined
 #am__append_3 = -no-undefined
 #am__append_4 = -mimpure-text
@@ -221,7 +221,7 @@ libhostname_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(libhostname_la_CFLAGS) $(CFLAGS) $(libhostname_la_LDFLAGS) \
 	$(LDFLAGS) -o $@
-am_libhostname_la_rpath =
+#am_libhostname_la_rpath =
 am__libstubgss_la_SOURCES_DIST = stub_gssapi.c stub_gssapi.h
 #am_libstubgss_la_OBJECTS =  \
 #	libstubgss_la-stub_gssapi.lo
@@ -229,8 +229,8 @@ libstubgss_la_OBJECTS = $(am_libstubgss_la_OBJECTS)
 libstubgss_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(libstubgss_la_CFLAGS) \
 	$(CFLAGS) $(libstubgss_la_LDFLAGS) $(LDFLAGS) -o $@
-##am_libstubgss_la_rpath =
 #am_libstubgss_la_rpath =
+##am_libstubgss_la_rpath =
 am__dirstamp = $(am__leading_dot)dirstamp
 am_chkdecimalpoint_OBJECTS =  \
 	chkdecimalpoint-chkdecimalpoint.$(OBJEXT) \
@@ -248,10 +248,10 @@ am__objects_3 = ../../lib/warnless.$(OBJEXT)
 am_lib1156_OBJECTS = lib1156.$(OBJEXT) $(am__objects_1) \
 	$(am__objects_2) $(am__objects_3)
 lib1156_OBJECTS = $(am_lib1156_OBJECTS)
-am__DEPENDENCIES_1 =  \
-	$(top_builddir)/lib/libcurl.la
 #am__DEPENDENCIES_1 =  \
 #	$(top_builddir)/lib/libcurl.la
+am__DEPENDENCIES_1 =  \
+	$(top_builddir)/lib/libcurl.la
 lib1156_DEPENDENCIES = $(am__DEPENDENCIES_1)
 am_lib1301_OBJECTS = lib1301.$(OBJEXT) $(am__objects_1) \
 	$(am__objects_2)
@@ -1602,7 +1602,7 @@ am__define_uniq_tagged_files = \
 am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.inc \
 	$(top_srcdir)/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} '/home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' aclocal-1.16
+ACLOCAL = ${SHELL} '/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 APACHECTL = 
@@ -1610,9 +1610,9 @@ APXS =
 AR = /usr/bin/ar
 AR_FLAGS = cr
 AS = as
-AUTOCONF = ${SHELL} '/home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' autoconf
-AUTOHEADER = ${SHELL} '/home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' autoheader
-AUTOMAKE = ${SHELL} '/home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' automake-1.16
+AUTOCONF = ${SHELL} '/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' autoconf
+AUTOHEADER = ${SHELL} '/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' autoheader
+AUTOMAKE = ${SHELL} '/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' automake-1.16
 AWK = mawk
 BLANK_AT_MAKETIME = 
 CADDY = 
@@ -1620,10 +1620,10 @@ CC = /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-
 CCDEPMODE = depmode=gcc3
 CFLAGS = -Werror-implicit-function-declaration -O2 -Wno-system-headers -pthread 
 CFLAG_CURL_SYMBOL_HIDING = -fvisibility=hidden
-CONFIGURE_OPTIONS = " '--host=arm-buildroot-linux-gnueabi' '--prefix=/home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install' 'CC=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc' 'CXX=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++' '--without-ssl' 'host_alias=arm-buildroot-linux-gnueabi'"
+CONFIGURE_OPTIONS = " '--host=arm-buildroot-linux-gnueabi' '--prefix=/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install' 'CC=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc' 'CXX=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++' '--disable-shared' '--enable-static' '--without-libidn' '--without-ssl' '--without-librtmp' '--without-gnutls' '--without-nss' '--without-libssh2' '--without-zlib' '--without-winidn' '--disable-rtsp' '--disable-ldap' '--disable-ldaps' '--disable-ipv6' 'host_alias=arm-buildroot-linux-gnueabi'"
 CPP = /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc -E
 CPPFLAGS = 
-CPPFLAG_CURL_STATICLIB = 
+CPPFLAG_CURL_STATICLIB = -DCURL_STATICLIB
 CSCOPE = cscope
 CTAGS = ctags
 CURLVERSION = 8.0.1
@@ -1640,7 +1640,7 @@ CURL_DISABLE_LDAPS = 1
 CURL_DISABLE_MQTT = 
 CURL_DISABLE_POP3 = 
 CURL_DISABLE_PROXY = 
-CURL_DISABLE_RTSP = 
+CURL_DISABLE_RTSP = 1
 CURL_DISABLE_SMB = 
 CURL_DISABLE_SMTP = 
 CURL_DISABLE_TELNET = 
@@ -1661,7 +1661,7 @@ ECHO_C =
 ECHO_N = -n
 ECHO_T = 
 EGREP = /usr/bin/grep -E
-ENABLE_SHARED = yes
+ENABLE_SHARED = no
 ENABLE_STATIC = yes
 ETAGS = etags
 EXEEXT = 
@@ -1672,8 +1672,8 @@ GCOV =
 GREP = /usr/bin/grep
 HAVE_BROTLI = 
 HAVE_GNUTLS_SRP = 
-HAVE_LDAP_SSL = 1
-HAVE_LIBZ = 1
+HAVE_LDAP_SSL = 
+HAVE_LIBZ = 
 HAVE_OPENSSL_SRP = 
 HAVE_PROTO_BSDSOCKET_H = 
 HAVE_ZSTD = 
@@ -1685,12 +1685,12 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-IPV6_ENABLED = 1
+IPV6_ENABLED = 
 LCOV = 
 LD = /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/bin/ld
 LDFLAGS = 
-LIBCURL_LIBS = -lz -pthread
-LIBCURL_NO_SHARED = 
+LIBCURL_LIBS = -pthread
+LIBCURL_NO_SHARED =  -pthread
 LIBOBJS = 
 
 # Prevent LIBS from being used for all link targets
@@ -1701,7 +1701,7 @@ LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 MAINT = #
-MAKEINFO = ${SHELL} '/home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' makeinfo
+MAKEINFO = ${SHELL} '/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' makeinfo
 MANIFEST_TOOL = :
 MANOPT = -man
 MKDIR_P = /usr/bin/mkdir -p
@@ -1729,7 +1729,7 @@ PKGCONFIG = no
 RANDOM_FILE = 
 RANLIB = ranlib
 RC = 
-REQUIRE_LIB_DEPS = no
+REQUIRE_LIB_DEPS = yes
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
@@ -1737,8 +1737,8 @@ SSL_BACKENDS =
 SSL_ENABLED = 
 SSL_LIBS = 
 STRIP = strip
-SUPPORT_FEATURES = AsynchDNS IPv6 Largefile UnixSockets alt-svc libz threadsafe
-SUPPORT_PROTOCOLS = DICT FILE FTP GOPHER HTTP IMAP MQTT POP3 RTSP SMTP TELNET TFTP
+SUPPORT_FEATURES = AsynchDNS Largefile UnixSockets alt-svc threadsafe
+SUPPORT_PROTOCOLS = DICT FILE FTP GOPHER HTTP IMAP MQTT POP3 SMTP TELNET TFTP
 TEST_NGHTTPX = nghttpx
 USE_ARES = 
 USE_BEARSSL = 
@@ -1770,12 +1770,12 @@ USE_WOLFSSH =
 USE_WOLFSSL = 
 VERSION = -
 VERSIONNUM = 080001
-ZLIB_LIBS = -lz
+ZLIB_LIBS = 
 ZSH_FUNCTIONS_DIR = ${prefix}/share/zsh/site-functions
-abs_builddir = /home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/tests/libtest
-abs_srcdir = /home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/tests/libtest
-abs_top_builddir = /home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1
-abs_top_srcdir = /home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1
+abs_builddir = /home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/tests/libtest
+abs_srcdir = /home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/tests/libtest
+abs_top_builddir = /home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1
+abs_top_srcdir = /home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1
 ac_ct_AR = 
 ac_ct_CC = 
 ac_ct_DUMPBIN = link -dump
@@ -1804,7 +1804,7 @@ host_vendor = buildroot
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/install-sh
+install_sh = ${SHELL} /home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 libext = a
@@ -1814,7 +1814,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install
+prefix = /home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
@@ -1866,10 +1866,10 @@ EXTRA_DIST = test307.pl test610.pl test613.pl test1013.pl test1022.pl   \
   Makefile.inc notexists.pl CMakeLists.txt mk-lib1521.pl .checksrc
 
 CLEANFILES = lib1521.c
-SUPPORTFILES_LIBS = $(top_builddir)/lib/libcurl.la  
-#SUPPORTFILES_LIBS = $(top_builddir)/lib/libcurl.la -lz -pthread
-TESTUTIL_LIBS = $(top_builddir)/lib/libcurl.la  
-#TESTUTIL_LIBS = $(top_builddir)/lib/libcurl.la -lz -pthread
+#SUPPORTFILES_LIBS = $(top_builddir)/lib/libcurl.la  
+SUPPORTFILES_LIBS = $(top_builddir)/lib/libcurl.la -pthread
+#TESTUTIL_LIBS = $(top_builddir)/lib/libcurl.la  
+TESTUTIL_LIBS = $(top_builddir)/lib/libcurl.la -pthread
 
 # Dependencies (may need to be overridden)
 LDADD = $(SUPPORTFILES_LIBS)
@@ -2299,15 +2299,15 @@ lib3100_SOURCES = lib3100.c $(SUPPORTFILES) $(TESTUTIL) $(WARNLESS)
 lib3100_LDADD = $(TESTUTIL_LIBS)
 lib3101_SOURCES = lib3101.c $(SUPPORTFILES) $(TESTUTIL) $(WARNLESS)
 lib3101_LDADD = $(TESTUTIL_LIBS)
-#noinst_LTLIBRARIES = $(am__append_7)
+noinst_LTLIBRARIES = $(am__append_7)
 
 # Makefile.inc provides the source defines (TESTUTIL, SUPPORTFILES,
 # noinst_PROGRAMS, lib*_SOURCES, and lib*_CFLAGS)
 
 # Preloading of libhostname allows host name overriding,
 # this is used to make some tests machine independent.
-noinst_LTLIBRARIES = libhostname.la \
-	$(am__append_7)
+#noinst_LTLIBRARIES = libhostname.la \
+#	$(am__append_7)
 AM_LDFLAGS = 
 AM_CFLAGS = 
 libhostname_la_CPPFLAGS_EXTRA = $(am__append_5)

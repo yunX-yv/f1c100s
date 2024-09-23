@@ -117,6 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named json
+
+# Build rule for target.
+json: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 json
+.PHONY : json
+
+# fast build rule for target.
+json/fast:
+	$(MAKE) $(MAKESILENT) -f lib/json/CMakeFiles/json.dir/build.make lib/json/CMakeFiles/json.dir/build
+.PHONY : json/fast
+
+#=============================================================================
+# Target rules for targets named asr
+
+# Build rule for target.
+asr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 asr
+.PHONY : asr
+
+# fast build rule for target.
+asr/fast:
+	$(MAKE) $(MAKESILENT) -f lib/asr/CMakeFiles/asr.dir/build.make lib/asr/CMakeFiles/asr.dir/build
+.PHONY : asr/fast
+
+#=============================================================================
 # Target rules for targets named chat
 
 # Build rule for target.
@@ -137,7 +163,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... asr"
 	@echo "... chat"
+	@echo "... json"
 .PHONY : help
 
 

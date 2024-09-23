@@ -95,7 +95,7 @@
 /* #undef CURL_DISABLE_PROXY */
 
 /* to disable RTSP */
-/* #undef CURL_DISABLE_RTSP */
+#define CURL_DISABLE_RTSP 1
 
 /* disable DNS shuffling */
 /* #undef CURL_DISABLE_SHUFFLE_DNS */
@@ -134,7 +134,7 @@
 /* #undef EGD_SOCKET */
 
 /* Define if you want to enable IPv6 support */
-#define ENABLE_IPV6 1
+/* #undef ENABLE_IPV6 */
 
 /* Define to the type of arg 2 for gethostname. */
 #define GETHOSTNAME_TYPE_ARG2 unsigned int
@@ -361,7 +361,7 @@
 /* #undef HAVE_LDAP_H */
 
 /* Use LDAPS implementation */
-#define HAVE_LDAP_SSL 1
+/* #undef HAVE_LDAP_SSL */
 
 /* Define to 1 if you have the ldap_ssl.h header file. */
 /* #undef HAVE_LDAP_SSL_H */
@@ -397,7 +397,7 @@
 /* #undef HAVE_LIBWOLFSSH */
 
 /* if zlib is available */
-#define HAVE_LIBZ 1
+/* #undef HAVE_LIBZ */
 
 /* Define to 1 if you have the `zstd' library (-lzstd). */
 /* #undef HAVE_LIBZSTD */
@@ -567,7 +567,7 @@
 #define HAVE_SNPRINTF 1
 
 /* Define to 1 if struct sockaddr_in6 has the sin6_scope_id member */
-#define HAVE_SOCKADDR_IN6_SIN6_SCOPE_ID 1
+/* #undef HAVE_SOCKADDR_IN6_SIN6_SCOPE_ID */
 
 /* Define to 1 if you have the socket function. */
 #define HAVE_SOCKET 1

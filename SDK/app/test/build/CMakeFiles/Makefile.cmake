@@ -11,6 +11,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
+  "/home/xiao/project/f1c100s/SDK/app/test/lib/CMakeLists.txt"
+  "/home/xiao/project/f1c100s/SDK/app/test/lib/asr/CMakeLists.txt"
+  "/home/xiao/project/f1c100s/SDK/app/test/lib/json/CMakeLists.txt"
   "/home/xiao/project/f1c100s/SDK/app/test/src/CMakeLists.txt"
   "/usr/share/cmake-3.28/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"
@@ -41,10 +44,15 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "lib/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "lib/json/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "lib/asr/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "lib/json/CMakeFiles/json.dir/DependInfo.cmake"
+  "lib/asr/CMakeFiles/asr.dir/DependInfo.cmake"
   "src/CMakeFiles/chat.dir/DependInfo.cmake"
   )

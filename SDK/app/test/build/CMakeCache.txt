@@ -230,6 +230,9 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Dependencies for the target
+asr_LIB_DEPENDS:STATIC=general;c;general;/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install/lib/libcurl.a;general;-lpthread;general;json;
+
 //Value Computed by CMake
 chat_BINARY_DIR:STATIC=/home/xiao/project/f1c100s/SDK/app/test/build
 
@@ -238,6 +241,9 @@ chat_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 chat_SOURCE_DIR:STATIC=/home/xiao/project/f1c100s/SDK/app/test
+
+//Dependencies for the target
+json_LIB_DEPENDS:STATIC=general;c;general;/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install/lib/libcurl.a;general;-lpthread;
 
 
 ########################
@@ -344,7 +350,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

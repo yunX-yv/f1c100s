@@ -23,10 +23,10 @@
 #
 ###########################################################################
 
-prefix="/home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install"
+prefix="/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install"
 exec_prefix=${prefix}
 includedir=${prefix}/include
-cppflag_curl_staticlib=
+cppflag_curl_staticlib=-DCURL_STATICLIB
 
 usage()
 {
@@ -70,7 +70,7 @@ while test $# -gt 0; do
 
     case "$1" in
     --built-shared)
-        echo yes
+        echo no
         ;;
 
     --ca)
@@ -86,13 +86,13 @@ while test $# -gt 0; do
         ;;
 
     --feature|--features)
-        for feature in AsynchDNS IPv6 Largefile UnixSockets alt-svc libz threadsafe ""; do
+        for feature in AsynchDNS Largefile UnixSockets alt-svc threadsafe ""; do
             test -n "$feature" && echo "$feature"
         done
         ;;
 
     --protocols)
-        for protocol in DICT FILE FTP GOPHER HTTP IMAP MQTT POP3 RTSP SMTP TELNET TFTP; do
+        for protocol in DICT FILE FTP GOPHER HTTP IMAP MQTT POP3 SMTP TELNET TFTP; do
             echo "$protocol"
         done
         ;;
@@ -162,8 +162,8 @@ while test $# -gt 0; do
         else
            CURLLIBDIR=""
         fi
-        if test "Xyes" = "Xno"; then
-          echo ${CURLLIBDIR}-lcurl -lz -pthread
+        if test "Xno" = "Xno"; then
+          echo ${CURLLIBDIR}-lcurl -pthread
         else
           echo ${CURLLIBDIR}-lcurl
         fi
@@ -174,7 +174,7 @@ while test $# -gt 0; do
 
     --static-libs)
         if test "Xyes" != "Xno" ; then
-          echo "${exec_prefix}/lib/libcurl.a"  -lz -pthread
+          echo "${exec_prefix}/lib/libcurl.a"  -pthread
         else
           echo "curl was built with static libraries disabled" >&2
           exit 1
@@ -182,7 +182,7 @@ while test $# -gt 0; do
         ;;
 
     --configure)
-        echo " '--host=arm-buildroot-linux-gnueabi' '--prefix=/home/xiao/f1c100s/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install' 'CC=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc' 'CXX=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++' '--without-ssl' 'host_alias=arm-buildroot-linux-gnueabi'"
+        echo " '--host=arm-buildroot-linux-gnueabi' '--prefix=/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install' 'CC=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc' 'CXX=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++' '--disable-shared' '--enable-static' '--without-libidn' '--without-ssl' '--without-librtmp' '--without-gnutls' '--without-nss' '--without-libssh2' '--without-zlib' '--without-winidn' '--disable-rtsp' '--disable-ldap' '--disable-ldaps' '--disable-ipv6' 'host_alias=arm-buildroot-linux-gnueabi'"
         ;;
 
     *)

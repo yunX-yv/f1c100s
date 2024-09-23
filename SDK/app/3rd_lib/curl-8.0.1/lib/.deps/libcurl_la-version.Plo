@@ -124,9 +124,7 @@ libcurl_la-version.lo: version.c \
  /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sched.h \
  /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/sched.h \
  /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_sched_param.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/cpu-set.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/zlib.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/zconf.h
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/cpu-set.h
 
 /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdc-predef.h:
 
@@ -469,7 +467,3 @@ easy_lock.h:
 /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_sched_param.h:
 
 /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/cpu-set.h:
-
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/zlib.h:
-
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/zconf.h:
