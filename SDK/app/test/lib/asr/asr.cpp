@@ -123,8 +123,8 @@ RETURN_CODE ASR::speech_get_token(string &token)
         curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "POST");
         curl_easy_setopt(curl, CURLOPT_URL, token_org.c_str());
         curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-        curl_easy_setopt(curl, CURLOPT_DEFAULT_PROTOCOL, "undefined");
-        // curl_easy_setopt(curl, CURLOPT_DEFAULT_PROTOCOL, "https");
+        //curl_easy_setopt(curl, CURLOPT_DEFAULT_PROTOCOL, "undefined");
+         curl_easy_setopt(curl, CURLOPT_DEFAULT_PROTOCOL, "https");
         // 打印详情
          //curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
         struct curl_slist *headers = NULL;
@@ -135,6 +135,8 @@ RETURN_CODE ASR::speech_get_token(string &token)
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &token);
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, onWriteData);
+        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0);
+		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0);
         res = curl_easy_perform(curl);
         if(res == CURLE_OK)
         {

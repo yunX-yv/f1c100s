@@ -103,6 +103,17 @@ libcurl_la-md5.lo: md5.c \
  ../include/curl/urlapi.h ../include/curl/options.h \
  ../include/curl/header.h ../include/curl/websockets.h \
  ../include/curl/typecheck-gcc.h curl_md5.h curl_hmac.h warnless.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslconf.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/configuration.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/macros.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslv.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/md5.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/e_os2.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/inttypes.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdint.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdint.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/wchar.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdint-uintn.h \
  curl_printf.h ../include/curl/mprintf.h curl_memory.h memdebug.h
 
 /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdc-predef.h:
@@ -336,6 +347,28 @@ curl_md5.h:
 curl_hmac.h:
 
 warnless.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslconf.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/configuration.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/macros.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslv.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/md5.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/e_os2.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/inttypes.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdint.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdint.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/wchar.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdint-uintn.h:
 
 curl_printf.h:
 

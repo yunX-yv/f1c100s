@@ -29,13 +29,13 @@ prefix=/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
-supported_protocols="DICT FILE FTP GOPHER HTTP IMAP MQTT POP3 SMTP TELNET TFTP"
-supported_features="AsynchDNS Largefile UnixSockets alt-svc threadsafe"
+supported_protocols="DICT FILE FTP FTPS GOPHER GOPHERS HTTP HTTPS IMAP IMAPS MQTT POP3 POP3S SMB SMBS SMTP SMTPS TELNET TFTP"
+supported_features="AsynchDNS HSTS HTTPS-proxy Largefile NTLM NTLM_WB SSL TLS-SRP UnixSockets alt-svc threadsafe"
 
 Name: libcurl
 URL: https://curl.se/
 Description: Library to transfer files with ftp, http, etc.
 Version: 8.0.1
-Libs: -L${libdir} -lcurl  -pthread
-Libs.private: -pthread
+Libs: -L${libdir} -lcurl -lssl -lcrypto -lssl -lcrypto  -ldl -pthread
+Libs.private: -lssl -lcrypto -lssl -lcrypto -ldl -pthread
 Cflags: -I${includedir} -DCURL_STATICLIB

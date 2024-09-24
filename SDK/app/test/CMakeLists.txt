@@ -42,6 +42,11 @@ link_directories(/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install/
 include_directories(/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install/include)
 link_libraries(/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install/lib/libcurl.a -lpthread)
 
+link_directories(/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib)
+link_libraries(/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib/libssl.a)
+link_libraries(/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib/libcrypto.a)
+link_libraries(dl)
+link_libraries(atomic)
 
 # 链接 zlib curl库需要
 #link_directories(~/project/f1c100s/SDK/app/3rd_lib/zlib-1.2.11/_install/lib)

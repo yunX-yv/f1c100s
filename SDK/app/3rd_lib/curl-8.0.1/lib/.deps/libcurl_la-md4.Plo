@@ -90,8 +90,12 @@ libcurl_la-md4.lo: md4.c \
  /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/getopt_posix.h \
  /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/getopt_core.h \
  /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/unistd_ext.h \
- functypes.h curl_ctype.h curl_md4.h warnless.h curl_printf.h \
- ../include/curl/mprintf.h ../include/curl/curl.h \
+ functypes.h curl_ctype.h curl_md4.h warnless.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslconf.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/configuration.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/macros.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslv.h \
+ curl_printf.h ../include/curl/mprintf.h ../include/curl/curl.h \
  ../include/curl/curlver.h ../include/curl/system.h \
  /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include-fixed/limits.h \
  /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include-fixed/syslimits.h \
@@ -298,6 +302,14 @@ curl_ctype.h:
 curl_md4.h:
 
 warnless.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslconf.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/configuration.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/macros.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslv.h:
 
 curl_printf.h:
 

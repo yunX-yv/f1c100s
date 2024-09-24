@@ -17,7 +17,7 @@ old_library='libcurl.a'
 inherited_linker_flags=' -pthread'
 
 # Libraries that this one depends upon.
-dependency_libs=''
+dependency_libs=' -L/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib -lssl -lcrypto -ldl'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''

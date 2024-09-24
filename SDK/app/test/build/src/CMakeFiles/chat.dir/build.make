@@ -93,10 +93,14 @@ chat_EXTERNAL_OBJECTS =
 src/chat: src/CMakeFiles/chat.dir/main.cpp.o
 src/chat: src/CMakeFiles/chat.dir/build.make
 src/chat: /home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install/lib/libcurl.a
+src/chat: /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib/libssl.a
+src/chat: /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib/libcrypto.a
 src/chat: lib/json/libjson.a
 src/chat: lib/asr/libasr.a
 src/chat: lib/json/libjson.a
 src/chat: /home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install/lib/libcurl.a
+src/chat: /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib/libssl.a
+src/chat: /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib/libcrypto.a
 src/chat: src/CMakeFiles/chat.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xiao/project/f1c100s/SDK/app/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable chat"
 	cd /home/xiao/project/f1c100s/SDK/app/test/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chat.dir/link.txt --verbose=$(VERBOSE)

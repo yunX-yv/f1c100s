@@ -126,12 +126,92 @@ vtls/libcurl_la-vtls.lo: vtls/vtls.c \
  ../lib/ftplistparser.h ../lib/multihandle.h ../lib/conncache.h \
  ../lib/socketpair.h ../lib/c-hyper.h ../lib/cf-socket.h \
  ../lib/nonblock.h ../lib/sockaddr.h ../lib/cfilters.h vtls/vtls.h \
- vtls/vtls_int.h ../lib/slist.h ../lib/sendf.h ../lib/curl_log.h \
- ../lib/strcase.h ../lib/url.h ../lib/progress.h ../lib/share.h \
- ../lib/urldata.h ../lib/multiif.h ../lib/timeval.h ../lib/curl_md5.h \
- ../lib/curl_hmac.h ../lib/warnless.h ../lib/curl_base64.h \
- ../lib/curl_printf.h ../include/curl/mprintf.h ../lib/strdup.h \
- ../lib/curl_memory.h ../lib/memdebug.h
+ vtls/vtls_int.h vtls/openssl.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ssl.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/macros.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslconf.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/configuration.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslv.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/e_os2.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/inttypes.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdint.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdint.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/wchar.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/e_ostime.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/comp.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/crypto.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/safestack.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/stack.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/types.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/cryptoerr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/symhacks.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/cryptoerr_legacy.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/core.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/pthread.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sched.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/sched.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_sched_param.h \
+ /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/cpu-set.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/comperr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/bio.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/bioerr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/x509.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/buffer.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/buffererr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/evp.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/core_dispatch.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/indicator.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/params.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/bn.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/bnerr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/evperr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/objects.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/obj_mac.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/asn1.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/asn1err.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/objectserr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ec.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ecerr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/rsa.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/rsaerr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/dsa.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/dh.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/dherr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/dsaerr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/sha.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/x509err.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/x509_vfy.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/lhash.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/pkcs7.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/pkcs7err.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/http.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/conf.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/conferr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/conftypes.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/pem.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/pemerr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/hmac.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/async.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/asyncerr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ct.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/cterr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/sslerr.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/sslerr_legacy.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/prov_ssl.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ssl2.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ssl3.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/tls1.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/dtls1.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/srtp.h \
+ /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/quic.h \
+ vtls/gtls.h vtls/nssg.h vtls/gskit.h vtls/wolfssl.h vtls/schannel.h \
+ vtls/sectransp.h vtls/mbedtls.h vtls/bearssl.h vtls/rustls.h \
+ ../lib/slist.h ../lib/sendf.h ../lib/curl_log.h ../lib/strcase.h \
+ ../lib/url.h ../lib/progress.h ../lib/share.h ../lib/urldata.h \
+ ../lib/multiif.h ../lib/timeval.h ../lib/curl_md5.h ../lib/curl_hmac.h \
+ ../lib/warnless.h ../lib/curl_base64.h ../lib/curl_printf.h \
+ ../include/curl/mprintf.h ../lib/strdup.h ../lib/curl_memory.h \
+ ../lib/memdebug.h
 
 /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdc-predef.h:
 
@@ -464,6 +544,180 @@ vtls/libcurl_la-vtls.lo: vtls/vtls.c \
 vtls/vtls.h:
 
 vtls/vtls_int.h:
+
+vtls/openssl.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ssl.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/macros.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslconf.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/configuration.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/opensslv.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/e_os2.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/inttypes.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdint.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdint.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/wchar.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/e_ostime.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/comp.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/crypto.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/safestack.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/stack.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/types.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/cryptoerr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/symhacks.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/cryptoerr_legacy.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/core.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/pthread.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sched.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/sched.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_sched_param.h:
+
+/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/cpu-set.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/comperr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/bio.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/bioerr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/x509.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/buffer.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/buffererr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/evp.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/core_dispatch.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/indicator.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/params.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/bn.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/bnerr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/evperr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/objects.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/obj_mac.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/asn1.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/asn1err.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/objectserr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ec.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ecerr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/rsa.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/rsaerr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/dsa.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/dh.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/dherr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/dsaerr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/sha.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/x509err.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/x509_vfy.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/lhash.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/pkcs7.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/pkcs7err.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/http.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/conf.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/conferr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/conftypes.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/pem.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/pemerr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/hmac.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/async.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/asyncerr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ct.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/cterr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/sslerr.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/sslerr_legacy.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/prov_ssl.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ssl2.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/ssl3.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/tls1.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/dtls1.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/srtp.h:
+
+/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl/quic.h:
+
+vtls/gtls.h:
+
+vtls/nssg.h:
+
+vtls/gskit.h:
+
+vtls/wolfssl.h:
+
+vtls/schannel.h:
+
+vtls/sectransp.h:
+
+vtls/mbedtls.h:
+
+vtls/bearssl.h:
+
+vtls/rustls.h:
 
 ../lib/slist.h:
 

@@ -1620,9 +1620,9 @@ CC = /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-
 CCDEPMODE = depmode=gcc3
 CFLAGS = -Werror-implicit-function-declaration -O2 -Wno-system-headers -pthread 
 CFLAG_CURL_SYMBOL_HIDING = -fvisibility=hidden
-CONFIGURE_OPTIONS = " '--host=arm-buildroot-linux-gnueabi' '--prefix=/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install' 'CC=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc' 'CXX=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++' '--disable-shared' '--enable-static' '--without-libidn' '--without-ssl' '--without-librtmp' '--without-gnutls' '--without-nss' '--without-libssh2' '--without-zlib' '--without-winidn' '--disable-rtsp' '--disable-ldap' '--disable-ldaps' '--disable-ipv6' 'host_alias=arm-buildroot-linux-gnueabi'"
+CONFIGURE_OPTIONS = " '--host=arm-buildroot-linux-gnueabi' '--prefix=/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install' 'CC=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc' 'CXX=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++' '--disable-shared' '--enable-static' '--without-libidn' '--without-librtmp' '--without-gnutls' '--without-nss' '--without-libssh2' '--without-zlib' '--without-winidn' '--disable-rtsp' '--disable-ldap' '--disable-ldaps' '--disable-ipv6' '--with-ssl' 'host_alias=arm-buildroot-linux-gnueabi' 'LDFLAGS=-L/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib' 'LIBS=-ldl' 'CPPFLAGS=-I/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include'"
 CPP = /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc -E
-CPPFLAGS = 
+CPPFLAGS = -isystem /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include
 CPPFLAG_CURL_STATICLIB = -DCURL_STATICLIB
 CSCOPE = cscope
 CTAGS = ctags
@@ -1646,8 +1646,8 @@ CURL_DISABLE_SMTP =
 CURL_DISABLE_TELNET = 
 CURL_DISABLE_TFTP = 
 CURL_LT_SHLIB_VERSIONED_FLAVOUR = 
-CURL_NETWORK_AND_TIME_LIBS = 
-CURL_NETWORK_LIBS = 
+CURL_NETWORK_AND_TIME_LIBS = -ldl
+CURL_NETWORK_LIBS = -ldl
 CURL_PLIST_VERSION = 8.0.1
 CURL_WITH_MULTI_SSL = 
 CYGPATH_W = echo
@@ -1674,7 +1674,7 @@ HAVE_BROTLI =
 HAVE_GNUTLS_SRP = 
 HAVE_LDAP_SSL = 
 HAVE_LIBZ = 
-HAVE_OPENSSL_SRP = 
+HAVE_OPENSSL_SRP = 1
 HAVE_PROTO_BSDSOCKET_H = 
 HAVE_ZSTD = 
 HTTPD = 
@@ -1688,9 +1688,9 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 IPV6_ENABLED = 
 LCOV = 
 LD = /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/bin/ld
-LDFLAGS = 
-LIBCURL_LIBS = -pthread
-LIBCURL_NO_SHARED =  -pthread
+LDFLAGS = -L/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib
+LIBCURL_LIBS = -lssl -lcrypto -lssl -lcrypto -ldl -pthread
+LIBCURL_NO_SHARED = -lssl -lcrypto -lssl -lcrypto  -ldl -pthread
 LIBOBJS = 
 
 # Prevent LIBS from being used for all link targets
@@ -1733,12 +1733,12 @@ REQUIRE_LIB_DEPS = yes
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
-SSL_BACKENDS = 
-SSL_ENABLED = 
-SSL_LIBS = 
+SSL_BACKENDS = OpenSSL v3+
+SSL_ENABLED = 1
+SSL_LIBS = -lssl -lcrypto 
 STRIP = strip
-SUPPORT_FEATURES = AsynchDNS Largefile UnixSockets alt-svc threadsafe
-SUPPORT_PROTOCOLS = DICT FILE FTP GOPHER HTTP IMAP MQTT POP3 SMTP TELNET TFTP
+SUPPORT_FEATURES = AsynchDNS HSTS HTTPS-proxy Largefile NTLM NTLM_WB SSL TLS-SRP UnixSockets alt-svc threadsafe
+SUPPORT_PROTOCOLS = DICT FILE FTP FTPS GOPHER GOPHERS HTTP HTTPS IMAP IMAPS MQTT POP3 POP3S SMB SMBS SMTP SMTPS TELNET TFTP
 TEST_NGHTTPX = nghttpx
 USE_ARES = 
 USE_BEARSSL = 
@@ -1866,10 +1866,10 @@ EXTRA_DIST = test307.pl test610.pl test613.pl test1013.pl test1022.pl   \
   Makefile.inc notexists.pl CMakeLists.txt mk-lib1521.pl .checksrc
 
 CLEANFILES = lib1521.c
-#SUPPORTFILES_LIBS = $(top_builddir)/lib/libcurl.la  
-SUPPORTFILES_LIBS = $(top_builddir)/lib/libcurl.la -pthread
-#TESTUTIL_LIBS = $(top_builddir)/lib/libcurl.la  
-TESTUTIL_LIBS = $(top_builddir)/lib/libcurl.la -pthread
+#SUPPORTFILES_LIBS = $(top_builddir)/lib/libcurl.la -ldl 
+SUPPORTFILES_LIBS = $(top_builddir)/lib/libcurl.la -lssl -lcrypto -lssl -lcrypto -ldl -pthread
+#TESTUTIL_LIBS = $(top_builddir)/lib/libcurl.la -ldl 
+TESTUTIL_LIBS = $(top_builddir)/lib/libcurl.la -lssl -lcrypto -lssl -lcrypto -ldl -pthread
 
 # Dependencies (may need to be overridden)
 LDADD = $(SUPPORTFILES_LIBS)
@@ -1919,7 +1919,7 @@ chkdecimalpoint_CPPFLAGS = $(AM_CPPFLAGS) -DCURL_STATICLIB \
  -DCURLX_NO_MEMORY_CALLBACKS -DBUILDING_LIBCURL
 
 chkhostname_SOURCES = chkhostname.c ../../lib/curl_gethostname.c
-chkhostname_LDADD = 
+chkhostname_LDADD = -ldl
 chkhostname_DEPENDENCIES = 
 libntlmconnect_SOURCES = libntlmconnect.c $(SUPPORTFILES) $(TESTUTIL) $(WARNLESS)
 libntlmconnect_LDADD = $(TESTUTIL_LIBS)
