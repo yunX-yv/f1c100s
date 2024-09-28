@@ -117,16 +117,6 @@ void thread_record(FILE *sox)
     running = true;
 }
 
-// void thread_record()
-// {
-//     while (running)
-//     {
-//         system("sox -q -b 16 -r 16000 -c 1  -t waveaudio -d 16k.wav");
-//         std::cout << "a" << std::endl;
-//     }
-// }
-
-
 void AudioRec::record()
 {
 	running = true;
@@ -141,7 +131,7 @@ void AudioRec::record()
         this->ol_wkup->run();
     }
 
-//在新线程发布好像不太行,不是不行，好像特定字符总是转化失败
+    //在新线程发布好像不太行,不是不行，好像特定字符总是转化失败
     str = "请说话:";
     mqttClient->publish("/test/ui",str);
 
@@ -150,34 +140,6 @@ void AudioRec::record()
     t.join();
     // t.detach();
 
-  
-    
-    
-
-    // int flag_rec_end = 1;
-
-    // while (flag_rec_end)
-    // {
-    //     // 检测音量
-    //     this->ol_wkup->run();
-
-    //     printf("recordering\n");
-    //     if (!AudioRec::start_record)
-    //     {
-    //         // if (t.joinable())
-    //         {
-    //             // pthread_kill(t.native_handle(), SIGINT);
-    //             // GenerateConsoleCtrlEvent(CTRL_C_EVENT, 0);
-    //             flag_rec_end = 0;
-    //             running = false;
-    //             printf("recorder finished\n");
-    //         }
-    //     }
-    // }
-
-    // // 等待子线程结束
-    // t.join();
-    // std::cout << "record finished!" << std::endl;
     str = "录音完成";
     mqttClient->publish("/test/ui",str);
 }

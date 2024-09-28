@@ -29,7 +29,7 @@ popen_sox(int sample_rate)
 
     printf("SOXCMD: %s\n", soxcmd);
     // Replaced "popen" with "_popen"
-    if ((sox = popen(soxcmd, "r")) == NULL)
+    if ((sox = popen(soxcmd, "r")) == NULL) //执行一个shell以运行命令来开启一个进程
         E_FATAL_SYSTEM("Failed to popen(%s)", soxcmd);
     free(soxcmd);
 
