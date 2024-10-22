@@ -432,11 +432,11 @@ static void sunxi_pctrl_dt_free_map(struct pinctrl_dev *pctldev,
 }
 
 static const struct pinctrl_ops sunxi_pctrl_ops = {
-	.dt_node_to_map		= sunxi_pctrl_dt_node_to_map,
-	.dt_free_map		= sunxi_pctrl_dt_free_map,
+	.dt_node_to_map		= sunxi_pctrl_dt_node_to_map,	//设备树节点解析
+	.dt_free_map		= sunxi_pctrl_dt_free_map,		
 	.get_groups_count	= sunxi_pctrl_get_groups_count,
 	.get_group_name		= sunxi_pctrl_get_group_name,
-	.get_group_pins		= sunxi_pctrl_get_group_pins,
+	.get_group_pins		= sunxi_pctrl_get_group_pins,	//引脚组
 };
 
 static int sunxi_pconf_reg(unsigned pin, enum pin_config_param param,
@@ -594,9 +594,9 @@ static int sunxi_pconf_group_set(struct pinctrl_dev *pctldev,
 
 static const struct pinconf_ops sunxi_pconf_ops = {
 	.is_generic		= true,
-	.pin_config_get		= sunxi_pconf_get,
-	.pin_config_group_get	= sunxi_pconf_group_get,
-	.pin_config_group_set	= sunxi_pconf_group_set,
+	.pin_config_get		= sunxi_pconf_get,	//获取引脚配置
+	.pin_config_group_get	= sunxi_pconf_group_get,	//获取pin组配置
+	.pin_config_group_set	= sunxi_pconf_group_set,	//配置pin组
 };
 
 static int sunxi_pmx_get_funcs_cnt(struct pinctrl_dev *pctldev)
@@ -654,7 +654,7 @@ static int sunxi_pmx_set_mux(struct pinctrl_dev *pctldev,
 	struct sunxi_pinctrl_group *g = pctl->groups + group;
 	struct sunxi_pinctrl_function *func = pctl->functions + function;
 	struct sunxi_desc_function *desc =
-		sunxi_pinctrl_desc_find_function_by_name(pctl,
+		sunxi_pinctrl_desc_find_function_by_name(pctl,	//匹配复用功能
 							 g->name,
 							 func->name);
 
@@ -694,8 +694,8 @@ static const struct pinmux_ops sunxi_pmx_ops = {
 	.get_functions_count	= sunxi_pmx_get_funcs_cnt,
 	.get_function_name	= sunxi_pmx_get_func_name,
 	.get_function_groups	= sunxi_pmx_get_func_groups,
-	.set_mux		= sunxi_pmx_set_mux,
-	.gpio_set_direction	= sunxi_pmx_gpio_set_direction,
+	.set_mux		= sunxi_pmx_set_mux,	//设置复用功能
+	.gpio_set_direction	= sunxi_pmx_gpio_set_direction,	//设置输出方向
 	.strict			= true,
 };
 
