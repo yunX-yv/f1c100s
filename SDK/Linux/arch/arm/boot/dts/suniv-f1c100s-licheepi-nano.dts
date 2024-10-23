@@ -88,7 +88,7 @@
 		function = "gpio_out";
     };
 	spi1_cs_pins: spi1_cs_pins {
-		pins = "PE7";
+		pins = "PD7";
 		function = "gpio_out";
 	};
 };
@@ -158,7 +158,7 @@
     pinctrl-0 = <&spi1_pins_a &spi1_cs_pins>;
     status = "okay";
     spi-max-frequency = <50000000>;
-	cs-gpios = <0>, <&pio 4 7 GPIO_ACTIVE_HIGH>;
+	cs-gpios = <0>, <&pio 3 7 GPIO_ACTIVE_HIGH>;
 };
 
 &tcon0 {
