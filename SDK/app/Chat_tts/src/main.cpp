@@ -53,7 +53,9 @@ int main(int argc, char **argv)
 {
     string payload = "hello world";
     // SetConsoleOutputCP(CP_UTF8);
+
     printf("test for xiao f1c100s\r\n");
+    
     if (signal(SIGINT, catch_sig) == SIG_ERR)
         E_FATAL_SYSTEM("Failed to set SIGINT handler");
     

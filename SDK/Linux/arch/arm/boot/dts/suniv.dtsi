@@ -223,7 +223,7 @@
 				pins = "PA2", "PA0", "PA3", "PA1";
 				function = "spi1";
 			};
-
+/*
 			lcd_rgb666_pins: lcd-rgb666-pins {
 				pins = "PD0", "PD1", "PD2", "PD3", "PD4",
 				       "PD5", "PD6", "PD7", "PD8", "PD9",
@@ -232,7 +232,7 @@
 				       "PD20", "PD21";
 				function = "lcd";
 			};
-
+*/
 			uart0_pins_a: uart-pins-pe {
 				pins = "PE0", "PE1";
 				function = "uart0";

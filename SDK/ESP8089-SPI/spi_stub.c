@@ -134,7 +134,7 @@ struct spi_device* sif_platform_new_device(void) {
 
 /* *** *** Interrupt *** *** */
 
-static int esp_interrupt = 137;  //pe9
+static int esp_interrupt = 98;  //pd2
 module_param(esp_interrupt, int, 0);
 MODULE_PARM_DESC(esp_interrupt, "Interrupt pin");
 
@@ -214,7 +214,7 @@ SDIO:
   GPIO11  SDCMD
 */
 
-static int esp_reset_gpio = 117;     //pD21
+static int esp_reset_gpio = 97;     //pD1
 module_param(esp_reset_gpio, int, 0);
 MODULE_PARM_DESC(esp_reset_gpio, "ESP8089 CHIP_EN GPIO number");
 
