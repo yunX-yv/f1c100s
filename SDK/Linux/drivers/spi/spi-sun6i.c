@@ -475,16 +475,16 @@ static int sun6i_spi_probe(struct platform_device *pdev)
 	sspi->master = master;
 	sspi->fifo_depth = (unsigned long)of_device_get_match_data(&pdev->dev);
 
-	master->max_speed_hz = 100 * 1000 * 1000;
-	master->min_speed_hz = 3 * 1000;
-	master->set_cs = sun6i_spi_set_cs;
-	master->transfer_one = sun6i_spi_transfer_one;
-	master->num_chipselect = 4;
-	master->mode_bits = SPI_CPOL | SPI_CPHA | SPI_CS_HIGH | SPI_LSB_FIRST;
+	master->max_speed_hz = 100 * 1000 * 1000;	//最大速度
+	master->min_speed_hz = 3 * 1000;			//最小速度
+	master->set_cs = sun6i_spi_set_cs;			//设置片选
+	master->transfer_one = sun6i_spi_transfer_one;	//传输一条数据
+	master->num_chipselect = 4;		//片选号
+	master->mode_bits = SPI_CPOL | SPI_CPHA | SPI_CS_HIGH | SPI_LSB_FIRST;	//模式
 	master->bits_per_word_mask = SPI_BPW_MASK(8);
-	master->dev.of_node = pdev->dev.of_node;
-	master->auto_runtime_pm = true;
-	master->max_transfer_size = sun6i_spi_max_transfer_size;
+	master->dev.of_node = pdev->dev.of_node;	//设备信息节点，指向关联的设备树节点
+	master->auto_runtime_pm = true;		//电源管理相关
+	master->max_transfer_size = sun6i_spi_max_transfer_size;	//返回最大传输大小
 
 	sspi->hclk = devm_clk_get(&pdev->dev, "ahb");
 	if (IS_ERR(sspi->hclk)) {

@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 []
 =======
+=======
+>>>>>>> ea23cf25008b60ecb6825a8a91178098593c79d7
 [
   {
     "arguments": [
@@ -2788,4 +2791,7 @@
     "output": "/home/xiao/f1c100s/f1c100s/SDK/Linux/arch/arm/boot/compressed/piggy.o"
   }
 ]
+<<<<<<< HEAD
 >>>>>>> ea23cf250 (New base borde fix ESP8089)
+=======
+>>>>>>> ea23cf25008b60ecb6825a8a91178098593c79d7
