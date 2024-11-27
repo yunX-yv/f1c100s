@@ -5,7 +5,8 @@
 
 #include <dt-bindings/clock/suniv-ccu.h>
 #include <dt-bindings/reset/suniv-ccu.h>
-
+#include <dt-bindings/input/input.h>
+#include <dt-bindings/interrupt-controller/irq.h>
 / {
 	#address-cells = <1>;
 	#size-cells = <1>;
@@ -242,6 +243,13 @@
 				pins = "PF0", "PF1", "PF2", "PF3", "PF4", "PF5";
 				function = "mmc0";
 			};
+			key_pins: key_pins@0 {
+				pins = "PD21", "PD20", "PD19";
+				function = "gpio_in";
+		
+    			/* allwinner,drive = <0>; */
+    			allwinner,pull = <1>; // 上拉
+			};
 		};
 
 		timer@1c20c00 {
@@ -276,6 +284,42 @@
 			clocks = <&ccu CLK_BUS_UART1>;
 			resets = <&ccu RST_BUS_UART1>;
 			status = "disabled";
+		};
+
+		gpio_keys: gpio_keys@0 {
+			compatible = "gpio-keys";
+			pinctrl-names = "default";
+			pinctrl-0 = <&key_pins>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			autorepeat;
+			status = "okay";
+			interrupt-controller;
+
+			key1@1 {
+				label = "USER-KEY1";
+				linux,code = <KEY_LEFT>;
+				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
+				interrupt-parent = <&pio>;
+				interrupts = <3 19 IRQ_TYPE_EDGE_FALLING>;	//PD19
+				// gpio-key,wakeup;
+			};
+			key2@1 {
+				label = "USER-KEY2";
+				linux,code = <KEY_DOWN>;
+				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
+				interrupt-parent = <&pio>;
+				interrupts = <3 20 IRQ_TYPE_EDGE_FALLING>;	//PD19
+				// gpio-key,wakeup;
+			};
+			key3@1 {
+				label = "USER-KEY3";
+				linux,code = <KEY_RIGHT>;
+				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
+				interrupt-parent = <&pio>;
+				interrupts = <3 21 IRQ_TYPE_EDGE_FALLING>;	//PD19
+				// gpio-key,wakeup;
+			};
 		};
 
 		uart2: serial@1c25800 {
