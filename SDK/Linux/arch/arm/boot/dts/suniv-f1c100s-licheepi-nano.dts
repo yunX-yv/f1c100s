@@ -114,19 +114,19 @@
             partition@0 {
                 label = "u-boot";
                 reg = <0x000000 0x100000>;
-                read-only;
+                // read-only;
             };
 
             partition@100000 {
                 label = "dtb";
                 reg = <0x100000 0x10000>;
-                read-only;
+                // read-only;
             };
 
             partition@110000 {
                 label = "kernel";
                 reg = <0x110000 0x400000>;
-                read-only;
+                // read-only;
             };
 
             partition@510000 {

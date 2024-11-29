@@ -301,7 +301,7 @@
 				linux,code = <KEY_LEFT>;
 				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
 				interrupt-parent = <&pio>;
-				interrupts = <3 19 IRQ_TYPE_EDGE_FALLING>;	//PD19
+				interrupts = <3 19 IRQ_TYPE_EDGE_BOTH>;	//PD19
 				// gpio-key,wakeup;
 			};
 			key2@1 {
@@ -309,7 +309,7 @@
 				linux,code = <KEY_DOWN>;
 				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
 				interrupt-parent = <&pio>;
-				interrupts = <3 20 IRQ_TYPE_EDGE_FALLING>;	//PD19
+				interrupts = <3 20 IRQ_TYPE_EDGE_BOTH>;	//PD19
 				// gpio-key,wakeup;
 			};
 			key3@1 {
@@ -317,7 +317,7 @@
 				linux,code = <KEY_RIGHT>;
 				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
 				interrupt-parent = <&pio>;
-				interrupts = <3 21 IRQ_TYPE_EDGE_FALLING>;	//PD19
+				interrupts = <3 21 IRQ_TYPE_EDGE_BOTH>;	//PD19
 				// gpio-key,wakeup;
 			};
 		};
