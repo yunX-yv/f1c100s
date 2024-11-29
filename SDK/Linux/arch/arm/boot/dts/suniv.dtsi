@@ -301,24 +301,27 @@
 				linux,code = <KEY_LEFT>;
 				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
 				interrupt-parent = <&pio>;
-				interrupts = <3 19 IRQ_TYPE_EDGE_BOTH>;	//PD19
-				// gpio-key,wakeup;
+				interrupts = <3 19 IRQ_TYPE_LEVEL_LOW>;	//PD19
+				gpio-key,wakeup;
+				debounce-interval = <20>;
 			};
 			key2@1 {
 				label = "USER-KEY2";
 				linux,code = <KEY_DOWN>;
 				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
 				interrupt-parent = <&pio>;
-				interrupts = <3 20 IRQ_TYPE_EDGE_BOTH>;	//PD19
-				// gpio-key,wakeup;
+				interrupts = <3 20 IRQ_TYPE_LEVEL_LOW>;	//PD19
+				gpio-key,wakeup;
+				debounce-interval = <20>;
 			};
 			key3@1 {
 				label = "USER-KEY3";
 				linux,code = <KEY_RIGHT>;
 				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
 				interrupt-parent = <&pio>;
-				interrupts = <3 21 IRQ_TYPE_EDGE_BOTH>;	//PD19
-				// gpio-key,wakeup;
+				interrupts = <3 21 IRQ_TYPE_LEVEL_LOW>;	//PD19
+				gpio-key,wakeup;
+				debounce-interval = <20>;
 			};
 		};
 

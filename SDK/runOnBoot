@@ -17,6 +17,9 @@
 #mkdir configs/c1.1
 #ln -s functions/rndis.rn0 configs/c1.1/
 #echo "musb-hdrc.1.auto" > UDC
+
+chown root.root /var/empty/
+
 modprobe g_ether
 ifconfig usb0 192.168.137.2
 ifconfig usb0 up
