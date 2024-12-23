@@ -101,6 +101,9 @@ void ui_event_Screen1(lv_event_t * e)
     if(event_code == LV_EVENT_SCREEN_LOADED) {
         tisk_Animation(ui_Image1, 0);
     }
+    if(event_code == LV_EVENT_KEY &&  lv_event_get_key(e) == LV_KEY_DOWN) {
+        _ui_screen_change(&ui_Screen2, LV_SCR_LOAD_ANIM_MOVE_TOP, 500, 0, &ui_Screen2_screen_init);
+    }
 }
 void ui_event_Screen2(lv_event_t * e)
 {

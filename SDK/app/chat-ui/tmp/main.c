@@ -11,6 +11,19 @@
 
 #define DISP_BUF_SIZE (128 * 1024)
 
+// void button_read(lv_indev_drv_t * drv, lv_indev_data_t*data){
+//     static uint32_t last_btn = 0;   /*Store the last pressed button*/
+//     int btn_pr = my_btn_read();     /*Get the ID (0,1,2...) of the pressed button*/
+//     if(btn_pr >= 0) {               /*Is there a button press? (E.g. -1 indicated no button was pressed)*/
+//        last_btn = btn_pr;           /*Save the ID of the pressed button*/
+//        data->state = LV_INDEV_STATE_PRESSED;  /*Set the pressed state*/
+//     } else {
+//        data->state = LV_INDEV_STATE_RELEASED; /*Set the released state*/
+//     }
+
+//     data->btn = last_btn;            /*Save the last button*/
+// }
+
 int main(void)
 {
     /*LittlevGL init*/
@@ -39,14 +52,13 @@ int main(void)
     disp_drv.ver_res    = 240;
     lv_disp_drv_register(&disp_drv);
 
-//    evdev_init();
+    //libinput_init();
     static lv_indev_drv_t indev_drv_1;
     lv_indev_drv_init(&indev_drv_1); /*Basic initialization*/
-    indev_drv_1.type = LV_INDEV_TYPE_POINTER;
-
+    indev_drv_1.type = LV_INDEV_TYPE_POINTER ;
 //    /*This function will be called periodically (by the library) to get the mouse position and state*/
-//   indev_drv_1.read_cb = evdev_read;
-//    lv_indev_t *mouse_indev = lv_indev_drv_register(&indev_drv_1);
+    // indev_drv_1.read_cb = button_read;
+    // lv_indev_t *key_indev = lv_indev_drv_register(&indev_drv_1);
 
 
     /*Set a cursor for the mouse*/

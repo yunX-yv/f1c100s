@@ -45,7 +45,7 @@ void ui_Screen2_screen_init(void)
 
     lv_obj_set_style_arc_color(ui_Spinner3, lv_color_hex(0xFB0000), LV_PART_INDICATOR | LV_STATE_DEFAULT);
     lv_obj_set_style_arc_opa(ui_Spinner3, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    lv_obj_set_style_arc_width(ui_Spinner3, 1, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_width(ui_Spinner3, 6, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 
     lv_obj_add_event_cb(ui_Screen2, ui_event_Screen2, LV_EVENT_ALL, NULL);
 
