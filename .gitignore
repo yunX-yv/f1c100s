@@ -1,2 +1,8 @@
 SDK/Linux/compile_commands.json
 *.o
+SDK/Linux/.config
+Image
+zImage
+vmlinux.lds
+vmlinux
+piggy_data
