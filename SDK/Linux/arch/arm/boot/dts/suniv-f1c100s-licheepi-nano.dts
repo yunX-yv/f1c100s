@@ -91,6 +91,10 @@
 		pins = "PD7";
 		function = "gpio_out";
 	};
+	usb0_id_pins: usb0_id_pins {
+		pins = "PE2";
+		function = "gpio_in";
+	};
 };
 
 &spi0 {
