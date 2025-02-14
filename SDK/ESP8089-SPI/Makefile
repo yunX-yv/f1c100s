@@ -11,7 +11,7 @@ KVERS_ARCH ?= $(shell arch)
 # a separate directory.
 #KBUILD ?= $(shell readlink -f /lib/modules/$(KVERS_UNAME)/build)
 KBUILD = ../Linux
-
+ccflags-y += "-I/home/xiao/tools/f1c100s_tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/lib/gcc/arm-linux-gnueabi/7.2.1/include/"
 ifeq (,$(KBUILD))
 $(error Kernel build tree not found - please set KBUILD to configured kernel)
 endif
@@ -136,7 +136,7 @@ cleandkms:
 	-rm -rf /var/lib/dkms/$(PACKAGE_NAME)/$(PACKAGE_VERSION) $(DKMS_PATH)
 
 modules:
-	$(MAKE) -C $(KBUILD) M=$(SRC_DIR)
+	$(MAKE) -C $(KBUILD) M=$(SRC_DIR) 
 
 $(MODULE):
 	$(MAKE) modules
