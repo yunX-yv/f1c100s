@@ -27,31 +27,31 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/x509_acert.h&gt;
+<pre><code> #include &lt;openssl/x509_acert.h&gt;
 
-const GENERAL_NAMES *X509_ACERT_get0_holder_entityName(const X509_ACERT *x);
-OSSL_ISSUER_SERIAL *X509_ACERT_get0_holder_baseCertId(const X509_ACERT *x);
-OSSL_OBJECT_DIGEST_INFO * X509_ACERT_get0_holder_digest(const X509_ACERT *x);
-void X509_ACERT_set0_holder_entityName(X509_ACERT *x, GENERAL_NAMES *name);
-void X509_ACERT_set0_holder_baseCertId(X509_ACERT *x, OSSL_ISSUER_SERIAL *isss);
-void X509_ACERT_set0_holder_digest(X509_ACERT *x,
-                                   OSSL_OBJECT_DIGEST_INFO *dinfo);
+ const GENERAL_NAMES *X509_ACERT_get0_holder_entityName(const X509_ACERT *x);
+ OSSL_ISSUER_SERIAL *X509_ACERT_get0_holder_baseCertId(const X509_ACERT *x);
+ OSSL_OBJECT_DIGEST_INFO * X509_ACERT_get0_holder_digest(const X509_ACERT *x);
+ void X509_ACERT_set0_holder_entityName(X509_ACERT *x, GENERAL_NAMES *name);
+ void X509_ACERT_set0_holder_baseCertId(X509_ACERT *x, OSSL_ISSUER_SERIAL *isss);
+ void X509_ACERT_set0_holder_digest(X509_ACERT *x,
+                                    OSSL_OBJECT_DIGEST_INFO *dinfo);
 
-X509_NAME *OSSL_ISSUER_SERIAL_get0_issuer(OSSL_ISSUER_SERIAL *isss);
-ASN1_INTEGER *OSSL_ISSUER_SERIAL_get0_serial(OSSL_ISSUER_SERIAL *isss);
-ASN1_BIT_STRING *OSSL_ISSUER_SERIAL_get0_issuerUID(OSSL_ISSUER_SERIAL *isss);
-int OSSL_ISSUER_SERIAL_set1_issuer(OSSL_ISSUER_SERIAL *isss, X509_NAME *issuer);
-int OSSL_ISSUER_SERIAL_set1_serial(OSSL_ISSUER_SERIAL *isss, ASN1_INTEGER *serial);
-int OSSL_ISSUER_SERIAL_set1_issuerUID(OSSL_ISSUER_SERIAL *isss, ASN1_BIT_STRING *uid);
+ X509_NAME *OSSL_ISSUER_SERIAL_get0_issuer(OSSL_ISSUER_SERIAL *isss);
+ ASN1_INTEGER *OSSL_ISSUER_SERIAL_get0_serial(OSSL_ISSUER_SERIAL *isss);
+ ASN1_BIT_STRING *OSSL_ISSUER_SERIAL_get0_issuerUID(OSSL_ISSUER_SERIAL *isss);
+ int OSSL_ISSUER_SERIAL_set1_issuer(OSSL_ISSUER_SERIAL *isss, X509_NAME *issuer);
+ int OSSL_ISSUER_SERIAL_set1_serial(OSSL_ISSUER_SERIAL *isss, ASN1_INTEGER *serial);
+ int OSSL_ISSUER_SERIAL_set1_issuerUID(OSSL_ISSUER_SERIAL *isss, ASN1_BIT_STRING *uid);
 
-void OSSL_OBJECT_DIGEST_INFO_get0_digest(OSSL_OBJECT_DIGEST_INFO *o,
-                                         ASN1_ENUMERATED **digestedObjectType,
-                                         X509_ALGOR **digestAlgorithm,
-                                         ASN1_BIT_STRING **digest);
-void OSSL_OBJECT_DIGEST_INFO_set1_digest(OSSL_OBJECT_DIGEST_INFO *o,
-                                         ASN1_ENUMERATED *digestedObjectType,
-                                         X509_ALGOR *digestAlgorithm,
-                                         ASN1_BIT_STRING *digest);</code></pre>
+ void OSSL_OBJECT_DIGEST_INFO_get0_digest(OSSL_OBJECT_DIGEST_INFO *o,
+                                          ASN1_ENUMERATED **digestedObjectType,
+                                          X509_ALGOR **digestAlgorithm,
+                                          ASN1_BIT_STRING **digest);
+ void OSSL_OBJECT_DIGEST_INFO_set1_digest(OSSL_OBJECT_DIGEST_INFO *o,
+                                          ASN1_ENUMERATED *digestedObjectType,
+                                          X509_ALGOR *digestAlgorithm,
+                                          ASN1_BIT_STRING *digest);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

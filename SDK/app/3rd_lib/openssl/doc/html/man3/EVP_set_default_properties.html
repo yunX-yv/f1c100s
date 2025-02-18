@@ -28,12 +28,12 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/evp.h&gt;
+<pre><code> #include &lt;openssl/evp.h&gt;
 
-int EVP_set_default_properties(OSSL_LIB_CTX *libctx, const char *propq);
-char *EVP_get1_default_properties(OSSL_LIB_CTX *libctx);
-int EVP_default_properties_enable_fips(OSSL_LIB_CTX *libctx, int enable);
-int EVP_default_properties_is_fips_enabled(OSSL_LIB_CTX *libctx);</code></pre>
+ int EVP_set_default_properties(OSSL_LIB_CTX *libctx, const char *propq);
+ char *EVP_get1_default_properties(OSSL_LIB_CTX *libctx);
+ int EVP_default_properties_enable_fips(OSSL_LIB_CTX *libctx, int enable);
+ int EVP_default_properties_is_fips_enabled(OSSL_LIB_CTX *libctx);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

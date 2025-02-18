@@ -26,7 +26,7 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>env OPENSSL_riscvcap=... &lt;application&gt;</code></pre>
+<pre><code> env OPENSSL_riscvcap=... &lt;application&gt;</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -36,7 +36,7 @@
 
 <p>The environment variable is similar to the RISC-V ISA string defined in the RISC-V Instruction Set Manual. It is case insensitive. Though due to the limit of the environment variable parser inside libcrypto, an extension must be prefixed with an underscore to make it recognizable. This also applies to the Vector extension.</p>
 
-<pre><code>OPENSSL_riscvcap=&quot;rv64gc_v_zba_zbb_zbs...&quot;</code></pre>
+<pre><code> OPENSSL_riscvcap=&quot;rv64gc_v_zba_zbb_zbs...&quot;</code></pre>
 
 <p>Note that extension implication is currently not implemented. For example, when &quot;rv64gc_b&quot; is provided as the environment variable, zba/zbb/zbs would not be implied in the capability vector.</p>
 
@@ -244,16 +244,16 @@
 
 <p>Check currently detected capabilities</p>
 
-<pre><code>$ openssl info -cpusettings
-OPENSSL_riscvcap=ZBA_ZBB_ZBC_ZBS_V</code></pre>
+<pre><code> $ openssl info -cpusettings
+ OPENSSL_riscvcap=ZBA_ZBB_ZBC_ZBS_V</code></pre>
 
 <p>Disables all instruction set extensions:</p>
 
-<pre><code>OPENSSL_riscvcap=&quot;rv64gc&quot;</code></pre>
+<pre><code> OPENSSL_riscvcap=&quot;rv64gc&quot;</code></pre>
 
 <p>Only enable the vector extension:</p>
 
-<pre><code>OPENSSL_riscvcap=&quot;rv64gc_v&quot;</code></pre>
+<pre><code> OPENSSL_riscvcap=&quot;rv64gc_v&quot;</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 

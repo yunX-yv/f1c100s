@@ -7,12 +7,13 @@ project(chat VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11) 
 set(CMAKE_CXX_STANDARD_REQUIRED True) 
 
-set(CMAKE_C_COMPILER "/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc")
-set(CMAKE_CXX_COMPILER "/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++")
+set(CMAKE_C_COMPILER "/home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-gcc")
+set(CMAKE_CXX_COMPILER "/home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-g++")
 
 set(CMAKE_CROSSCOMPILING TRUE)
 set(CAMKE_SYSTEM_NAME Linux)
 
+set(CMAKE_BUILD_TOOL "make")
 # 设置编译器搜索路径
 # set(CMAKE_FIND_ROOT_PATH /home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi)
 # set(CMAKE_SYSROOT /home/xiao/f1c100s/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi)

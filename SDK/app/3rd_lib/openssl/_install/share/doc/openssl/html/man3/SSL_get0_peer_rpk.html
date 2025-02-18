@@ -28,13 +28,13 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/ssl.h&gt;
+<pre><code> #include &lt;openssl/ssl.h&gt;
 
-int SSL_add_expected_rpk(SSL *s, EVP_PKEY *rpk);
-int SSL_get_negotiated_client_cert_type(const SSL *s);
-int SSL_get_negotiated_server_cert_type(const SSL *s);
-EVP_PKEY *SSL_get0_peer_rpk(const SSL *s);
-EVP_PKEY *SSL_SESSION_get0_peer_rpk(const SSL_SESSION *ss);</code></pre>
+ int SSL_add_expected_rpk(SSL *s, EVP_PKEY *rpk);
+ int SSL_get_negotiated_client_cert_type(const SSL *s);
+ int SSL_get_negotiated_server_cert_type(const SSL *s);
+ EVP_PKEY *SSL_get0_peer_rpk(const SSL *s);
+ EVP_PKEY *SSL_SESSION_get0_peer_rpk(const SSL_SESSION *ss);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

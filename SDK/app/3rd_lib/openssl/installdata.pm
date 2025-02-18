@@ -19,28 +19,28 @@ our @EXPORT = qw(
 );
 
 our @PREFIX                     = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install' );
-our @libdir                     = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib64' );
+our @libdir                     = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib' );
 our @BINDIR                     = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/bin' );
 our @BINDIR_REL_PREFIX          = ( 'bin' );
-our @LIBDIR                     = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib64' );
-our @LIBDIR_REL_PREFIX          = ( 'lib64' );
+our @LIBDIR                     = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib' );
+our @LIBDIR_REL_PREFIX          = ( 'lib' );
 our @INCLUDEDIR                 = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include' );
 our @INCLUDEDIR_REL_PREFIX      = ( 'include' );
 our @APPLINKDIR                 = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include/openssl' );
 our @APPLINKDIR_REL_PREFIX      = ( 'include/openssl' );
-our @ENGINESDIR                 = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib64/engines-3' );
+our @ENGINESDIR                 = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib/engines-3' );
 our @ENGINESDIR_REL_LIBDIR      = ( 'engines-3' );
-our @MODULESDIR                 = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib64/ossl-modules' );
+our @MODULESDIR                 = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib/ossl-modules' );
 our @MODULESDIR_REL_LIBDIR      = ( 'ossl-modules' );
-our @PKGCONFIGDIR               = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib64/pkgconfig' );
+our @PKGCONFIGDIR               = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib/pkgconfig' );
 our @PKGCONFIGDIR_REL_LIBDIR    = ( 'pkgconfig' );
-our @CMAKECONFIGDIR             = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib64/cmake/OpenSSL' );
+our @CMAKECONFIGDIR             = ( '/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib/cmake/OpenSSL' );
 our @CMAKECONFIGDIR_REL_LIBDIR  = ( 'cmake/OpenSSL' );
 our $VERSION                    = '3.5.0-dev';
 our @LDLIBS                     =
     # Unix and Windows use space separation, VMS uses comma separation
     $^O eq 'VMS'
-    ? split(/ *, */, '-ldl -pthread ')
-    : split(/ +/, '-ldl -pthread ');
+    ? split(/ *, */, '-ldl -pthread -latomic ')
+    : split(/ +/, '-ldl -pthread -latomic ');
 
 1;

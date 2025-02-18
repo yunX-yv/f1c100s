@@ -1,23 +1,23 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/xiao/project/f1c100s/SDK/app/test/lib/asr/asr.cpp" "/home/xiao/project/f1c100s/SDK/app/test/build/lib/asr/CMakeFiles/asr.dir/asr.cpp.o"
+  "/home/xiao/project/f1c100s/SDK/app/test/lib/asr/common.cpp" "/home/xiao/project/f1c100s/SDK/app/test/build/lib/asr/CMakeFiles/asr.dir/common.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install/include"
+  "../lib/json/json"
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/xiao/project/f1c100s/SDK/app/test/lib/asr/asr.cpp" "lib/asr/CMakeFiles/asr.dir/asr.cpp.o" "gcc" "lib/asr/CMakeFiles/asr.dir/asr.cpp.o.d"
-  "/home/xiao/project/f1c100s/SDK/app/test/lib/asr/common.cpp" "lib/asr/CMakeFiles/asr.dir/common.cpp.o" "gcc" "lib/asr/CMakeFiles/asr.dir/common.cpp.o.d"
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/xiao/project/f1c100s/SDK/app/test/build/lib/json/CMakeFiles/json.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

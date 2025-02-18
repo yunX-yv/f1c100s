@@ -28,17 +28,17 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/ssl.h&gt;
+<pre><code> #include &lt;openssl/ssl.h&gt;
 
-uint64_t SSL_get_stream_id(SSL *ssl);
+ uint64_t SSL_get_stream_id(SSL *ssl);
 
-#define SSL_STREAM_TYPE_NONE
-#define SSL_STREAM_TYPE_BIDI
-#define SSL_STREAM_TYPE_READ
-#define SSL_STREAM_TYPE_WRITE
-int SSL_get_stream_type(SSL *ssl);
+ #define SSL_STREAM_TYPE_NONE
+ #define SSL_STREAM_TYPE_BIDI
+ #define SSL_STREAM_TYPE_READ
+ #define SSL_STREAM_TYPE_WRITE
+ int SSL_get_stream_type(SSL *ssl);
 
-int SSL_is_stream_local(SSL *ssl);</code></pre>
+ int SSL_is_stream_local(SSL *ssl);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

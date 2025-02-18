@@ -26,22 +26,22 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/cmac.h&gt;</code></pre>
+<pre><code> #include &lt;openssl/cmac.h&gt;</code></pre>
 
 <p>The following functions have been deprecated since OpenSSL 3.0, and can be disabled entirely by defining <b>OPENSSL_API_COMPAT</b> with a suitable version value, see <a href="../man7/openssl_user_macros.html">openssl_user_macros(7)</a>.</p>
 
-<pre><code>typedef struct CMAC_CTX_st CMAC_CTX;
+<pre><code> typedef struct CMAC_CTX_st CMAC_CTX;
 
-CMAC_CTX *CMAC_CTX_new(void);
-void CMAC_CTX_cleanup(CMAC_CTX *ctx);
-void CMAC_CTX_free(CMAC_CTX *ctx);
-EVP_CIPHER_CTX *CMAC_CTX_get0_cipher_ctx(CMAC_CTX *ctx);
-int CMAC_CTX_copy(CMAC_CTX *out, const CMAC_CTX *in);
-int CMAC_Init(CMAC_CTX *ctx, const void *key, size_t keylen,
-              const EVP_CIPHER *cipher, ENGINE *impl);
-int CMAC_Update(CMAC_CTX *ctx, const void *data, size_t dlen);
-int CMAC_Final(CMAC_CTX *ctx, unsigned char *out, size_t *poutlen);
-int CMAC_resume(CMAC_CTX *ctx);</code></pre>
+ CMAC_CTX *CMAC_CTX_new(void);
+ void CMAC_CTX_cleanup(CMAC_CTX *ctx);
+ void CMAC_CTX_free(CMAC_CTX *ctx);
+ EVP_CIPHER_CTX *CMAC_CTX_get0_cipher_ctx(CMAC_CTX *ctx);
+ int CMAC_CTX_copy(CMAC_CTX *out, const CMAC_CTX *in);
+ int CMAC_Init(CMAC_CTX *ctx, const void *key, size_t keylen,
+               const EVP_CIPHER *cipher, ENGINE *impl);
+ int CMAC_Update(CMAC_CTX *ctx, const void *data, size_t dlen);
+ int CMAC_Final(CMAC_CTX *ctx, unsigned char *out, size_t *poutlen);
+ int CMAC_resume(CMAC_CTX *ctx);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

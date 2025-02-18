@@ -170,7 +170,7 @@ old_postuninstall_cmds=""
 lock_old_archive_extraction=no
 
 # A C compiler.
-LTCC="/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc"
+LTCC="/home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-gcc"
 
 # LTCC compiler flags.
 LTCFLAGS="-Werror-implicit-function-declaration -O2 -Wno-system-headers -pthread"
@@ -290,10 +290,10 @@ finish_eval=""
 hardcode_into_libs=yes
 
 # Compile-time system search path for libraries.
-sys_lib_search_path_spec="/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0 /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/lib /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/lib /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/lib "
+sys_lib_search_path_spec="/home/xiao/project/buildroot-2021.02.4/output/host/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0 /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/lib /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/lib /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/lib "
 
 # Detected run-time system search path for libraries.
-sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib/x86_64-linux-gnu/libfakeroot /usr/local/lib /usr/local/lib/x86_64-linux-gnu /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu /lib32 /usr/lib32 "
+sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib/x86_64-linux-gnu/libfakeroot /usr/local/lib /usr/local/lib/x86_64-linux-gnu /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu /lib32 /usr/lib32 /libx32 /usr/libx32 "
 
 # Explicit LT_SYS_LIBRARY_PATH set during ./configure time.
 configure_time_lt_sys_library_path=""
@@ -313,7 +313,7 @@ striplib="strip --strip-unneeded"
 
 
 # The linker used to build libraries.
-LD="/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/bin/ld"
+LD="/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/bin/ld"
 
 # How to create reloadable object files.
 reload_flag=" -r"
@@ -323,7 +323,7 @@ reload_cmds="\$LD\$reload_flag -o \$output\$reload_objs"
 old_archive_cmds="\$AR \$AR_FLAGS \$oldlib\$oldobjs~\$RANLIB \$tool_oldlib"
 
 # A language specific compiler.
-CC="/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc"
+CC="/home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-gcc"
 
 # Is the compiler the GNU compiler?
 with_gcc=yes

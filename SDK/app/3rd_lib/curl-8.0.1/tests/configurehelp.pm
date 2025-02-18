@@ -18,6 +18,6 @@ use vars qw(
     $Cpreprocessor
     );
 
-$Cpreprocessor = '/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc -E -isystem /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include';
+$Cpreprocessor = '/home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-gcc -E -isystem /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include';
 
 1;
