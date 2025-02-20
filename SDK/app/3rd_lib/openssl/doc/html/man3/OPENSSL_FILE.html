@@ -27,14 +27,14 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/macros.h&gt;
+<pre><code> #include &lt;openssl/macros.h&gt;
 
-#define OPENSSL_FILE /* typically: __FILE__ */
-#define OPENSSL_LINE /* typically: __LINE__ */
-#define OPENSSL_FUNC /* typically: __func__ */
+ #define OPENSSL_FILE /* typically: __FILE__ */
+ #define OPENSSL_LINE /* typically: __LINE__ */
+ #define OPENSSL_FUNC /* typically: __func__ */
 
-#define OPENSSL_MSTR_HELPER(x) #x
-#define OPENSSL_MSTR(x) OPENSSL_MSTR_HELPER(x)</code></pre>
+ #define OPENSSL_MSTR_HELPER(x) #x
+ #define OPENSSL_MSTR(x) OPENSSL_MSTR_HELPER(x)</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

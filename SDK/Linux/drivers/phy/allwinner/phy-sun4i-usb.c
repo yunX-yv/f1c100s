@@ -695,7 +695,7 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
 	if (IS_ERR(data->base))
 		return PTR_ERR(data->base);
 
-	data->id_det_gpio = devm_gpiod_get_optional(dev, "usb0_id_det",
+	data->id_det_gpio = devm_gpiod_get_optional(dev, "usb0_id_det-gpio",
 						    GPIOD_IN);
 	if (IS_ERR(data->id_det_gpio)) {
 		dev_err(dev, "Couldn't request ID GPIO\n");

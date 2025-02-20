@@ -27,14 +27,14 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/ssl.h&gt;
+<pre><code> #include &lt;openssl/ssl.h&gt;
 
-#define SSL_INCOMING_STREAM_POLICY_AUTO
-#define SSL_INCOMING_STREAM_POLICY_ACCEPT
-#define SSL_INCOMING_STREAM_POLICY_REJECT
+ #define SSL_INCOMING_STREAM_POLICY_AUTO
+ #define SSL_INCOMING_STREAM_POLICY_ACCEPT
+ #define SSL_INCOMING_STREAM_POLICY_REJECT
 
-int SSL_set_incoming_stream_policy(SSL *conn, int policy,
-                                          uint64_t app_error_code);</code></pre>
+ int SSL_set_incoming_stream_policy(SSL *conn, int policy,
+                                           uint64_t app_error_code);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

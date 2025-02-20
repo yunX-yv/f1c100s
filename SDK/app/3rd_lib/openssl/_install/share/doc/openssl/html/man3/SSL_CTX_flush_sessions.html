@@ -27,13 +27,13 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/ssl.h&gt;
+<pre><code> #include &lt;openssl/ssl.h&gt;
 
-void SSL_CTX_flush_sessions_ex(SSL_CTX *ctx, time_t tm);</code></pre>
+ void SSL_CTX_flush_sessions_ex(SSL_CTX *ctx, time_t tm);</code></pre>
 
 <p>The following functions have been deprecated since OpenSSL 3.4, and can be hidden entirely by defining <b>OPENSSL_API_COMPAT</b> with a suitable version value, see <a href="../man7/openssl_user_macros.html">openssl_user_macros(7)</a>:</p>
 
-<pre><code>void SSL_CTX_flush_sessions(SSL_CTX *ctx, long tm);</code></pre>
+<pre><code> void SSL_CTX_flush_sessions(SSL_CTX *ctx, long tm);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

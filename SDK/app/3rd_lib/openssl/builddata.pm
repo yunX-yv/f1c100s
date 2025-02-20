@@ -40,7 +40,7 @@ our $VERSION                    = '3.5.0-dev';
 our @LDLIBS                     =
     # Unix and Windows use space separation, VMS uses comma separation
     $^O eq 'VMS'
-    ? split(/ *, */, '-ldl -pthread ')
-    : split(/ +/, '-ldl -pthread ');
+    ? split(/ *, */, '-ldl -pthread -latomic ')
+    : split(/ +/, '-ldl -pthread -latomic ');
 
 1;

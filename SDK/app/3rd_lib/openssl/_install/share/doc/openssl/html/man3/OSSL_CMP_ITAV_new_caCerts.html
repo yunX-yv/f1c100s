@@ -28,41 +28,41 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/cmp.h&gt;
+<pre><code> #include &lt;openssl/cmp.h&gt;
 
-OSSL_CMP_ITAV *OSSL_CMP_ITAV_new_caCerts(const STACK_OF(X509) *caCerts);
-int OSSL_CMP_ITAV_get0_caCerts(const OSSL_CMP_ITAV *itav, STACK_OF(X509) **out);
+ OSSL_CMP_ITAV *OSSL_CMP_ITAV_new_caCerts(const STACK_OF(X509) *caCerts);
+ int OSSL_CMP_ITAV_get0_caCerts(const OSSL_CMP_ITAV *itav, STACK_OF(X509) **out);
 
-OSSL_CMP_ITAV *OSSL_CMP_ITAV_new_rootCaCert(const X509 *rootCaCert);
-int OSSL_CMP_ITAV_get0_rootCaCert(const OSSL_CMP_ITAV *itav, X509 **out);
-OSSL_CMP_ITAV *OSSL_CMP_ITAV_new_rootCaKeyUpdate(const X509 *newWithNew,
-                                                 const X509 *newWithOld,
-                                                 const X509 *oldWithNew);
-int OSSL_CMP_ITAV_get0_rootCaKeyUpdate(const OSSL_CMP_ITAV *itav,
-                                       X509 **newWithNew,
-                                       X509 **newWithOld,
-                                       X509 **oldWithNew);
+ OSSL_CMP_ITAV *OSSL_CMP_ITAV_new_rootCaCert(const X509 *rootCaCert);
+ int OSSL_CMP_ITAV_get0_rootCaCert(const OSSL_CMP_ITAV *itav, X509 **out);
+ OSSL_CMP_ITAV *OSSL_CMP_ITAV_new_rootCaKeyUpdate(const X509 *newWithNew,
+                                                  const X509 *newWithOld,
+                                                  const X509 *oldWithNew);
+ int OSSL_CMP_ITAV_get0_rootCaKeyUpdate(const OSSL_CMP_ITAV *itav,
+                                        X509 **newWithNew,
+                                        X509 **newWithOld,
+                                        X509 **oldWithNew);
 
-OSSL_CMP_CRLSTATUS *OSSL_CMP_CRLSTATUS_new1(const DIST_POINT_NAME *dpn,
-                                            const GENERAL_NAMES *issuer,
-                                            const ASN1_TIME *thisUpdate);
-OSSL_CMP_CRLSTATUS *OSSL_CMP_CRLSTATUS_create(const X509_CRL *crl,
-                                              const X509 *cert, int only_DN);
-int OSSL_CMP_CRLSTATUS_get0(const OSSL_CMP_CRLSTATUS *crlstatus,
-                            DIST_POINT_NAME **dpn, GENERAL_NAMES **issuer,
-                            ASN1_TIME **thisUpdate);
-OSSL_CMP_ITAV
-*OSSL_CMP_ITAV_new0_crlStatusList(STACK_OF(OSSL_CMP_CRLSTATUS) *crlStatusList);
-int OSSL_CMP_ITAV_get0_crlStatusList(const OSSL_CMP_ITAV *itav,
-                                     STACK_OF(OSSL_CMP_CRLSTATUS) **out);
-OSSL_CMP_ITAV *OSSL_CMP_ITAV_new_crls(const X509_CRL *crl);
-int OSSL_CMP_ITAV_get0_crls(const OSSL_CMP_ITAV *itav, STACK_OF(X509_CRL) **out);
-OSSL_CMP_ITAV
-*OSSL_CMP_ITAV_new0_certReqTemplate(OSSL_CRMF_CERTTEMPLATE *certTemplate,
-                                    OSSL_CMP_ATAVS *keySpec);
-int OSSL_CMP_ITAV_get1_certReqTemplate(const OSSL_CMP_ITAV *itav,
-                                       OSSL_CRMF_CERTTEMPLATE **certTemplate,
-                                       OSSL_CMP_ATAVS **keySpec);</code></pre>
+ OSSL_CMP_CRLSTATUS *OSSL_CMP_CRLSTATUS_new1(const DIST_POINT_NAME *dpn,
+                                             const GENERAL_NAMES *issuer,
+                                             const ASN1_TIME *thisUpdate);
+ OSSL_CMP_CRLSTATUS *OSSL_CMP_CRLSTATUS_create(const X509_CRL *crl,
+                                               const X509 *cert, int only_DN);
+ int OSSL_CMP_CRLSTATUS_get0(const OSSL_CMP_CRLSTATUS *crlstatus,
+                             DIST_POINT_NAME **dpn, GENERAL_NAMES **issuer,
+                             ASN1_TIME **thisUpdate);
+ OSSL_CMP_ITAV
+ *OSSL_CMP_ITAV_new0_crlStatusList(STACK_OF(OSSL_CMP_CRLSTATUS) *crlStatusList);
+ int OSSL_CMP_ITAV_get0_crlStatusList(const OSSL_CMP_ITAV *itav,
+                                      STACK_OF(OSSL_CMP_CRLSTATUS) **out);
+ OSSL_CMP_ITAV *OSSL_CMP_ITAV_new_crls(const X509_CRL *crl);
+ int OSSL_CMP_ITAV_get0_crls(const OSSL_CMP_ITAV *itav, STACK_OF(X509_CRL) **out);
+ OSSL_CMP_ITAV
+ *OSSL_CMP_ITAV_new0_certReqTemplate(OSSL_CRMF_CERTTEMPLATE *certTemplate,
+                                     OSSL_CMP_ATAVS *keySpec);
+ int OSSL_CMP_ITAV_get1_certReqTemplate(const OSSL_CMP_ITAV *itav,
+                                        OSSL_CRMF_CERTTEMPLATE **certTemplate,
+                                        OSSL_CMP_ATAVS **keySpec);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

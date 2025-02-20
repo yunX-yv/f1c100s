@@ -29,12 +29,12 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/asn1.h&gt;
+<pre><code> #include &lt;openssl/asn1.h&gt;
 
-ASN1_VALUE *SMIME_read_ASN1_ex(BIO *in, int flags, BIO **bcont,
-                               const ASN1_ITEM *it, ASN1_VALUE **x,
-                               OSSL_LIB_CTX *libctx, const char *propq);
-ASN1_VALUE *SMIME_read_ASN1(BIO *in, BIO **bcont, const ASN1_ITEM *it);</code></pre>
+ ASN1_VALUE *SMIME_read_ASN1_ex(BIO *in, int flags, BIO **bcont,
+                                const ASN1_ITEM *it, ASN1_VALUE **x,
+                                OSSL_LIB_CTX *libctx, const char *propq);
+ ASN1_VALUE *SMIME_read_ASN1(BIO *in, BIO **bcont, const ASN1_ITEM *it);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

@@ -276,18 +276,18 @@
 
 <p>Use one or more times to specify the RRDATA fields of the DANE TLSA RRset associated with the target service. The <i>rrdata</i> value is specified in &quot;presentation form&quot;, that is four whitespace separated fields that specify the usage, selector, matching type and associated data, with the last of these encoded in hexadecimal. Optional whitespace is ignored in the associated data field. For example:</p>
 
-<pre><code>$ openssl s_client -brief -starttls smtp \
-  -connect smtp.example.com:25 \
-  -dane_tlsa_domain smtp.example.com \
-  -dane_tlsa_rrdata &quot;2 1 1
-    B111DD8A1C2091A89BD4FD60C57F0716CCE50FEEFF8137CDBEE0326E 02CF362B&quot; \
-  -dane_tlsa_rrdata &quot;2 1 1
-    60B87575447DCBA2A36B7D11AC09FB24A9DB406FEE12D2CC90180517 616E8A18&quot;
-...
-Verification: OK
-Verified peername: smtp.example.com
-DANE TLSA 2 1 1 ...ee12d2cc90180517616e8a18 matched TA certificate at depth 1
-...</code></pre>
+<pre><code>  $ openssl s_client -brief -starttls smtp \
+    -connect smtp.example.com:25 \
+    -dane_tlsa_domain smtp.example.com \
+    -dane_tlsa_rrdata &quot;2 1 1
+      B111DD8A1C2091A89BD4FD60C57F0716CCE50FEEFF8137CDBEE0326E 02CF362B&quot; \
+    -dane_tlsa_rrdata &quot;2 1 1
+      60B87575447DCBA2A36B7D11AC09FB24A9DB406FEE12D2CC90180517 616E8A18&quot;
+  ...
+  Verification: OK
+  Verified peername: smtp.example.com
+  DANE TLSA 2 1 1 ...ee12d2cc90180517616e8a18 matched TA certificate at depth 1
+  ...</code></pre>
 
 </dd>
 <dt id="dane_ee_no_namechecks"><b>-dane_ee_no_namechecks</b></dt>
@@ -575,7 +575,7 @@ DANE TLSA 2 1 1 ...ee12d2cc90180517616e8a18 matched TA certificate at depth 1
 
 <p>The list of all supported groups includes named EC parameters as well as X25519 and X448 or FFDHE groups, and may also include groups implemented in 3rd-party providers. For a list of named EC parameters, use:</p>
 
-<pre><code>$ openssl ecparam -list_curves</code></pre>
+<pre><code>    $ openssl ecparam -list_curves</code></pre>
 
 </dd>
 <dt id="cipher-cipherlist"><b>-cipher</b> <i>cipherlist</i></dt>
@@ -926,7 +926,7 @@ DANE TLSA 2 1 1 ...ee12d2cc90180517616e8a18 matched TA certificate at depth 1
 
 <p>This command can be used to debug SSL servers. To connect to an SSL HTTP server the command:</p>
 
-<pre><code>openssl s_client -connect servername:443</code></pre>
+<pre><code> openssl s_client -connect servername:443</code></pre>
 
 <p>would typically be used (https uses port 443). If the connection succeeds then an HTTP command can be given such as &quot;GET /&quot; to retrieve a web page.</p>
 
@@ -948,32 +948,32 @@ DANE TLSA 2 1 1 ...ee12d2cc90180517616e8a18 matched TA certificate at depth 1
 
 <p>For example:</p>
 
-<pre><code>openssl s_client -connect &lt;server address&gt;:443 -tls1_3
-                 -sess_out /path/to/tls_session_params_file
-                 -ign_eof &lt;/dev/null</code></pre>
+<pre><code> openssl s_client -connect &lt;server address&gt;:443 -tls1_3
+                  -sess_out /path/to/tls_session_params_file
+                  -ign_eof &lt;/dev/null</code></pre>
 
 <p>However, relying solely on <b>-ign_eof</b> can lead to issues if the server keeps the connection open, expecting the client to close first. In such cases, the client may hang indefinitely. This behavior is not uncommon, particularly with protocols where the server waits for a graceful disconnect from the client.</p>
 
 <p>For example, when connecting to an SMTP server, the session may pause if the server expects a QUIT command before closing:</p>
 
-<pre><code>$ openssl s_client -brief -ign_eof -starttls smtp
-                   -connect &lt;server address&gt;:25 &lt;/dev/null
-CONNECTION ESTABLISHED
-Protocol version: TLSv1.3
-Ciphersuite: TLS_AES_256_GCM_SHA384
-...
-250 CHUNKING
-[long pause]</code></pre>
+<pre><code> $ openssl s_client -brief -ign_eof -starttls smtp
+                    -connect &lt;server address&gt;:25 &lt;/dev/null
+ CONNECTION ESTABLISHED
+ Protocol version: TLSv1.3
+ Ciphersuite: TLS_AES_256_GCM_SHA384
+ ...
+ 250 CHUNKING
+ [long pause]</code></pre>
 
 <p>To avoid such hangs, it&#39;s better to use an application-level command to initiate a clean disconnect. For SMTP, you can send a QUIT command:</p>
 
-<pre><code>printf &#39;QUIT\r\n&#39; | openssl s_client -connect &lt;server address&gt;:25
-                                     -starttls smtp -brief -ign_eof</code></pre>
+<pre><code> printf &#39;QUIT\r\n&#39; | openssl s_client -connect &lt;server address&gt;:25
+                                      -starttls smtp -brief -ign_eof</code></pre>
 
 <p>Similarly, for HTTP/1.1 connections, including a `Connection: close` header ensures the server closes the connection after responding:</p>
 
-<pre><code>printf &#39;GET / HTTP/1.1\r\nHost: &lt;server address&gt;\r\nConnection: close\r\n\r\n&#39;
-    | openssl s_client -connect &lt;server address&gt;:443 -brief</code></pre>
+<pre><code> printf &#39;GET / HTTP/1.1\r\nHost: &lt;server address&gt;\r\nConnection: close\r\n\r\n&#39;
+     | openssl s_client -connect &lt;server address&gt;:443 -brief</code></pre>
 
 <p>These approaches help manage the connection closure gracefully and prevent hangs caused by the server waiting for the client to initiate the disconnect.</p>
 

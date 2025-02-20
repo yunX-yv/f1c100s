@@ -42,22 +42,22 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/evp.h&gt;
+<pre><code> #include &lt;openssl/evp.h&gt;
 
-int EVP_PKEY_verify_init(EVP_PKEY_CTX *ctx);
-int EVP_PKEY_verify_init_ex(EVP_PKEY_CTX *ctx, const OSSL_PARAM params[]);
-int EVP_PKEY_verify_init_ex2(EVP_PKEY_CTX *ctx, EVP_SIGNATURE *algo,
-                             const OSSL_PARAM params[]);
-int EVP_PKEY_verify_message_init(EVP_PKEY_CTX *ctx, EVP_SIGNATURE *algo,
-                                 const OSSL_PARAM params[]);
-int EVP_PKEY_CTX_set_signature(EVP_PKEY_CTX *pctx,
-                               const unsigned char *sig, size_t siglen);
-int EVP_PKEY_verify_message_update(EVP_PKEY_CTX *ctx,
-                                   unsigned char *in, size_t inlen);
-int EVP_PKEY_verify_message_final(EVP_PKEY_CTX *ctx);
-int EVP_PKEY_verify(EVP_PKEY_CTX *ctx,
-                    const unsigned char *sig, size_t siglen,
-                    const unsigned char *tbs, size_t tbslen);</code></pre>
+ int EVP_PKEY_verify_init(EVP_PKEY_CTX *ctx);
+ int EVP_PKEY_verify_init_ex(EVP_PKEY_CTX *ctx, const OSSL_PARAM params[]);
+ int EVP_PKEY_verify_init_ex2(EVP_PKEY_CTX *ctx, EVP_SIGNATURE *algo,
+                              const OSSL_PARAM params[]);
+ int EVP_PKEY_verify_message_init(EVP_PKEY_CTX *ctx, EVP_SIGNATURE *algo,
+                                  const OSSL_PARAM params[]);
+ int EVP_PKEY_CTX_set_signature(EVP_PKEY_CTX *pctx,
+                                const unsigned char *sig, size_t siglen);
+ int EVP_PKEY_verify_message_update(EVP_PKEY_CTX *ctx,
+                                    unsigned char *in, size_t inlen);
+ int EVP_PKEY_verify_message_final(EVP_PKEY_CTX *ctx);
+ int EVP_PKEY_verify(EVP_PKEY_CTX *ctx,
+                     const unsigned char *sig, size_t siglen,
+                     const unsigned char *tbs, size_t tbslen);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -111,159 +111,159 @@ int EVP_PKEY_verify(EVP_PKEY_CTX *ctx,
 
 <p>Verify signature using PKCS#1 padding and a SHA256 digest as input:</p>
 
-<pre><code>#include &lt;openssl/evp.h&gt;
-#include &lt;openssl/rsa.h&gt;
+<pre><code> #include &lt;openssl/evp.h&gt;
+ #include &lt;openssl/rsa.h&gt;
 
-EVP_PKEY_CTX *ctx;
-unsigned char *md, *sig;
-size_t mdlen, siglen;
-EVP_PKEY *verify_key;
+ EVP_PKEY_CTX *ctx;
+ unsigned char *md, *sig;
+ size_t mdlen, siglen;
+ EVP_PKEY *verify_key;
 
-/*
- * NB: assumes verify_key, sig, siglen md and mdlen are already set up
- * and that verify_key is an RSA public key
- */
-ctx = EVP_PKEY_CTX_new(verify_key, NULL /* no engine */);
-if (ctx == NULL)
-    /* Error occurred */
-if (EVP_PKEY_verify_init(ctx) &lt;= 0)
-    /* Error */
-if (EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_PKCS1_PADDING) &lt;= 0)
-    /* Error */
-if (EVP_PKEY_CTX_set_signature_md(ctx, EVP_sha256()) &lt;= 0)
-    /* Error */
+ /*
+  * NB: assumes verify_key, sig, siglen md and mdlen are already set up
+  * and that verify_key is an RSA public key
+  */
+ ctx = EVP_PKEY_CTX_new(verify_key, NULL /* no engine */);
+ if (ctx == NULL)
+     /* Error occurred */
+ if (EVP_PKEY_verify_init(ctx) &lt;= 0)
+     /* Error */
+ if (EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_PKCS1_PADDING) &lt;= 0)
+     /* Error */
+ if (EVP_PKEY_CTX_set_signature_md(ctx, EVP_sha256()) &lt;= 0)
+     /* Error */
 
-/* Perform operation */
-ret = EVP_PKEY_verify(ctx, sig, siglen, md, mdlen);
+ /* Perform operation */
+ ret = EVP_PKEY_verify(ctx, sig, siglen, md, mdlen);
 
-/*
- * ret == 1 indicates success, 0 verify failure and &lt; 0 for some
- * other error.
- */</code></pre>
+ /*
+  * ret == 1 indicates success, 0 verify failure and &lt; 0 for some
+  * other error.
+  */</code></pre>
 
 <h2 id="RSA-SHA256-with-a-pre-computed-digest">RSA-SHA256 with a pre-computed digest</h2>
 
 <p>Verify a digest with RSA-SHA256 using one-shot functions. To be noted is that RSA-SHA256 is assumed to be an implementation of <code>sha256WithRSAEncryption</code>, for which the padding is pre-determined to be <b>RSA_PKCS1_PADDING</b>, and the input digest is assumed to have been computed using SHA256.</p>
 
-<pre><code>#include &lt;openssl/evp.h&gt;
-#include &lt;openssl/rsa.h&gt;
+<pre><code> #include &lt;openssl/evp.h&gt;
+ #include &lt;openssl/rsa.h&gt;
 
-EVP_PKEY_CTX *ctx;
-/* md is a SHA-256 digest in this example. */
-unsigned char *md, *sig;
-size_t mdlen = 32, siglen;
-EVP_PKEY *signing_key;
+ EVP_PKEY_CTX *ctx;
+ /* md is a SHA-256 digest in this example. */
+ unsigned char *md, *sig;
+ size_t mdlen = 32, siglen;
+ EVP_PKEY *signing_key;
 
-/*
- * NB: assumes verify_key, sig, siglen, md and mdlen are already set up
- * and that verify_key is an RSA public key
- */
-ctx = EVP_PKEY_CTX_new(signing_key, NULL /* no engine */);
-alg = EVP_SIGNATURE_fetch(NULL, &quot;RSA-SHA256&quot;, NULL);
+ /*
+  * NB: assumes verify_key, sig, siglen, md and mdlen are already set up
+  * and that verify_key is an RSA public key
+  */
+ ctx = EVP_PKEY_CTX_new(signing_key, NULL /* no engine */);
+ alg = EVP_SIGNATURE_fetch(NULL, &quot;RSA-SHA256&quot;, NULL);
 
-if (ctx == NULL)
-    /* Error occurred */
-if (EVP_PKEY_verify_init_ex2(ctx, alg, NULL) &lt;= 0)
-    /* Error */
+ if (ctx == NULL)
+     /* Error occurred */
+ if (EVP_PKEY_verify_init_ex2(ctx, alg, NULL) &lt;= 0)
+     /* Error */
 
-/* Determine buffer length */
-if (EVP_PKEY_verify(ctx, sig, siglen, md, mdlen) &lt;= 0)
-    /* Error or signature doesn&#39;t verify */
+ /* Determine buffer length */
+ if (EVP_PKEY_verify(ctx, sig, siglen, md, mdlen) &lt;= 0)
+     /* Error or signature doesn&#39;t verify */
 
-/* Perform operation */
-ret = EVP_PKEY_verify(ctx, sig, siglen, md, mdlen);
+ /* Perform operation */
+ ret = EVP_PKEY_verify(ctx, sig, siglen, md, mdlen);
 
-/*
- * ret == 1 indicates success, 0 verify failure and &lt; 0 for some
- * other error.
- */</code></pre>
+ /*
+  * ret == 1 indicates success, 0 verify failure and &lt; 0 for some
+  * other error.
+  */</code></pre>
 
 <h2 id="RSA-SHA256-one-shot">RSA-SHA256, one-shot</h2>
 
 <p>Verify a document with RSA-SHA256 using one-shot functions. To be noted is that RSA-SHA256 is assumed to be an implementation of <code>sha256WithRSAEncryption</code>, for which the padding is pre-determined to be <b>RSA_PKCS1_PADDING</b>.</p>
 
-<pre><code>#include &lt;openssl/evp.h&gt;
-#include &lt;openssl/rsa.h&gt;
+<pre><code> #include &lt;openssl/evp.h&gt;
+ #include &lt;openssl/rsa.h&gt;
 
-EVP_PKEY_CTX *ctx;
-/* in the input in this example. */
-unsigned char *in, *sig;
-/* inlen is the length of the input in this example. */
-size_t inlen, siglen;
-EVP_PKEY *signing_key;
-EVP_SIGNATURE *alg;
+ EVP_PKEY_CTX *ctx;
+ /* in the input in this example. */
+ unsigned char *in, *sig;
+ /* inlen is the length of the input in this example. */
+ size_t inlen, siglen;
+ EVP_PKEY *signing_key;
+ EVP_SIGNATURE *alg;
 
-/*
- * NB: assumes signing_key, in and inlen are set up before
- * the next step. signing_key must be an RSA private key,
- * in must point to data to be digested and signed, and
- * inlen must be the size of the data in bytes.
- */
-ctx = EVP_PKEY_CTX_new(signing_key, NULL /* no engine */);
-alg = EVP_SIGNATURE_fetch(NULL, &quot;RSA-SHA256&quot;, NULL);
+ /*
+  * NB: assumes signing_key, in and inlen are set up before
+  * the next step. signing_key must be an RSA private key,
+  * in must point to data to be digested and signed, and
+  * inlen must be the size of the data in bytes.
+  */
+ ctx = EVP_PKEY_CTX_new(signing_key, NULL /* no engine */);
+ alg = EVP_SIGNATURE_fetch(NULL, &quot;RSA-SHA256&quot;, NULL);
 
-if (ctx == NULL || alg == NULL)
-    /* Error occurred */
-if (EVP_PKEY_verify_message_init(ctx, alg, NULL) &lt;= 0)
-    /* Error */
+ if (ctx == NULL || alg == NULL)
+     /* Error occurred */
+ if (EVP_PKEY_verify_message_init(ctx, alg, NULL) &lt;= 0)
+     /* Error */
 
-/* Perform operation */
-ret = EVP_PKEY_verify(ctx, sig, siglen, in, inlen);
+ /* Perform operation */
+ ret = EVP_PKEY_verify(ctx, sig, siglen, in, inlen);
 
-/*
- * ret == 1 indicates success, 0 verify failure and &lt; 0 for some
- * other error.
- */</code></pre>
+ /*
+  * ret == 1 indicates success, 0 verify failure and &lt; 0 for some
+  * other error.
+  */</code></pre>
 
 <h2 id="RSA-SHA256-using-update-and-final">RSA-SHA256, using update and final</h2>
 
 <p>This is the same as the previous example, but allowing stream-like functionality.</p>
 
-<pre><code>#include &lt;openssl/evp.h&gt;
-#include &lt;openssl/rsa.h&gt;
+<pre><code> #include &lt;openssl/evp.h&gt;
+ #include &lt;openssl/rsa.h&gt;
 
-EVP_PKEY_CTX *ctx;
-/* in is the input in this example. */
-unsigned char *in, *sig;
-/* inlen is the length of the input in this example. */
-size_t inlen, siglen;
-EVP_PKEY *signing_key;
-EVP_SIGNATURE *alg;
+ EVP_PKEY_CTX *ctx;
+ /* in is the input in this example. */
+ unsigned char *in, *sig;
+ /* inlen is the length of the input in this example. */
+ size_t inlen, siglen;
+ EVP_PKEY *signing_key;
+ EVP_SIGNATURE *alg;
 
-/*
- * NB: assumes signing_key, in and inlen are set up before
- * the next step. signing_key must be an RSA private key,
- * in must point to data to be digested and signed, and
- * inlen must be the size of the data in bytes.
- */
-ctx = EVP_PKEY_CTX_new(signing_key, NULL /* no engine */);
-alg = EVP_SIGNATURE_fetch(NULL, &quot;RSA-SHA256&quot;, NULL);
+ /*
+  * NB: assumes signing_key, in and inlen are set up before
+  * the next step. signing_key must be an RSA private key,
+  * in must point to data to be digested and signed, and
+  * inlen must be the size of the data in bytes.
+  */
+ ctx = EVP_PKEY_CTX_new(signing_key, NULL /* no engine */);
+ alg = EVP_SIGNATURE_fetch(NULL, &quot;RSA-SHA256&quot;, NULL);
 
-if (ctx == NULL || alg == NULL)
-    /* Error occurred */
-if (EVP_PKEY_verify_message_init(ctx, alg, NULL) &lt;= 0)
-    /* Error */
+ if (ctx == NULL || alg == NULL)
+     /* Error occurred */
+ if (EVP_PKEY_verify_message_init(ctx, alg, NULL) &lt;= 0)
+     /* Error */
 
-/* We have the signature, specify it early */
-EVP_PKEY_CTX_set_signature(ctx, sig, siglen);
+ /* We have the signature, specify it early */
+ EVP_PKEY_CTX_set_signature(ctx, sig, siglen);
 
-/* Perform operation */
-while (inlen &gt; 0) {
-    if (EVP_PKEY_verify_message_update(ctx, in, inlen)) &lt;= 0)
-        /* Error */
-    if (inlen &gt; 256) {
-        inlen -= 256;
-        in += 256;
-    } else {
-        inlen = 0;
-    }
-}
-ret = EVP_PKEY_verify_message_final(ctx);
+ /* Perform operation */
+ while (inlen &gt; 0) {
+     if (EVP_PKEY_verify_message_update(ctx, in, inlen)) &lt;= 0)
+         /* Error */
+     if (inlen &gt; 256) {
+         inlen -= 256;
+         in += 256;
+     } else {
+         inlen = 0;
+     }
+ }
+ ret = EVP_PKEY_verify_message_final(ctx);
 
-/*
- * ret == 1 indicates success, 0 verify failure and &lt; 0 for some
- * other error.
- */</code></pre>
+ /*
+  * ret == 1 indicates success, 0 verify failure and &lt; 0 for some
+  * other error.
+  */</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 

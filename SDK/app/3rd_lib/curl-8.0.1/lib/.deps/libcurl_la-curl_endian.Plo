@@ -1,98 +1,98 @@
 libcurl_la-curl_endian.lo: curl_endian.c \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdc-predef.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdc-predef.h \
  curl_setup.h curl_config.h ../include/curl/system.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/types.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/features.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/cdefs.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/wordsize.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/long-double.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/gnu/stubs.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/gnu/stubs-soft.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/timesize.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/typesizes.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/time64.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/clock_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/clockid_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/time_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/timer_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stddef.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdint-intn.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/endian.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/endian.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/endianness.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/byteswap.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/uintn-identity.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/select.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/select.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/sigset_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__sigset_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_timeval.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_timespec.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/pthreadtypes.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/thread-shared-types.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/pthreadtypes-arch.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/struct_mutex.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/struct_rwlock.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/socket.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_iovec.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/socket.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/socket_type.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/sockaddr.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/socket.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/socket.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/sockios.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/sockios.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_osockaddr.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdio.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/libc-header-start.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdarg.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__fpos_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__mbstate_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__fpos64_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__FILE.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/FILE.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_FILE.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdio_lim.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/floatn.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/floatn-common.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdio.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/assert.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/types.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/features.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/cdefs.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/wordsize.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/long-double.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/gnu/stubs.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/gnu/stubs-soft.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/timesize.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/typesizes.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/time64.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/clock_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/clockid_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/time_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/timer_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stddef.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdint-intn.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/endian.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/endian.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/endianness.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/byteswap.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/uintn-identity.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/select.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/select.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/sigset_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__sigset_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_timeval.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_timespec.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/pthreadtypes.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/thread-shared-types.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/pthreadtypes-arch.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/struct_mutex.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/struct_rwlock.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/socket.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_iovec.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/socket.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/socket_type.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/sockaddr.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/socket.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/socket.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/sockios.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/sockios.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_osockaddr.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdio.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/libc-header-start.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdarg.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__fpos_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__mbstate_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__fpos64_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__FILE.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/FILE.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_FILE.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdio_lim.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/floatn.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/floatn-common.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdio.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/assert.h \
  curl_setup_once.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdlib.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/waitflags.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/waitstatus.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/alloca.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdlib-bsearch.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdlib-float.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/string.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/locale_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__locale_t.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/strings.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/time.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/time.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_tm.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_itimerspec.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/errno.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/errno.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/linux/errno.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/errno.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/errno.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/errno-base.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/stat.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stat.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/time.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdbool.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/unistd.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/posix_opt.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/environments.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/confname.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/getopt_posix.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/getopt_core.h \
- /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/unistd_ext.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdlib.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/waitflags.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/waitstatus.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/alloca.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdlib-bsearch.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdlib-float.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/string.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/locale_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__locale_t.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/strings.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/time.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/time.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_tm.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_itimerspec.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/errno.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/errno.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/linux/errno.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/errno.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/errno.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/errno-base.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/stat.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stat.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/time.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdbool.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/unistd.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/posix_opt.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/environments.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/confname.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/getopt_posix.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/getopt_core.h \
+ /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/unistd_ext.h \
  functypes.h curl_ctype.h curl_endian.h
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdc-predef.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdc-predef.h:
 
 curl_setup.h:
 
@@ -100,183 +100,183 @@ curl_config.h:
 
 ../include/curl/system.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/types.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/types.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/features.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/features.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/cdefs.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/cdefs.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/wordsize.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/wordsize.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/long-double.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/long-double.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/gnu/stubs.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/gnu/stubs.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/gnu/stubs-soft.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/gnu/stubs-soft.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/timesize.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/timesize.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/typesizes.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/typesizes.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/time64.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/time64.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/clock_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/clock_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/clockid_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/clockid_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/time_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/time_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/timer_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/timer_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stddef.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stddef.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdint-intn.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdint-intn.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/endian.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/endian.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/endian.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/endian.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/endianness.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/endianness.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/byteswap.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/byteswap.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/uintn-identity.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/uintn-identity.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/select.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/select.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/select.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/select.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/sigset_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/sigset_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__sigset_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__sigset_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_timeval.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_timeval.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_timespec.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_timespec.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/pthreadtypes.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/pthreadtypes.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/thread-shared-types.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/thread-shared-types.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/pthreadtypes-arch.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/pthreadtypes-arch.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/struct_mutex.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/struct_mutex.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/struct_rwlock.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/struct_rwlock.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/socket.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/socket.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_iovec.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_iovec.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/socket.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/socket.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/socket_type.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/socket_type.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/sockaddr.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/sockaddr.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/socket.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/socket.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/socket.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/socket.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/sockios.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/sockios.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/sockios.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/sockios.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_osockaddr.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_osockaddr.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdio.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdio.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/libc-header-start.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/libc-header-start.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdarg.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdarg.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__fpos_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__fpos_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__mbstate_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__mbstate_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__fpos64_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__fpos64_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__FILE.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__FILE.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/FILE.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/FILE.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_FILE.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_FILE.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdio_lim.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdio_lim.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/floatn.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/floatn.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/floatn-common.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/floatn-common.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdio.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdio.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/assert.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/assert.h:
 
 curl_setup_once.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdlib.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/stdlib.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/waitflags.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/waitflags.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/waitstatus.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/waitstatus.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/alloca.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/alloca.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdlib-bsearch.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdlib-bsearch.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdlib-float.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stdlib-float.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/string.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/string.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/locale_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/locale_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__locale_t.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/__locale_t.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/strings.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/strings.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/time.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/time.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/time.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/time.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_tm.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_tm.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_itimerspec.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/types/struct_itimerspec.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/errno.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/errno.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/errno.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/errno.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/linux/errno.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/linux/errno.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/errno.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm/errno.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/errno.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/errno.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/errno-base.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/asm-generic/errno-base.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/stat.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/stat.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stat.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/stat.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/time.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/sys/time.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdbool.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/lib/gcc/arm-buildroot-linux-gnueabi/9.4.0/include/stdbool.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/unistd.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/unistd.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/posix_opt.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/posix_opt.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/environments.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/environments.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/confname.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/confname.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/getopt_posix.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/getopt_posix.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/getopt_core.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/getopt_core.h:
 
-/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/unistd_ext.h:
+/home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/bits/unistd_ext.h:
 
 functypes.h:
 

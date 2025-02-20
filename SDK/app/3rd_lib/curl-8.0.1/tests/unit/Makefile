@@ -502,15 +502,15 @@ AS = as
 AUTOCONF = ${SHELL} '/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' autoconf
 AUTOHEADER = ${SHELL} '/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' autoheader
 AUTOMAKE = ${SHELL} '/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/missing' automake-1.16
-AWK = mawk
+AWK = gawk
 BLANK_AT_MAKETIME = 
 CADDY = 
-CC = /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc
+CC = /home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -Werror-implicit-function-declaration -O2 -Wno-system-headers -pthread 
 CFLAG_CURL_SYMBOL_HIDING = -fvisibility=hidden
-CONFIGURE_OPTIONS = " '--host=arm-buildroot-linux-gnueabi' '--prefix=/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install' 'CC=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc' 'CXX=/home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-g++' '--disable-shared' '--enable-static' '--without-libidn' '--without-librtmp' '--without-gnutls' '--without-nss' '--without-libssh2' '--without-zlib' '--without-winidn' '--disable-rtsp' '--disable-ldap' '--disable-ldaps' '--disable-ipv6' '--with-ssl' 'host_alias=arm-buildroot-linux-gnueabi' 'LDFLAGS=-L/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib' 'LIBS=-ldl' 'CPPFLAGS=-I/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include'"
-CPP = /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/bin/arm-buildroot-linux-gnueabi-gcc -E
+CONFIGURE_OPTIONS = " '--host=arm-buildroot-linux-gnueabi' '--prefix=/home/xiao/project/f1c100s/SDK/app/3rd_lib/curl-8.0.1/_install' 'CC=/home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-gcc' 'CXX=/home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-g++' '--disable-shared' '--enable-static' '--without-libidn' '--without-librtmp' '--without-gnutls' '--without-nss' '--without-libssh2' '--without-zlib' '--without-winidn' '--disable-rtsp' '--disable-ldap' '--disable-ldaps' '--disable-ipv6' '--with-ssl' 'host_alias=arm-buildroot-linux-gnueabi' 'LDFLAGS=-L/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib' 'LIBS=-ldl' 'CPPFLAGS=-I/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include'"
+CPP = /home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-gcc -E
 CPPFLAGS = -isystem /home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/include
 CPPFLAG_CURL_STATICLIB = -DCURL_STATICLIB
 CSCOPE = cscope
@@ -576,10 +576,10 @@ INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 IPV6_ENABLED = 
 LCOV = 
-LD = /home/xiao/f1c100s/tools/arm-buildroot-linux-gnueabi_sdk-buildroot/arm-buildroot-linux-gnueabi/bin/ld
+LD = /home/xiao/project/buildroot-2021.02.4/output/host/arm-buildroot-linux-gnueabi/bin/ld
 LDFLAGS = -L/home/xiao/project/f1c100s/SDK/app/3rd_lib/openssl/_install/lib
 LIBCURL_LIBS = -lssl -lcrypto -lssl -lcrypto -ldl -pthread
-LIBCURL_NO_SHARED = -lssl -lcrypto -lssl -lcrypto  -ldl -pthread
+LIBCURL_NO_SHARED = -lssl -lcrypto -lssl -lcrypto -ldl -pthread
 LIBOBJS = 
 
 # Prevent LIBS from being used for all link targets
@@ -624,7 +624,7 @@ SET_MAKE =
 SHELL = /bin/bash
 SSL_BACKENDS = OpenSSL v3+
 SSL_ENABLED = 1
-SSL_LIBS = -lssl -lcrypto 
+SSL_LIBS = -lssl -lcrypto
 STRIP = strip
 SUPPORT_FEATURES = AsynchDNS HSTS HTTPS-proxy Largefile NTLM NTLM_WB SSL TLS-SRP UnixSockets alt-svc threadsafe
 SUPPORT_PROTOCOLS = DICT FILE FTP FTPS GOPHER GOPHERS HTTP HTTPS IMAP IMAPS MQTT POP3 POP3S SMB SMBS SMTP SMTPS TELNET TFTP

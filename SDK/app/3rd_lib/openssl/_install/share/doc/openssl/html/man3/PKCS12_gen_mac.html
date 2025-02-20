@@ -29,26 +29,26 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/pkcs12.h&gt;
+<pre><code> #include &lt;openssl/pkcs12.h&gt;
 
-int PKCS12_gen_mac(PKCS12 *p12, const char *pass, int passlen,
-                   unsigned char *mac, unsigned int *maclen);
-int PKCS12_verify_mac(PKCS12 *p12, const char *pass, int passlen);
-int PKCS12_set_mac(PKCS12 *p12, const char *pass, int passlen,
-                   unsigned char *salt, int saltlen, int iter,
-                   const EVP_MD *md_type);
-int PKCS12_set_pbmac1_pbkdf2(PKCS12 *p12, const char *pass, int passlen,
-                                  unsigned char *salt, int saltlen, int iter,
-                                  const EVP_MD *md_type,
-                                  const char *prf_md_name);
-int PKCS12_setup_mac(PKCS12 *p12, int iter, unsigned char *salt,
-                     int saltlen, const EVP_MD *md_type);
+ int PKCS12_gen_mac(PKCS12 *p12, const char *pass, int passlen,
+                    unsigned char *mac, unsigned int *maclen);
+ int PKCS12_verify_mac(PKCS12 *p12, const char *pass, int passlen);
+ int PKCS12_set_mac(PKCS12 *p12, const char *pass, int passlen,
+                    unsigned char *salt, int saltlen, int iter,
+                    const EVP_MD *md_type);
+ int PKCS12_set_pbmac1_pbkdf2(PKCS12 *p12, const char *pass, int passlen,
+                                   unsigned char *salt, int saltlen, int iter,
+                                   const EVP_MD *md_type,
+                                   const char *prf_md_name);
+ int PKCS12_setup_mac(PKCS12 *p12, int iter, unsigned char *salt,
+                      int saltlen, const EVP_MD *md_type);
 
-void PKCS12_get0_mac(const ASN1_OCTET_STRING **pmac,
-                     const X509_ALGOR **pmacalg,
-                     const ASN1_OCTET_STRING **psalt,
-                     const ASN1_INTEGER **piter,
-                     const PKCS12 *p12);</code></pre>
+ void PKCS12_get0_mac(const ASN1_OCTET_STRING **pmac,
+                      const X509_ALGOR **pmacalg,
+                      const ASN1_OCTET_STRING **psalt,
+                      const ASN1_INTEGER **piter,
+                      const PKCS12 *p12);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

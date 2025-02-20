@@ -27,10 +27,10 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/x509_acert.h&gt;
+<pre><code> #include &lt;openssl/x509_acert.h&gt;
 
-int X509_ACERT_add_attr_nconf(CONF *conf, const char *section,
-                              X509_ACERT *acert);</code></pre>
+ int X509_ACERT_add_attr_nconf(CONF *conf, const char *section,
+                               X509_ACERT *acert);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -38,19 +38,19 @@ int X509_ACERT_add_attr_nconf(CONF *conf, const char *section,
 
 <p>The give <i>section</i> of the configuration should contain attribute descriptions of the form:</p>
 
-<pre><code>attribute_name = value</code></pre>
+<pre><code>  attribute_name = value</code></pre>
 
 <p>The format of <b>value</b> will vary depending on the <b>attribute_name</b>. <b>value</b> can either be a string value or an <b>ASN1_TYPE</b> object.</p>
 
 <p>To encode an <b>ASN1_TYPE</b> object, use the prefix &quot;ASN1:&quot; followed by the object description that uses the same syntax as <a href="../man3/ASN1_generate_nconf.html">ASN1_generate_nconf(3)</a>. For example:</p>
 
-<pre><code>id-aca-group = ASN1:SEQUENCE:ietfattr
+<pre><code> id-aca-group = ASN1:SEQUENCE:ietfattr
 
-[ietfattr]
-values = SEQUENCE:groups
+ [ietfattr]
+ values = SEQUENCE:groups
 
-[groups]
-1.string = UTF8:mygroup1</code></pre>
+ [groups]
+ 1.string = UTF8:mygroup1</code></pre>
 
 <h1 id="RETURN-VALUES">RETURN VALUES</h1>
 

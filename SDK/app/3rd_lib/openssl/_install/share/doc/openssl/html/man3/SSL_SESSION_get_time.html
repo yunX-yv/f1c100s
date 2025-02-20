@@ -28,23 +28,23 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<pre><code>#include &lt;openssl/ssl.h&gt;
+<pre><code> #include &lt;openssl/ssl.h&gt;
 
-long SSL_SESSION_get_timeout(const SSL_SESSION *s);
-long SSL_SESSION_set_timeout(SSL_SESSION *s, long tm);
+ long SSL_SESSION_get_timeout(const SSL_SESSION *s);
+ long SSL_SESSION_set_timeout(SSL_SESSION *s, long tm);
 
-long SSL_get_timeout(const SSL_SESSION *s);
-long SSL_set_timeout(SSL_SESSION *s, long tm);
+ long SSL_get_timeout(const SSL_SESSION *s);
+ long SSL_set_timeout(SSL_SESSION *s, long tm);
 
-time_t SSL_SESSION_get_time_ex(const SSL_SESSION *s);
-time_t SSL_SESSION_set_time_ex(SSL_SESSION *s, time_t tm);</code></pre>
+ time_t SSL_SESSION_get_time_ex(const SSL_SESSION *s);
+ time_t SSL_SESSION_set_time_ex(SSL_SESSION *s, time_t tm);</code></pre>
 
 <p>The following functions have been deprecated since OpenSSL 3.4, and can be hidden entirely by defining <b>OPENSSL_API_COMPAT</b> with a suitable version value, see <a href="../man7/openssl_user_macros.html">openssl_user_macros(7)</a>:</p>
 
-<pre><code>long SSL_SESSION_get_time(const SSL_SESSION *s);
-long SSL_SESSION_set_time(SSL_SESSION *s, long tm);
-long SSL_get_time(const SSL_SESSION *s);
-long SSL_set_time(SSL_SESSION *s, long tm);</code></pre>
+<pre><code> long SSL_SESSION_get_time(const SSL_SESSION *s);
+ long SSL_SESSION_set_time(SSL_SESSION *s, long tm);
+ long SSL_get_time(const SSL_SESSION *s);
+ long SSL_set_time(SSL_SESSION *s, long tm);</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
