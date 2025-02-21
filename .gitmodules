@@ -1,15 +1,15 @@
 # [submodule "SDK/app/chat-ui/tmp/lv_port_linux_frame_buffer"]
 #     path = SDK/app/chat-ui/tmp/lv_port_linux_frame_buffer
 #     url = https://github.com/lvgl/lv_port_linux_frame_buffer.git
-[submodule "lv_examples"]
+[submodule "SDK/app/chat-ui/tmp/lv_examples"]
 	path = SDK/app/chat-ui/tmp/lv_examples
 	url = https://github.com/littlevgl/lv_examples.git
-[submodule "lv_drivers"]
+[submodule "SDK/app/chat-ui/tmp/lv_drivers"]
 	path = SDK/app/chat-ui/tmp/lv_drivers
 	url = https://github.com/littlevgl/lv_drivers.git
-[submodule "lvgl"]
+[submodule "SDK/app/chat-ui/tmp/lvgl"]
 	path = SDK/app/chat-ui/tmp/lvgl
 	url = https://github.com/littlevgl/lvgl.git
-[submodule "lv_demos"]
+[submodule "SDK/app/chat-ui/tmp/lv_demos"]
 	path = SDK/app/chat-ui/tmp/lv_demos
 	url = https://github.com/lvgl/lv_demos
