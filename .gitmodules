@@ -1,9 +1,3 @@
-[submodule "SDK/app/chat-ui/tmp/lv_drivers"]
-    path = SDK/app/chat-ui/tmp/lv_drivers
-    url = https://github.com/lvgl/lv_drivers.git
-[submodule "SDK/app/chat-ui/tmp/lvgl"]
-    path = SDK/app/chat-ui/tmp/lvgl
-    url = https://github.com/lvgl/lvgl.git
 [submodule "SDK/app/chat-ui/tmp/lv_port_linux_frame_buffer"]
     path = SDK/app/chat-ui/tmp/lv_port_linux_frame_buffer
     url = https://github.com/lvgl/lv_port_linux_frame_buffer.git
