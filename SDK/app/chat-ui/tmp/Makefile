@@ -1,48 +1,64 @@
-#
-# Makefile
-#
 CC = /home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-gnueabi-gcc
 LVGL_DIR_NAME ?= lvgl
-LVGL_DIR ?= ${shell pwd}
-CFLAGS ?= -O0 -g -I$(LVGL_DIR)/ #-Wall -Wshadow -Wundef -Wmissing-prototypes -Wno-discarded-qualifiers -Wall -Wextra -Wno-unused-function -Wno-error=strict-prototypes -Wpointer-arith -fno-strict-aliasing -Wno-error=cpp -Wuninitialized -Wmaybe-uninitialized -Wno-unused-parameter -Wno-missing-field-initializers -Wtype-limits -Wsizeof-pointer-memaccess -Wno-format-nonliteral -Wno-cast-qual -Wunreachable-code -Wno-switch-default -Wreturn-type -Wmultichar -Wformat-security -Wno-ignored-qualifiers -Wno-error=pedantic -Wno-sign-compare -Wno-error=missing-prototypes -Wdouble-promotion -Wclobbered -Wdeprecated -Wempty-body -Wtype-limits -Wshift-negative-value -Wstack-usage=2048 -Wno-unused-value -Wno-unused-parameter -Wno-missing-field-initializers -Wuninitialized -Wmaybe-uninitialized -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wtype-limits -Wsizeof-pointer-memaccess -Wno-format-nonliteral -Wpointer-arith -Wno-cast-qual -Wmissing-prototypes -Wunreachable-code -Wno-switch-default -Wreturn-type -Wmultichar -Wno-discarded-qualifiers -Wformat-security -Wno-ignored-qualifiers -Wno-sign-compare
+LVGL_DIR ?= $(shell pwd)
+CFLAGS ?= -O0 -g -I$(LVGL_DIR)/ -I$(LVGL_DIR)/lv_port_linux_frame_buffer/lvgl -I$(LVGL_DIR)/lv_port_linux_frame_buffer/lv_drivers -I$(LVGL_DIR)/ui_app
 LDFLAGS ?= -lm
 BIN = demo
 
-OUTPUT_DIR = output
-
-#Collect the files to compile
 MAINSRC = ./main.c
 
-include $(LVGL_DIR)/lvgl/lvgl.mk
-include $(LVGL_DIR)/lv_drivers/lv_drivers.mk
+include $(LVGL_DIR)/lv_port_linux_frame_buffer/lvgl/lvgl.mk
+include $(LVGL_DIR)/lv_port_linux_frame_buffer/lv_drivers/lv_drivers.mk
 include $(LVGL_DIR)/ui_app/app.mk
 
-#CSRCS +=$(LVGL_DIR)/mouse_cursor_icon.c 
-
 OBJEXT ?= .o
+OBJDIR = output
 
-AOBJS = $(ASRCS:.S=$(OBJEXT))
-COBJS = $(CSRCS:.c=$(OBJEXT))
+# 保留源文件路径结构的目标文件定义
+COBJS = $(addprefix $(OBJDIR)/, $(CSRCS:.c=.o))
+AOBJS = $(addprefix $(OBJDIR)/, $(ASRCS:.S=.o))
+MAINOBJ = $(addprefix $(OBJDIR)/, $(MAINSRC:.c=.o))
 
-MAINOBJ = $(MAINSRC:.c=$(OBJEXT))
+OBJS = $(AOBJS) $(COBJS)
+
+# 定义输出目录结构
+OUTPUT_DIR = output
+BUILD_DIR = $(OUTPUT_DIR)/build
+
+# 生成目标文件路径，保持源文件的目录结构
+define generate_object_files
+$(addprefix $(BUILD_DIR)/, $(patsubst %.c,%.o,$(1)))
+endef
+
+# 将所有对象文件放在 output 目录下，保持源文件的目录结构
+AOBJS = $(addprefix $(BUILD_DIR)/, $(patsubst %.S,%.o,$(ASRCS)))
+COBJS = $(addprefix $(BUILD_DIR)/, $(patsubst %.c,%.o,$(CSRCS)))
+MAINOBJ = $(addprefix $(BUILD_DIR)/, $(patsubst %.c,%.o,$(MAINSRC)))
 
 SRCS = $(ASRCS) $(CSRCS) $(MAINSRC)
 OBJS = $(AOBJS) $(COBJS)
 
-## MAINOBJ -> OBJFILES
+# 编译规则
+$(BUILD_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "CC $<"
+
+$(BUILD_DIR)/%.o: %.S
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "CC $<"
 
 all: default
 
-%.o: %.c
-	@$(CC)  $(CFLAGS) -c $< -o $(OUTPUT_DIR)/$@
-	@echo "CC $<"
-    
-default: $(AOBJS) $(COBJS) $(MAINOBJ) $(OUTPUT_DIR)
-	$(CC) -o $(BIN) $(MAINOBJ) $(AOBJS) $(COBJS) $(LDFLAGS)
+default: $(BUILD_DIR) $(OBJS) $(MAINOBJ)
+	@mkdir -p $(OUTPUT_DIR)
+	$(CC) -o $(OUTPUT_DIR)/$(BIN) $(MAINOBJ) $(OBJS) $(LDFLAGS)
+	@echo "Build complete: $(OUTPUT_DIR)/$(BIN)"
 
-$(OUTPUT_DIR):
-	mkdir -p $(OUTPUT_DIR)
+$(BUILD_DIR):
+	@mkdir -p $(BUILD_DIR)
 
 clean: 
-	rm -f $(BIN) $(AOBJS) $(COBJS) $(MAINOBJ)
-
+	rm -f $(OUTPUT_DIR)/$(BIN)
+	rm -rf $(BUILD_DIR)
