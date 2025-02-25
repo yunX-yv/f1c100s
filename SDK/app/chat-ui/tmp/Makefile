@@ -7,8 +7,8 @@ BIN = demo
 
 MAINSRC = ./main.c
 
-include $(LVGL_DIR)/lv_port_linux_frame_buffer/lvgl/lvgl.mk
-include $(LVGL_DIR)/lv_port_linux_frame_buffer/lv_drivers/lv_drivers.mk
+include $(LVGL_DIR)/lvgl/lvgl.mk
+include $(LVGL_DIR)/lv_drivers/lv_drivers.mk
 include $(LVGL_DIR)/ui_app/app.mk
 
 OBJEXT ?= .o
