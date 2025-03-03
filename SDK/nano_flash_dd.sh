@@ -25,5 +25,8 @@ ln -s /etc/init.d/runOnBoot rootfs/etc/init.d/S99runOnBoot
 #由此计算得到 0x1000000(16M)-0x10000(64K)-0x100000(1M)-0x400000(4M)=0xAF0000
 mkfs.jffs2 -s 0x100 -e 0x10000 --pad=0x1AF0000 -d rootfs/ -o jffs2.img &&\
 dd if=jffs2.img of=flashimg.bin bs=1K seek=5184 conv=notrunc &&\
-#rm -rf rootfs &&\
+cd  rootfs
+tar -vcf ../rootfs.tar *
+cd ..
+rm -rf rootfs &&\
 rm jffs2.img
