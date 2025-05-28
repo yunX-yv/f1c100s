@@ -11,8 +11,9 @@ dd if=$UBOOT_FILE of=flashimg.bin bs=1K conv=notrunc &&\
 dd if=$DTB_FILE of=flashimg.bin bs=1K seek=1024 conv=notrunc &&\
 dd if=$KERNEL_FILE of=flashimg.bin bs=1K seek=1088 conv=notrunc &&\
 mkdir rootfs
-mkdir output
-tar -xvf $ROOTFS_FILE -C ./rootfs &&\
+#tar -xvf $ROOTFS_FILE -C ./rootfs &&\
+echo "pv $ROOTFS_FILE | tar -xvf - -C ./rootfs"
+pv $ROOTFS_FILE | tar -xvf - -C ./rootfs &&\
 cp -r $MOD_FILE rootfs/lib/modules/ &&\
 
 echo "export PS1='[\u@\h: \w\a\]$'" >> rootfs/etc/profile
