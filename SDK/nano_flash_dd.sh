@@ -11,6 +11,7 @@ dd if=$UBOOT_FILE of=flashimg.bin bs=1K conv=notrunc &&\
 dd if=$DTB_FILE of=flashimg.bin bs=1K seek=1024 conv=notrunc &&\
 dd if=$KERNEL_FILE of=flashimg.bin bs=1K seek=1088 conv=notrunc &&\
 mkdir rootfs
+mkdir output
 tar -xvf $ROOTFS_FILE -C ./rootfs &&\
 cp -r $MOD_FILE rootfs/lib/modules/ &&\
 
@@ -28,5 +29,6 @@ dd if=jffs2.img of=flashimg.bin bs=1K seek=5184 conv=notrunc &&\
 cd  rootfs
 tar -vcf ../rootfs.tar *
 cd ..
+cp rootfs.tar output/
 rm -rf rootfs &&\
 rm jffs2.img
