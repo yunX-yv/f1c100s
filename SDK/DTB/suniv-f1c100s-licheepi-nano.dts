@@ -1,0 +1,205 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR X11)
+/*
+ * Copyright 2018 Icenowy Zheng <icenowy@aosc.io>
+ */
+
+/dts-v1/;
+#include "suniv-f1c100s.dtsi"
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/dma/sun4i-a10.h> 
+
+/ {
+	model = "Lichee Pi Nano";
+	compatible = "licheepi,licheepi-nano", "allwinner,suniv-f1c100s",
+		     "allwinner,suniv";
+
+	aliases {
+		serial0 = &uart0;
+		spi0 = &spi0;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+/*
+	panel: panel {
+		compatible = "qiaodian,qd43003c0-40", "simple-panel";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		enable-gpios = <&pio 4 6 GPIO_ACTIVE_HIGH>;
+
+		port@0 {
+			reg = <0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			panel_input: endpoint@0 {
+				reg = <0>;
+				remote-endpoint = <&tcon0_out_lcd>;
+			};
+		};
+	};
+*/
+	panel: panel {
+		compatible = "lg,lb070wv8", "simple-panel";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		enable-gpios = <&pio 4 6 GPIO_ACTIVE_HIGH>;
+		status = "disabled";
+		port@0 {
+			reg = <0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			panel_input: endpoint@0 {
+				reg = <0>;
+				remote-endpoint = <&tcon0_out_lcd>;
+			};
+		};
+	};
+	reg_vcc3v3: vcc3v3 {
+		compatible = "regulator-fixed";
+		regulator-name = "vcc3v3";
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+	};
+
+};
+
+&de {
+	status = "okay";
+};
+
+&mmc0 {
+	vmmc-supply = <&reg_vcc3v3>;
+	bus-width = <4>;
+	broken-cd;
+	status = "okay";
+};
+
+&otg_sram {
+	status = "okay";
+};
+
+&pio {
+    spi0_cs_pins: spi0_cs_pins {
+		pins = "PD9";
+		function = "gpio_out";
+    };
+	spi1_cs_pins: spi1_cs_pins {
+		pins = "PD7";
+		function = "gpio_out";
+	};
+	usb0_id_pins: usb0_id_pins {
+		pins = "PE2";
+		function = "gpio_in";
+	};
+};
+
+&spi0 {
+    pinctrl-names = "default";
+    pinctrl-0 = <&spi0_pins_a &spi0_cs_pins>;
+    status = "okay";
+    spi-max-frequency = <50000000>;
+	cs-gpios = <0>, <&pio 3 9 GPIO_ACTIVE_HIGH>;
+
+    flash: w25q128bv@0 {
+        #address-cells = <1>;
+        #size-cells = <1>;
+        compatible = "winbond,w25q128bv", "jedec,spi-nor";
+        reg = <0>;
+        spi-max-frequency = <50000000>;
+        partitions {
+            compatible = "fixed-partitions";
+            #address-cells = <1>;
+            #size-cells = <1>;
+
+            partition@0 {
+                label = "u-boot";
+                reg = <0x000000 0x100000>;
+                // read-only;
+            };
+
+            partition@100000 {
+                label = "dtb";
+                reg = <0x100000 0x10000>;
+                // read-only;
+            };
+
+            partition@110000 {
+                label = "kernel";
+                reg = <0x110000 0x400000>;
+                // read-only;
+            };
+
+            partition@510000 {
+                label = "rootfs";
+                reg = <0x510000 0x1AF0000>;
+            };
+        };
+    };
+
+	st7789v@0 {
+		status = "okay";
+		compatible = "sitronix,st7789v";
+			reg = <1>;
+			spi-max-frequency = <50000000>;
+			rotate = <0>;
+			spi-cpol;
+			spi-cpha;
+			rgb;
+			fps = <60>;
+			buswidth = <8>;
+			reset-gpios = <&pio 3 10 GPIO_ACTIVE_LOW>;
+			dc-gpios = <&pio 3 8 GPIO_ACTIVE_LOW>;
+			debug = <0>;
+	};
+};
+
+&spi1 {
+    pinctrl-names = "default";
+    pinctrl-0 = <&spi1_pins_a &spi1_cs_pins>;
+    status = "okay";
+    spi-max-frequency = <50000000>;
+	cs-gpios = <0>, <&pio 3 7 GPIO_ACTIVE_HIGH>;
+};
+/*
+&tcon0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&lcd_rgb666_pins>;
+	status = "disabled";
+};
+*/
+&tcon0_out {
+	tcon0_out_lcd: endpoint@0 {
+		reg = <0>;
+		remote-endpoint = <&panel_input>;
+	};
+};
+
+&uart0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart0_pins_a>;
+	status = "okay";
+};
+
+&usb_otg {
+	dr_mode = "otg";
+	status = "okay";
+};
+
+&usbphy {
+	usb0_id_det-gpio = <&pio 4 2 GPIO_ACTIVE_HIGH>; /* PE2 */
+	status = "okay";
+};
+
+&codec {
+	allwinner,audio-routing =
+		"Headphone", "HP",
+		"Headphone", "HPCOM",
+		"MIC", "Mic";
+	status = "okay";
+};
+
+
