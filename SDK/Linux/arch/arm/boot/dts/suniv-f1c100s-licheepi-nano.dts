@@ -141,7 +141,7 @@
 		compatible = "sitronix,st7735s";
 			reg = <1>;
 			spi-max-frequency = <50000000>;
-			rotate = <0>;
+			rotate = <90>;
 			spi-cpol;
 			spi-cpha;
 			rgb;
