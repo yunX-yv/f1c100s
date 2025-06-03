@@ -38,7 +38,7 @@ echo "\e[31;47m Burning rootfs \e[0m"
 #为根文件系统制作jffs2镜像包
 #--pad参数指定 jffs2大小
 #由此计算得到 0x1000000(16M)-0x10000(64K)-0x100000(1M)-0x400000(4M)=0xAF0000
-mkfs.jffs2 -s 0x100 -e 0x10000 --pad=0x1AF0000 -d rootfs/ -o jffs2.img 
+mkfs.jffs2 -s 0x100 -e 0x10000 --pad=0x3AF0000 -d rootfs/ -o jffs2.img 
 dd if=jffs2.img of=flashimg.bin bs=1K seek=5184 conv=notrunc  status=progress
 
 echo "Generate img to $(pwd)/flashimg.bin. (size: $(stat -c %s flashimg.bin | awk '{print $1/1024/1024 " MB"}'))"

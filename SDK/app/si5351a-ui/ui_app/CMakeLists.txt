@@ -1,0 +1,16 @@
+SET(SOURCES screens/ui_Screen2.c
+    screens/ui_Screen1.c
+    screens/ui_Screen3.c
+    screens/ui_Screen4.c
+    ui.c
+    components/ui_comp_hook.c
+    ui_helpers.c
+    images/ui_img_main_png.c
+    images/ui_img_lock_png.c
+    fonts/ui_font_AlimamaDaoLiTi16.c
+    fonts/ui_font_AlimamaDaoLiTi32.c
+    fonts/ui_font_YeZiGongChangXiaoShiTou18.c
+    fonts/ui_font_YeZiGongChangXiaoShiTou32.c
+    fonts/ui_font_YeZiGongChangXiaoShiTou64.c)
+
+add_library(ui ${SOURCES})
