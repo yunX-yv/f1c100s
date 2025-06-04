@@ -17,16 +17,20 @@
 #mkdir configs/c1.1
 #ln -s functions/rndis.rn0 configs/c1.1/
 #echo "musb-hdrc.1.auto" > UDC
-echo "heartbeat" > /sys/class/leds/User-LED/trigger
+
+insmod /root/fb_st7735.ko
 
 chown root.root /var/empty/
 
 modprobe g_ether
+echo "usb0 IP: 192.168.137.2" > /dev/tty1
 ifconfig usb0 192.168.137.2
 ifconfig usb0 up
 route add default gw 192.168.137.1
 
+echo "heartbeat" > /sys/class/leds/User-LED/trigger
 
+/root/demo &
 
 # Demo to run a script ↓
 # script_path=/home/start.sh

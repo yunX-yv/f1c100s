@@ -103,7 +103,7 @@
     flash: w25q128bv@0 {
         #address-cells = <1>;
         #size-cells = <1>;
-        compatible = "winbond,w25q128bv", "jedec,spi-nor";
+        compatible = "winbond,w25q512jv", "jedec,spi-nor";
         reg = <0>;
         spi-max-frequency = <50000000>;
         partitions {
@@ -131,7 +131,7 @@
 
             partition@510000 {
                 label = "rootfs";
-                reg = <0x510000 0x1AF0000>;
+                reg = <0x510000 0x3AF0000>;
             };
         };
     };

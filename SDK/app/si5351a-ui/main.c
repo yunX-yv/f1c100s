@@ -48,8 +48,10 @@ int main(void)
     lv_disp_drv_init(&disp_drv);
     disp_drv.draw_buf   = &disp_buf;
     disp_drv.flush_cb   = fbdev_flush;
-    disp_drv.hor_res    = 80;
-    disp_drv.ver_res    = 160;
+    disp_drv.hor_res    = 160;
+    disp_drv.ver_res    = 80;
+    disp_drv.offset_x    = 0;
+    disp_drv.offset_y    = 0;
     lv_disp_drv_register(&disp_drv);
 
     //libinput_init();

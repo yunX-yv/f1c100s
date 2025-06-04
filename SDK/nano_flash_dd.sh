@@ -49,7 +49,7 @@ echo "\e[31;47m Backup rootfs \e[0m"
 cd  rootfs
 tar -cf ../rootfs.tar *
 cd ..
-cp rootfs.tar output/
+mv rootfs.tar output/
 echo "Optput rootfs to $(pwd)/output/rootfs.tar. (size: $(stat -c %s ./output/rootfs.tar | awk '{print $1/1024/1024 " MB"}'))"
 
 rm -rf rootfs &&\
