@@ -9,3 +9,4 @@ piggy_data
 SDK/app/si5351a-ui/lvgl
 SDK/app/si5351a-ui/lv_drivers
 .cache
+SDK/output
