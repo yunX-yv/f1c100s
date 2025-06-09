@@ -252,9 +252,13 @@
     			allwinner,pull = <1>; // 上拉
 			};
 			gpio_led_pins: gpio_led_pins {
-			pins = "PE5";
-			function = "gpio_out";
+				pins = "PE5";
+				function = "gpio_out";
 			};
+			i2c1_pins: i2c1 {
+        		pins = "PD5", "PD6";
+       			function = "i2c1";
+    		};
 		};
 
 		timer@1c20c00 {
@@ -280,6 +284,19 @@
 			status = "disabled";
 		};
 
+		i2c1: i2c@1C27000 {
+				compatible = "allwinner,sun6i-a31-i2c";
+				reg = <0x01C27400 0x400>;
+				interrupts = <7>;
+				clocks = <&ccu CLK_BUS_I2C1>;
+				resets = <&ccu RST_BUS_I2C1>;
+				pinctrl-names = "default";
+				pinctrl-0 = <&i2c1_pins>;
+				status = "disabled";
+				#address-cells = <1>;
+				#size-cells = <0>;
+			};
+			
 		uart1: serial@1c25400 {
 			compatible = "snps,dw-apb-uart";
 			reg = <0x01c25400 0x400>;
