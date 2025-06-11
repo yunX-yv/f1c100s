@@ -245,7 +245,7 @@
 				function = "mmc0";
 			};
 			key_pins: key_pins@0 {
-				pins = "PD21", "PD20", "PD19";
+				pins = "PD7", "PD10", "PD11";
 				function = "gpio_in";
 		
     			/* allwinner,drive = <0>; */
@@ -323,7 +323,7 @@
 				linux,code = <KEY_LEFT>;
 				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
 				interrupt-parent = <&pio>;
-				interrupts = <3 19 IRQ_TYPE_LEVEL_LOW>;	//PD19
+				interrupts = <3 7 IRQ_TYPE_LEVEL_LOW>;	//PD19
 				gpio-key,wakeup;
 				debounce-interval = <20>;
 			};
@@ -332,7 +332,7 @@
 				linux,code = <KEY_DOWN>;
 				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
 				interrupt-parent = <&pio>;
-				interrupts = <3 20 IRQ_TYPE_LEVEL_LOW>;	//PD19
+				interrupts = <3 10 IRQ_TYPE_LEVEL_LOW>;	//PD19
 				gpio-key,wakeup;
 				debounce-interval = <20>;
 			};
@@ -341,7 +341,7 @@
 				linux,code = <KEY_RIGHT>;
 				// gpios = <&pio 18 GPIO_ACTIVE_LOW>;
 				interrupt-parent = <&pio>;
-				interrupts = <3 21 IRQ_TYPE_LEVEL_LOW>;	//PD19
+				interrupts = <3 11 IRQ_TYPE_LEVEL_LOW>;	//PD19
 				gpio-key,wakeup;
 				debounce-interval = <20>;
 			};
