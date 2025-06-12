@@ -30,8 +30,14 @@ cp -r $MOD_FILE rootfs/lib/modules/ &&\
 
 echo "export PS1='[\u@\h: \w\a\]$'" >> rootfs/etc/profile
 echo "PermitRootLogin yes" >> rootfs/etc/ssh/sshd_config
+
 cp runOnBoot rootfs/etc/init.d/runOnBoot
+cp fb_st7735.ko rootfs/root/fb_st7735.ko
+cp clk-si5351.ko rootfs/root/clk-si5351.ko
+cp demo rootfs/root/demo
+
 chmod +x rootfs/etc/init.d/runOnBoot
+chmod +x rootfs/root/demo
 ln -s /etc/init.d/runOnBoot rootfs/etc/init.d/S99runOnBoot
 
 echo "\e[31;47m Burning rootfs \e[0m"

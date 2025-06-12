@@ -1,4 +1,27 @@
 # Aliases extracted from modules themselves.
 alias crypto-echainiv echainiv
 alias echainiv echainiv
+alias of:N*T*Csilabs,si5351cC* clk_si5351
+alias of:N*T*Csilabs,si5351c clk_si5351
+alias of:N*T*Csilabs,si5351bC* clk_si5351
+alias of:N*T*Csilabs,si5351b clk_si5351
+alias of:N*T*Csilabs,si5351a-msopC* clk_si5351
+alias of:N*T*Csilabs,si5351a-msop clk_si5351
+alias of:N*T*Csilabs,si5351aC* clk_si5351
+alias of:N*T*Csilabs,si5351a clk_si5351
+alias i2c:si5351c clk_si5351
+alias i2c:si5351b clk_si5351
+alias i2c:si5351a-msop clk_si5351
+alias i2c:si5351a clk_si5351
+alias usb:v0586p401Ad*dc*dsc*dp*ic*isc*ip*in* rtl8150
+alias usb:v1557p8150d*dc*dsc*dp*ic*isc*ip*in* rtl8150
+alias usb:v07B8p401Ad*dc*dsc*dp*ic*isc*ip*in* rtl8150
+alias usb:v3980p0003d*dc*dsc*dp*ic*isc*ip*in* rtl8150
+alias usb:v0411p0012d*dc*dsc*dp*ic*isc*ip*in* rtl8150
+alias usb:v0BDAp8150d*dc*dsc*dp*ic*isc*ip*in* rtl8150
 alias usbfunc:mass_storage usb_f_mass_storage
+alias sdio:c*v024CdB723* r8723bs
+alias sdio:c*v024Cd0626* r8723bs
+alias sdio:c*v024Cd0623* r8723bs
+alias sdio:c*v024Cd0523* r8723bs
+alias acpi*:OBDA8723:* r8723bs
