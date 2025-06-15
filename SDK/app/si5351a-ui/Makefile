@@ -2,8 +2,13 @@ CC = /home/xiao/project/buildroot-2021.02.4/output/host/bin/arm-buildroot-linux-
 LVGL_DIR_NAME ?= lvgl
 LVGL_SRC_DIR ?= $(shell pwd)/../3rd_lib
 LVGL_DIR ?= $(shell pwd)
-CFLAGS ?= -O0 -g -I$(LVGL_DIR)/ -I$(LVGL_DIR)/lv_port_linux_frame_buffer/lvgl -I$(LVGL_DIR)/lv_port_linux_frame_buffer/lv_drivers -I$(LVGL_DIR)/ui_app
-LDFLAGS ?= -lm
+CFLAGS ?= -O0 -g 
+CFLAGS += -I$(LVGL_DIR)/	
+CFLAGS += -I$(LVGL_DIR)/lv_port_linux_frame_buffer/lvgl	
+CFLAGS += -I$(LVGL_DIR)/lv_port_linux_frame_buffer/lv_drivers 	
+CFLAGS += -I$(LVGL_DIR)/ui_app 	
+CFLAGS += -I$(LVGL_DIR)/include 	
+LDFLAGS ?= -lm 
 BIN = demo
 
 MAINSRC = ./main.c
@@ -11,6 +16,7 @@ MAINSRC = ./main.c
 include $(LVGL_DIR)/lvgl/lvgl.mk
 include $(LVGL_DIR)/lv_drivers/lv_drivers.mk
 include $(LVGL_DIR)/ui_app/app.mk
+include $(LVGL_DIR)/src/src.mk
 
 OBJEXT ?= .o
 OBJDIR = output

@@ -8,21 +8,22 @@
 #include <sys/time.h>
 
 #include "ui_app/ui.h"
+#include "key_input.h"
 
 #define DISP_BUF_SIZE (128 * 1024)
 
-// void button_read(lv_indev_drv_t * drv, lv_indev_data_t*data){
-//     static uint32_t last_btn = 0;   /*Store the last pressed button*/
-//     int btn_pr = my_btn_read();     /*Get the ID (0,1,2...) of the pressed button*/
-//     if(btn_pr >= 0) {               /*Is there a button press? (E.g. -1 indicated no button was pressed)*/
-//        last_btn = btn_pr;           /*Save the ID of the pressed button*/
-//        data->state = LV_INDEV_STATE_PRESSED;  /*Set the pressed state*/
-//     } else {
-//        data->state = LV_INDEV_STATE_RELEASED; /*Set the released state*/
-//     }
+void button_read(lv_indev_drv_t * drv, lv_indev_data_t*data){
+    static uint32_t last_btn = 0;   /*Store the last pressed button*/
+    int btn_pr = my_btn_read();     /*Get the ID (0,1,2...) of the pressed button*/
+    if(btn_pr >= 0) {               /*Is there a button press? (E.g. -1 indicated no button was pressed)*/
+       last_btn = btn_pr;           /*Save the ID of the pressed button*/
+       data->state = LV_INDEV_STATE_PRESSED;  /*Set the pressed state*/
+    } else {
+       data->state = LV_INDEV_STATE_RELEASED; /*Set the released state*/
+    }
 
-//     data->btn = last_btn;            /*Save the last button*/
-// }
+    data->btn = last_btn;            /*Save the last button*/
+}
 
 int main(void)
 {
@@ -73,7 +74,7 @@ int main(void)
     /*Create a Demo*/
 //    lv_demo_widgets();
     ui_init();
-
+    do_capture_init("/dev/input/event0", 0); // Change the device path as needed
     /*Handle LitlevGL tasks (tickless mode)*/
     while(1) {
         lv_timer_handler();

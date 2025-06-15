@@ -7,7 +7,10 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <signal.h>
+#include <sys/select.h>
 
+#if (PRINTF_DEVICE_IFIO == 1)
 /**
  * Print static device information (no events). This information includes
  * version numbers, device name and all bits supported by this device.
@@ -77,7 +80,9 @@ static int print_device_info(int fd)
 
 	return 0;
 }
+#endif /* PRINTF_DEVICE_IFIO */
 
+#if (AUTO_FIND_DEVICE == 1)
 /**
  * Filter for the AutoDevProbe scandir on /dev/input.
  *
@@ -141,14 +146,60 @@ static char* scan_devices(void)
 	if (devnum > max_device || devnum < 0)
 		return NULL;
 
-	asprintf(&filename, "%s/%s%d",
-		 DEV_INPUT_EVENT, EVENT_DEV_NAME,
-		 devnum);
+	asprintf(&filename, "%s/%s%d", DEV_INPUT_EVENT, EVENT_DEV_NAME, devnum);
 
 	return filename;
 }
+#endif /* AUTO_FIND_DEVICE */
 
-static int do_capture_init(const char *device, int grab_flag) {
+/**
+ * Print device events as they come in.
+ *
+ * @param fd The file descriptor to the device.
+ * @return 0 on success or 1 otherwise.
+ */
+ static int print_events(int fd)
+ {
+	 struct input_event ev[64];
+	 int i, rd;
+	 fd_set rdfs;
+ 
+	 FD_ZERO(&rdfs);
+	 FD_SET(fd, &rdfs);
+ 
+	 while (1) {
+		 select(fd + 1, &rdfs, NULL, NULL, NULL);
+		 rd = read(fd, ev, sizeof(ev));
+ 
+		 if (rd < (int) sizeof(struct input_event)) {
+			 printf("expected %d bytes, got %d\n", (int) sizeof(struct input_event), rd);
+			 perror("\nevtest: error reading");
+			 return 1;
+		 }
+ 
+		 for (i = 0; i < rd / sizeof(struct input_event); i++) {
+			 unsigned int type, code;
+ 
+			 type = ev[i].type;
+			 code = ev[i].code;
+ 
+			 printf("Event: time %ld.%06ld, ", ev[i].time.tv_sec, ev[i].time.tv_usec);
+ 
+			 if (type == EV_KEY) {
+					 printf("++++++++++++++ KEY:%d,%d ++++++++++++\n", ev[i].code, ev[i].value);
+			 } else {
+				//do nothing
+				printf("++++++++++++++ %d,%d,%d ++++++++++++\n", ev[i].type, ev[i].code, ev[i].value);
+			 }
+		 }
+ 
+	 }
+ 
+	 ioctl(fd, EVIOCGRAB, (void*)0);
+	 return EXIT_SUCCESS;
+ }
+
+int do_capture_init(const char *device, int grab_flag) {
   int fd;
   char *filename = NULL;
 
@@ -159,10 +210,11 @@ static int do_capture_init(const char *device, int grab_flag) {
     /* check euid if it is root */
     if (geteuid() != 0)
       fprintf(stderr, "Not running as root, no devices may be available.\n");
-
+#if AUTO_FIND_DEVICE == 1
     filename = scan_devices();
     if (!filename)
       return EXIT_FAILURE;
+#endif
   } else
     filename = strdup(device);
 
@@ -182,11 +234,13 @@ static int do_capture_init(const char *device, int grab_flag) {
   if (!isatty(fileno(stdout)))
     setbuf(stdout, NULL);
 
+#if (PRINTF_DEVICE_IFIO == 1)
   if (print_device_info(fd))
     goto error;
+#endif
 
   printf("Testing ... (interrupt to exit)\n");
-
+/*
   if (test_grab(fd, grab_flag)) // 测试是否是独占设备
   {
     printf("***********************************************\n");
@@ -201,13 +255,13 @@ static int do_capture_init(const char *device, int grab_flag) {
            filename);
     printf("***********************************************\n");
   }
-
-  signal(SIGINT, interrupt_handler);
-  signal(SIGTERM, interrupt_handler);
+*/
+//   signal(SIGINT, interrupt_handler);
+//   signal(SIGTERM, interrupt_handler);
 
   free(filename);
 
-  return print_events(fd);
+  return print_events(fd); 
 
 error:
   free(filename);
