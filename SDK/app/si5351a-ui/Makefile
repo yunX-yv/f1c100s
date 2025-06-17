@@ -8,7 +8,7 @@ CFLAGS += -I$(LVGL_DIR)/lv_port_linux_frame_buffer/lvgl
 CFLAGS += -I$(LVGL_DIR)/lv_port_linux_frame_buffer/lv_drivers 	
 CFLAGS += -I$(LVGL_DIR)/ui_app 	
 CFLAGS += -I$(LVGL_DIR)/include 	
-LDFLAGS ?= -lm 
+LDFLAGS ?= -lm -lpthread
 BIN = demo
 
 MAINSRC = ./main.c

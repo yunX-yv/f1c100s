@@ -9,9 +9,22 @@
 
 #include "ui_app/ui.h"
 #include "key_input.h"
+#include <dirent.h>
+#include <errno.h>
+#include <fcntl.h>
+
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/select.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include "multi_button.h"
 
 #define DISP_BUF_SIZE (128 * 1024)
 
+#if 0
 void button_read(lv_indev_drv_t * drv, lv_indev_data_t*data){
     static uint32_t last_btn = 0;   /*Store the last pressed button*/
     int btn_pr = my_btn_read();     /*Get the ID (0,1,2...) of the pressed button*/
@@ -24,6 +37,7 @@ void button_read(lv_indev_drv_t * drv, lv_indev_data_t*data){
 
     data->btn = last_btn;            /*Save the last button*/
 }
+#endif
 
 int main(void)
 {
@@ -74,10 +88,28 @@ int main(void)
     /*Create a Demo*/
 //    lv_demo_widgets();
     ui_init();
-    do_capture_init("/dev/input/event0", 0); // Change the device path as needed
+    //do_init_test();
+    init_btn();
     /*Handle LitlevGL tasks (tickless mode)*/
+    int fd;
+    if ((fd = open("/dev/input/event0", O_RDONLY | O_NONBLOCK)) < 0) {
+        perror("evtest");
+        if (errno == EACCES && getuid() != 0)
+          fprintf(stderr,
+                  "You do not have access to %s. Try "
+                  "running as root instead.\n",
+                  "/dev/input/event0");
+      }
+
+    printf("running...\r\n");
     while(1) {
+        // printf("lv_timer_handler...\r\n");
         lv_timer_handler();
+        // printf("button_ticks...\r\n");
+        button_ticks();
+        // printf("get_key_value...\r\n");
+        get_key_value(fd);
+//        printf("usleep...\r\n");
         usleep(5000);
     }
 
