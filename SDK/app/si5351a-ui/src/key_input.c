@@ -1,4 +1,6 @@
 #include "key_input.h"
+#include "multi_button.h"
+#include "ui.h"
 #include <dirent.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -10,8 +12,6 @@
 #include <sys/select.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include "multi_button.h"
-
 static uint8_t btn1_state, btn2_state, btn3_state;
 
 #if (PRINTF_DEVICE_IFIO == 1)
@@ -155,46 +155,42 @@ static char *scan_devices(void) {
 }
 #endif /* AUTO_FIND_DEVICE */
 
-void get_key_value(int fd)
-{
-	struct input_event ev[64];
-	int i, rd;
-	rd = read(fd, ev, sizeof(ev));
+void get_key_value(int fd) {
+  struct input_event ev[64];
+  int i, rd;
+  rd = read(fd, ev, sizeof(ev));
 
-    if (rd < (int)sizeof(struct input_event)) {
+  if (rd < (int)sizeof(struct input_event)) {
     //   printf("expected %d bytes, got %d\n", (int)sizeof(struct input_event),
     //          rd);
     //   perror("\nevtest: error reading");
-      return 1;
-    }
+    return 1;
+  }
 
-    for (i = 0; i < rd / sizeof(struct input_event); i++) {
-      unsigned int type, code;
+  for (i = 0; i < rd / sizeof(struct input_event); i++) {
+    unsigned int type, code;
 
-      type = ev[i].type;
-      code = ev[i].code;
+    type = ev[i].type;
+    code = ev[i].code;
 
-      printf("Event: time %ld.%06ld, ", ev[i].time.tv_sec, ev[i].time.tv_usec);
+    printf("Event: time %ld.%06ld, ", ev[i].time.tv_sec, ev[i].time.tv_usec);
 
-      if (type == EV_KEY) {
-        printf("++++++++++++++ KEY:%d,%d ++++++++++++\n", ev[i].code,
-               ev[i].value);
-			   if(ev[i].code == 106 && ev[i].value <= 1)
-			   {
-					btn1_state = ev[i].value;
-			   }else if(ev[i].code == 108)
-			   {
-					btn2_state = ev[i].value;
-			   }else if(ev[i].code == 105)
-			   {
-					btn3_state = ev[i].value;
-			   }
-      } else {
-        // do nothing
-        printf("++++++++++++++ %d,%d,%d ++++++++++++\n", ev[i].type, ev[i].code,
-               ev[i].value);
+    if (type == EV_KEY) {
+      printf("++++++++++++++ KEY:%d,%d ++++++++++++\n", ev[i].code,
+             ev[i].value);
+      if (ev[i].code == 106 && ev[i].value <= 1) {
+        btn1_state = ev[i].value;
+      } else if (ev[i].code == 108) {
+        btn2_state = ev[i].value;
+      } else if (ev[i].code == 105) {
+        btn3_state = ev[i].value;
       }
+    } else {
+      // do nothing
+      printf("++++++++++++++ %d,%d,%d ++++++++++++\n", ev[i].type, ev[i].code,
+             ev[i].value);
     }
+  }
 }
 
 /**
@@ -233,16 +229,13 @@ static int print_events(int fd) {
       if (type == EV_KEY) {
         printf("++++++++++++++ KEY:%d,%d ++++++++++++\n", ev[i].code,
                ev[i].value);
-			   if(ev[i].code == 106 && ev[i].value <= 1)
-			   {
-					btn1_state = ev[i].value;
-			   }else if(ev[i].code == 108)
-			   {
-					btn2_state = ev[i].value;
-			   }else if(ev[i].code == 105)
-			   {
-					btn3_state = ev[i].value;
-			   }
+        if (ev[i].code == 106 && ev[i].value <= 1) {
+          btn1_state = ev[i].value;
+        } else if (ev[i].code == 108) {
+          btn2_state = ev[i].value;
+        } else if (ev[i].code == 105) {
+          btn3_state = ev[i].value;
+        }
       } else {
         // do nothing
         printf("++++++++++++++ %d,%d,%d ++++++++++++\n", ev[i].type, ev[i].code,
@@ -335,50 +328,90 @@ void *mypthread(void *arg) {
   pthread_exit(NULL); // 结束线程
 }
 
-uint8_t read_button_value(uint8_t button_id)
-{
-    switch (button_id) {
-        case 1:
-            return btn1_state;
-        case 2:
-            return btn2_state;
-		case 3:
-            return btn3_state;
-        default:
-            return 0;
+uint8_t read_button_value(uint8_t button_id) {
+  switch (button_id) {
+  case 1:
+    return btn1_state;
+  case 2:
+    return btn2_state;
+  case 3:
+    return btn3_state;
+  default:
+    return 0;
+  }
+}
+static uint8_t ScreenNum = 1;
+void btn_single_click_handler(Button *btn) {
+  (void)btn; // suppress unused parameter warning
+  printf("🔘 Button %d: Single Click\n", btn->button_id);
+  switch (btn->button_id) {
+  case 3:
+    switch (ScreenNum) {
+    case 1:
+      ScreenNum = 2;
+      _ui_screen_change(&ui_Screen3, LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0,
+                        &ui_Screen3_screen_init);
+      break;
+    case 2:
+      ScreenNum = 3;
+      _ui_screen_change(&ui_Screen4, LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0,
+                        &ui_Screen4_screen_init);
+      break;
+    case 3:
+      ScreenNum = 1;
+      _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0,
+                        &ui_Screen1_screen_init);
+      break;
     }
+    break;
+  case 1:
+    switch (ScreenNum) {
+    case 1:
+      ScreenNum = 3;
+      _ui_screen_change(&ui_Screen4, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 300, 0,
+                        &ui_Screen4_screen_init);
+      break;
+    case 2:
+      ScreenNum = 1;
+      _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 300, 0,
+                        &ui_Screen1_screen_init);
+      break;
+    case 3:
+      ScreenNum = 2;
+      _ui_screen_change(&ui_Screen3, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 300, 0,
+                        &ui_Screen3_screen_init);
+      break;
+    }
+    break;
+  default:
+    break;
+  }
 }
-void btn_single_click_handler(Button* btn)
-{
-    (void)btn;  // suppress unused parameter warning
-    printf("🔘 Button %d: Single Click\n", btn->button_id);
-}
 
-void init_btn(void)
-{
+void init_btn(void) {
 
-	 // Initialize button 1 (active high for simulation)
-	 button_init(&btn1, read_button_value, 1, 1);
+  // Initialize button 1 (active high for simulation)
+  button_init(&btn1, read_button_value, 1, 1);
 
-	 // Attach event handlers for button 1
-	 button_attach(&btn1, BTN_SINGLE_CLICK, btn_single_click_handler);
-   
-	 // Initialize button 2 (active high for simulation)
-	 button_init(&btn2, read_button_value, 1, 2);
-   
-	 // Attach event handlers for button 2
-	 button_attach(&btn2, BTN_SINGLE_CLICK, btn_single_click_handler);
-   
-	   // Initialize button 2 (active high for simulation)
-	   button_init(&btn3, read_button_value, 1, 3);
-   
-	   // Attach event handlers for button 2
-	   button_attach(&btn3, BTN_SINGLE_CLICK, btn_single_click_handler);
-   
-	 // Start button processing
-	 button_start(&btn1);
-	 button_start(&btn2);
-	 button_start(&btn3);
+  // Attach event handlers for button 1
+  button_attach(&btn1, BTN_SINGLE_CLICK, btn_single_click_handler);
+
+  // Initialize button 2 (active high for simulation)
+  button_init(&btn2, read_button_value, 1, 2);
+
+  // Attach event handlers for button 2
+  button_attach(&btn2, BTN_SINGLE_CLICK, btn_single_click_handler);
+
+  // Initialize button 2 (active high for simulation)
+  button_init(&btn3, read_button_value, 1, 3);
+
+  // Attach event handlers for button 2
+  button_attach(&btn3, BTN_SINGLE_CLICK, btn_single_click_handler);
+
+  // Start button processing
+  button_start(&btn1);
+  button_start(&btn2);
+  button_start(&btn3);
 }
 
 void *btn_pthread(void *arg) {
@@ -398,11 +431,11 @@ void *btn_pthread(void *arg) {
   // Attach event handlers for button 2
   button_attach(&btn2, BTN_SINGLE_CLICK, btn_single_click_handler);
 
-    // Initialize button 2 (active high for simulation)
-	button_init(&btn3, read_button_value, 1, 3);
+  // Initialize button 2 (active high for simulation)
+  button_init(&btn3, read_button_value, 1, 3);
 
-	// Attach event handlers for button 2
-	button_attach(&btn3, BTN_SINGLE_CLICK, btn_single_click_handler);
+  // Attach event handlers for button 2
+  button_attach(&btn3, BTN_SINGLE_CLICK, btn_single_click_handler);
 
   // Start button processing
   button_start(&btn1);
@@ -410,10 +443,12 @@ void *btn_pthread(void *arg) {
   button_start(&btn3);
   while (1) // 进入死循环防止线程退出
   {
-	button_ticks();
-	usleep(5000); // 5ms sleep to simulate a timer tick
-	// printf("btn1_state=%d, btn2_state=%d, btn3_state=%d\n", btn1_state, btn2_state, btn3_state);
-	// printf("btn1_event=%d, btn2_event=%d, btn3_event=%d\n", button_get_event(&btn1), button_get_event(&btn2), button_get_event(&btn3));
+    button_ticks();
+    usleep(5000); // 5ms sleep to simulate a timer tick
+    // printf("btn1_state=%d, btn2_state=%d, btn3_state=%d\n", btn1_state,
+    // btn2_state, btn3_state); printf("btn1_event=%d, btn2_event=%d,
+    // btn3_event=%d\n", button_get_event(&btn1), button_get_event(&btn2),
+    // button_get_event(&btn3));
   }
   pthread_exit(NULL); // 结束线程
 }
@@ -422,16 +457,16 @@ void do_init_test(void) {
   pthread_t tid1;
   pthread_t tid2;
   pthread_attr_t attr;
-  if(pthread_attr_init(&attr)) /*初始化线程属性*/
+  if (pthread_attr_init(&attr)) /*初始化线程属性*/
   {
-	perror("pthread_attr_init err.");
-	return;
+    perror("pthread_attr_init err.");
+    return;
   }
-
-  if(pthread_attr_setstacksize(&attr,2 * 1024))
-  {
-	perror("pthread_attr_setstacksize err.");
-	return;
+  int no = pthread_attr_setstacksize(&attr, 2 * 1024);
+  if (no) {
+    perror("pthread_attr_setstacksize err.");
+    printf("errid : %d:errno :%d\r\n", no, errno);
+    return;
   }
 
   if (pthread_create(&tid1, &attr, mypthread, NULL) != 0) {
