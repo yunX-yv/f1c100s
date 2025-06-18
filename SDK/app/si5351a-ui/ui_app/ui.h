@@ -35,6 +35,7 @@ extern lv_obj_t * ui____initial_actions0;
 // IMAGES AND IMAGE SETS
 LV_IMG_DECLARE(ui_img_main_png);    // assets/main.png
 LV_IMG_DECLARE(ui_img_lock_png);    // assets/lock.png
+LV_IMG_DECLARE(ui_img_1480980206);    // assets/caret-left.png
 
 // FONTS
 LV_FONT_DECLARE(ui_font_AlimamaDaoLiTi16);

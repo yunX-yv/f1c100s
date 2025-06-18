@@ -176,19 +176,20 @@ void get_key_value(int fd) {
     printf("Event: time %ld.%06ld, ", ev[i].time.tv_sec, ev[i].time.tv_usec);
 
     if (type == EV_KEY) {
-      printf("++++++++++++++ KEY:%d,%d ++++++++++++\n", ev[i].code,
-             ev[i].value);
+      // printf("++++++++++++++ KEY:%d,%d ++++++++++++\n", ev[i].code,
+      //        ev[i].value);
       if (ev[i].code == 106 && ev[i].value <= 1) {
         btn1_state = ev[i].value;
-      } else if (ev[i].code == 108) {
+      } else if (ev[i].code == 108 && ev[i].value <= 1) {
         btn2_state = ev[i].value;
-      } else if (ev[i].code == 105) {
+      } else if (ev[i].code == 105 && ev[i].value <= 1) {
         btn3_state = ev[i].value;
       }
     } else {
       // do nothing
-      printf("++++++++++++++ %d,%d,%d ++++++++++++\n", ev[i].type, ev[i].code,
-             ev[i].value);
+      // printf("++++++++++++++ %d,%d,%d ++++++++++++\n", ev[i].type,
+      // ev[i].code,
+      //        ev[i].value);
     }
   }
 }
@@ -227,19 +228,20 @@ static int print_events(int fd) {
       printf("Event: time %ld.%06ld, ", ev[i].time.tv_sec, ev[i].time.tv_usec);
 
       if (type == EV_KEY) {
-        printf("++++++++++++++ KEY:%d,%d ++++++++++++\n", ev[i].code,
-               ev[i].value);
+        // printf("++++++++++++++ KEY:%d,%d ++++++++++++\n", ev[i].code,
+        //       ev[i].value);
         if (ev[i].code == 106 && ev[i].value <= 1) {
           btn1_state = ev[i].value;
-        } else if (ev[i].code == 108) {
+        } else if (ev[i].code == 108 && ev[i].value <= 1) {
           btn2_state = ev[i].value;
-        } else if (ev[i].code == 105) {
+        } else if (ev[i].code == 105 && ev[i].value <= 1) {
           btn3_state = ev[i].value;
         }
       } else {
         // do nothing
-        printf("++++++++++++++ %d,%d,%d ++++++++++++\n", ev[i].type, ev[i].code,
-               ev[i].value);
+        // printf("++++++++++++++ %d,%d,%d ++++++++++++\n", ev[i].type,
+        // ev[i].code,
+        //       ev[i].value);
       }
     }
   }
@@ -341,47 +343,244 @@ uint8_t read_button_value(uint8_t button_id) {
   }
 }
 static uint8_t ScreenNum = 1;
+static uint8_t ScreenNum_state = 0;
+static uint32_t outclk_Mhz[3] = {};
+static uint32_t outclk_Khz[3] = {};
+
+void change_screen_left(uint8_t screen_num) {
+  switch (screen_num) {
+  case 1:
+    ScreenNum = 2;
+    _ui_screen_change(&ui_Screen3, LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0,
+                      &ui_Screen3_screen_init);
+    break;
+  case 2:
+    ScreenNum = 3;
+    _ui_screen_change(&ui_Screen4, LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0,
+                      &ui_Screen4_screen_init);
+    break;
+  case 3:
+    ScreenNum = 1;
+    _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0,
+                      &ui_Screen1_screen_init);
+    break;
+  default:
+    break;
+  }
+}
+
+void change_screen_right(uint8_t screen_num) {
+  switch (screen_num) {
+  case 1:
+    ScreenNum = 3;
+    _ui_screen_change(&ui_Screen4, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 300, 0,
+                      &ui_Screen4_screen_init);
+    break;
+  case 2:
+    ScreenNum = 1;
+    _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 300, 0,
+                      &ui_Screen1_screen_init);
+    break;
+  case 3:
+    ScreenNum = 2;
+    _ui_screen_change(&ui_Screen3, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 300, 0,
+                      &ui_Screen3_screen_init);
+    break;
+  default:
+    break;
+  }
+}
+
+void outclk_Mhz_set(uint8_t screen_num, uint8_t state, uint8_t step) {
+  switch (screen_num) {
+  case 1:
+    if (state == 0) {
+      outclk_Mhz[0] = outclk_Mhz[0] + step < lv_bar_get_max_value(ui_Bar1)
+                          ? outclk_Mhz[0] + step
+                          : lv_bar_get_max_value(ui_Bar1);
+    } else {
+      outclk_Mhz[0] = outclk_Mhz[0] - step > lv_bar_get_min_value(ui_Bar1)
+                          ? outclk_Mhz[0] - step
+                          : lv_bar_get_min_value(ui_Bar1);
+    }
+    char str[4];
+    sprintf(str, "%d", (outclk_Mhz[0] / 100) % 10);
+    lv_label_set_text(ui_S1MHZ3, str);
+    sprintf(str, "%d", (outclk_Mhz[0] / 10) % 10);
+    lv_label_set_text(ui_S1MHZ2, str);
+    sprintf(str, "%d", (outclk_Mhz[0] / 1) % 10);
+    lv_label_set_text(ui_S1MHZ1, str);
+    lv_bar_set_value(ui_Bar1, outclk_Mhz[0], LV_ANIM_ON);
+    printf("ui_Bar1 value: %d\n", lv_bar_get_value(ui_Bar1));
+    break;
+  case 2:
+    if (state == 0) {
+      outclk_Mhz[1] += step;
+    } else {
+      outclk_Mhz[1] -= step;
+    }
+    _ui_bar_increment(ui_Bar4, outclk_Mhz[1], LV_ANIM_ON);
+    break;
+  case 3:
+    if (state == 0) {
+      outclk_Mhz[2] += step;
+    } else {
+      outclk_Mhz[2] -= step;
+    }
+    _ui_bar_increment(ui_Bar6, outclk_Mhz[2], LV_ANIM_ON);
+    break;
+  default:
+    break;
+  }
+}
+
+void outclk_Khz_set(uint8_t screen_num, uint8_t state, uint8_t step) {
+  switch (screen_num) {
+  case 1:
+    if (state == 0) {
+      outclk_Khz[0] = outclk_Khz[0] + step < lv_bar_get_max_value(ui_Bar3)
+                          ? outclk_Khz[0] + step
+                          : lv_bar_get_max_value(ui_Bar3);
+    } else {
+      outclk_Khz[0] = outclk_Khz[0] - step > lv_bar_get_min_value(ui_Bar3)
+                          ? outclk_Khz[0] - step
+                          : lv_bar_get_min_value(ui_Bar3);
+    }
+    char str[4];
+    sprintf(str, "%d", (outclk_Khz[0] / 100) % 10);
+    lv_label_set_text(ui_S1KHZ3, str);
+    sprintf(str, "%d", (outclk_Khz[0] / 10) % 10);
+    lv_label_set_text(ui_S1KHZ2, str);
+    sprintf(str, "%d", (outclk_Khz[0] / 1) % 10);
+    lv_label_set_text(ui_S1KHZ1, str);
+    lv_bar_set_value(ui_Bar3, outclk_Khz[0], LV_ANIM_ON);
+    break;
+  case 2:
+    if (state == 0) {
+      outclk_Khz[1] += step;
+    } else {
+      outclk_Khz[1] -= step;
+    }
+    _ui_bar_increment(ui_Bar5, outclk_Khz[1], LV_ANIM_ON);
+    break;
+  case 3:
+    if (state == 0) {
+      outclk_Khz[2] += step;
+    } else {
+      outclk_Khz[2] -= step;
+    }
+    _ui_bar_increment(ui_Bar7, outclk_Khz[2], LV_ANIM_ON);
+    break;
+  default:
+    break;
+  }
+}
+
 void btn_single_click_handler(Button *btn) {
   (void)btn; // suppress unused parameter warning
-  printf("🔘 Button %d: Single Click\n", btn->button_id);
+
   switch (btn->button_id) {
   case 3:
-    switch (ScreenNum) {
+    switch (ScreenNum_state) {
+    case 0:
+      change_screen_left(ScreenNum);
+      break;
     case 1:
-      ScreenNum = 2;
-      _ui_screen_change(&ui_Screen3, LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0,
-                        &ui_Screen3_screen_init);
+      outclk_Mhz_set(ScreenNum, 0, 1);
       break;
     case 2:
-      ScreenNum = 3;
-      _ui_screen_change(&ui_Screen4, LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0,
-                        &ui_Screen4_screen_init);
-      break;
-    case 3:
-      ScreenNum = 1;
-      _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0,
-                        &ui_Screen1_screen_init);
+      outclk_Khz_set(ScreenNum, 0, 1);
       break;
     }
     break;
+  case 2:
+    ScreenNum_state = (ScreenNum_state + 1) % 3;
+    printf("ScreenNum_state: %d\n", ScreenNum_state);
+    if (ScreenNum == 1) {
+      switch (ScreenNum_state) {
+      case 0:
+        lv_obj_set_style_opa(ui_Image7, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_opa(ui_Image9, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_opa(ui_Image10, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+        break;
+      case 1:
+        lv_obj_set_style_opa(ui_Image7, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_opa(ui_Image9, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_opa(ui_Image10, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+        break;
+      case 2:
+        lv_obj_set_style_opa(ui_Image7, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_opa(ui_Image9, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_opa(ui_Image10, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+        // do nothing
+        break;
+      }
+    }
+
+    break;
   case 1:
-    switch (ScreenNum) {
+    switch (ScreenNum_state) {
+    case 0:
+      change_screen_right(ScreenNum);
+      break;
     case 1:
-      ScreenNum = 3;
-      _ui_screen_change(&ui_Screen4, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 300, 0,
-                        &ui_Screen4_screen_init);
+      outclk_Mhz_set(ScreenNum, 1, 1);
       break;
     case 2:
-      ScreenNum = 1;
-      _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 300, 0,
-                        &ui_Screen1_screen_init);
-      break;
-    case 3:
-      ScreenNum = 2;
-      _ui_screen_change(&ui_Screen3, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 300, 0,
-                        &ui_Screen3_screen_init);
+      outclk_Khz_set(ScreenNum, 1, 1);
       break;
     }
+    break;
+  default:
+    break;
+  }
+}
+static uint32_t hold_num = 1;
+void btn_single_long_hold_handler(Button *btn) {
+  printf("btn_single_long_hold_handler \n");
+
+  switch (btn->button_id) {
+  case 1:
+    switch (ScreenNum_state) {
+    case 0:
+      break;
+    case 1:
+      outclk_Mhz_set(ScreenNum, 1, hold_num);
+      break;
+    case 2:
+      outclk_Khz_set(ScreenNum, 1, hold_num);
+      break;
+    }
+    break;
+  case 2:
+
+    break;
+  case 3:
+    switch (ScreenNum_state) {
+    case 0:
+      break;
+    case 1:
+      outclk_Mhz_set(ScreenNum, 0, hold_num);
+      break;
+    case 2:
+      outclk_Khz_set(ScreenNum, 0, hold_num);
+      break;
+    }
+    break;
+  default:
+    break;
+  }
+}
+
+void btn_single_press_up_handler(Button *btn) {
+  hold_num = 1; // Reset hold count on button release
+  printf("btn_single_press_up_handler \n");
+  switch (btn->button_id) {
+  case 1:
+    break;
+  case 2:
+    break;
+  case 3:
     break;
   default:
     break;
@@ -395,18 +594,24 @@ void init_btn(void) {
 
   // Attach event handlers for button 1
   button_attach(&btn1, BTN_SINGLE_CLICK, btn_single_click_handler);
+  button_attach(&btn1, BTN_LONG_PRESS_HOLD, btn_single_long_hold_handler);
+  button_attach(&btn1, BTN_PRESS_UP, btn_single_press_up_handler);
 
   // Initialize button 2 (active high for simulation)
   button_init(&btn2, read_button_value, 1, 2);
 
   // Attach event handlers for button 2
   button_attach(&btn2, BTN_SINGLE_CLICK, btn_single_click_handler);
+  button_attach(&btn2, BTN_LONG_PRESS_HOLD, btn_single_long_hold_handler);
+  button_attach(&btn2, BTN_PRESS_UP, btn_single_press_up_handler);
 
   // Initialize button 2 (active high for simulation)
   button_init(&btn3, read_button_value, 1, 3);
 
   // Attach event handlers for button 2
   button_attach(&btn3, BTN_SINGLE_CLICK, btn_single_click_handler);
+  button_attach(&btn3, BTN_LONG_PRESS_HOLD, btn_single_long_hold_handler);
+  button_attach(&btn3, BTN_PRESS_UP, btn_single_press_up_handler);
 
   // Start button processing
   button_start(&btn1);
