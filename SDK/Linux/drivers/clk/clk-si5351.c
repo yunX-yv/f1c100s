@@ -1542,6 +1542,7 @@ static int si5351_i2c_probe(struct i2c_client *client,
 		goto err_clk;
 	}
 
+	_dev_info(&client->dev, "si5351 test\r\n");
 	for (n = 0; n < num_clocks; n++) {
 		drvdata->msynth[n].num = n;
 		drvdata->msynth[n].drvdata = drvdata;
@@ -1562,7 +1563,7 @@ static int si5351_i2c_probe(struct i2c_client *client,
 			goto err_clk;
 		}
 	}
-
+	_dev_info(&client->dev, "devm_clk_hw_register clocks\r\n");
 	num_parents = (drvdata->variant == SI5351_VARIANT_C) ? 4 : 3;
 	parent_names[2] = si5351_input_names[0];
 	parent_names[3] = si5351_input_names[1];

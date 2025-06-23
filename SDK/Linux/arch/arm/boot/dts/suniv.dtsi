@@ -493,5 +493,10 @@
 			dma-names = "rx", "tx";
 			status = "disabled";
 		};
+
+		// si5351a_out: si5351a_out@0{
+		// 	compatible = "si5351a-usr";
+		// 	status = "disabled";
+		// };
 	};
 };
