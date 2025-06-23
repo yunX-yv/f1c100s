@@ -1447,13 +1447,14 @@ static int si5351_i2c_probe(struct i2c_client *client,
 	init.name = si5351_input_names[0];
 	init.ops = &si5351_xtal_ops;
 	init.flags = 0;
+	/*存在xtal*/
 	if (!IS_ERR(drvdata->pxtal)) {
 		drvdata->pxtal_name = __clk_get_name(drvdata->pxtal);
 		init.parent_names = &drvdata->pxtal_name;
 		init.num_parents = 1;
 	}
 	drvdata->xtal.init = &init;
-	ret = devm_clk_hw_register(&client->dev, &drvdata->xtal);
+	ret = devm_clk_hw_register(&client->dev, &drvdata->xtal);	//注册xtal设备
 	if (ret) {
 		dev_err(&client->dev, "unable to register %s\n", init.name);
 		goto err_clk;
