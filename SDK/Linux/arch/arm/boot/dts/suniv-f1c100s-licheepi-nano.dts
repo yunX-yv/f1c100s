@@ -194,15 +194,20 @@
 
 		clkout1 {
 			reg = <1>;
-			silabs,drive-strength = <4>;
-			silabs,multisynth-source = <1>;
+			silabs,drive-strength = <8>;
+			silabs,multisynth-source = <0>;	//设置multisynth源
 			silabs,clock-source = <0>;
-			pll-master;
+			silabs,pll-master;
+			clock-frequency = <74250000>;
 		};
 
 		clkout2 {
 			reg = <2>;
-      		silabs,clock-source = <2>;
+      		silabs,drive-strength = <8>;
+			silabs,multisynth-source = <0>;	//设置multisynth源
+			silabs,clock-source = <0>;
+			silabs,pll-master;
+			clock-frequency = <74250000>;
 		};
 	};
 }; 
@@ -221,11 +226,11 @@
 	};
 };
 
-// &si5351a_out {
-// 	status = "okay";
-// 	clocks = <&si5351a 0>, <&si5351a 1>, <&si5351a 2>;
-// 	clock-names = "clkout0", "clkout1", "clkout2";
-// };
+&si5351a_out {
+	status = "okay";
+	clocks = <&si5351a 0>, <&si5351a 1>, <&si5351a 2>;
+	clock-names = "clkout0", "clkout1", "clkout2";
+};
 
 &uart0 {
 	pinctrl-names = "default";
